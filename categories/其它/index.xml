@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>其它 - 分类 - 欢迎来到 Staok - 瞰百易</title>
+        <link>http://Staok.github.io/categories/%E5%85%B6%E5%AE%83/</link>
+        <description>其它 - 分类 - 欢迎来到 Staok - 瞰百易</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 01 Oct 2020 16:15:14 &#43;0800</lastBuildDate><atom:link href="http://Staok.github.io/categories/%E5%85%B6%E5%AE%83/" rel="self" type="application/rss+xml" /><item>
+    <title>科幻小说《请留在未来》</title>
+    <link>http://Staok.github.io/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5/</link>
+    <pubDate>Mon, 01 Jun 2020 13:26:36 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5/</guid>
+    <description><![CDATA[本文另发在，恭迎：知乎、BiliBili 按： 有时真的非常想写一些东西，写一些不一样的东西，这个小文费了不多也不少力气。 星空对于我小时候来说是]]></description>
+</item><item>
+    <title>科幻小说《请留在未来》注解篇</title>
+    <link>http://Staok.github.io/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5-%E6%B3%A8%E8%A7%A3%E7%AF%87/</link>
+    <pubDate>Wed, 17 Jun 2020 16:15:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5-%E6%B3%A8%E8%A7%A3%E7%AF%87/</guid>
+    <description><![CDATA[1、 冰冻三尺，非一蹴而就。既然要写，就写好，计划中，首先设计世界观和大背景，围绕我要表达的思想构思故事内核和主线，再填充对话和动作，最后在写]]></description>
+</item><item>
+    <title>【考研】噫嘘唏，考研个人经验汇总</title>
+    <link>http://Staok.github.io/%E8%80%83%E7%A0%94%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Thu, 01 Oct 2020 16:15:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/%E8%80%83%E7%A0%94%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[纯干货，不上升到哲学，提个醒，实际安排可调整。 安静，是好环境。 我默认你心理素质强大，所以下面不讲心态的事情。 选学校 即给多个意向学校的难度做个]]></description>
+</item><item>
+    <title>【开源电源】巧克力板</title>
+    <link>http://Staok.github.io/%E5%BC%80%E6%BA%90%E7%94%B5%E6%BA%90-%E5%B7%A7%E5%85%8B%E5%8A%9B%E6%9D%BF/</link>
+    <pubDate>Wed, 01 Jul 2020 16:15:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/%E5%BC%80%E6%BA%90%E7%94%B5%E6%BA%90-%E5%B7%A7%E5%85%8B%E5%8A%9B%E6%9D%BF/</guid>
+    <description><![CDATA[一个实现大功率可调的开关电源，附带多路多种输出和实用功能；本项目是“瞰百易”计划的一部分。 本项目的 GitHub仓库 Staok/PowerBar: 一个实现大功率可调的开关]]></description>
+</item></channel>
+</rss>

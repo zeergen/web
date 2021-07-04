@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>【规范】SCH &amp; PCB 设计规范和 AD 的使用 - 欢迎来到 Staok - 瞰百易</title><meta name="Description" content="比较详细、全名的介绍了SCH &amp; PCB 设计规范和 AD 的使用"><meta property="og:title" content="【规范】SCH &amp; PCB 设计规范和 AD 的使用" />
+<meta property="og:description" content="比较详细、全名的介绍了SCH &amp; PCB 设计规范和 AD 的使用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-07-30T16:15:14+08:00" />
+<meta property="article:modified_time" content="2021-06-29T16:17:18+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【规范】SCH &amp; PCB 设计规范和 AD 的使用"/>
+<meta name="twitter:description" content="比较详细、全名的介绍了SCH &amp; PCB 设计规范和 AD 的使用"/>
+<meta name="application-name" content="Staok - 瞰百易">
+<meta name="apple-mobile-web-app-title" content="Staok - 瞰百易"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/" /><link rel="prev" href="http://Staok.github.io/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5/" /><link rel="next" href="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8501-arm-imx6ull%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "【规范】SCH \u0026 PCB 设计规范和 AD 的使用",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/Staok.github.io\/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "http:\/\/Staok.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "规范, 硬件","wordcount":  17959 ,
+        "url": "http:\/\/Staok.github.io\/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83\/","datePublished": "2020-07-30T16:15:14+08:00","dateModified": "2021-06-29T16:17:18+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Staok","logo": {
+                    "@type": "ImageObject",
+                    "url": "http:\/\/Staok.github.io\/images\/avatar.png",
+                    "width":  404 ,
+                    "height":  392 
+                }},"author": {
+                "@type": "Person",
+                "name": "Staok"
+            },"description": "比较详细、全名的介绍了SCH \u0026 PCB 设计规范和 AD 的使用"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">【规范】SCH &amp; PCB 设计规范和 AD 的使用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Staok" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Staok</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%A7%84%E8%8C%83/"><i class="far fa-folder fa-fw"></i>规范</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-30">2020-07-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 17959 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 36 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#o-目录">O 目录</a></li>
+    <li><a href="#05-其他优秀的参考文章">0.5 其他优秀的参考文章</a></li>
+    <li><a href="#1-最基本的电路检查项和器件选型">1 最基本的电路检查项和器件选型</a>
+      <ul>
+        <li><a href="#关于电路模块化">关于电路模块化</a></li>
+        <li><a href="#保护机制">保护机制</a></li>
+        <li><a href="#电源">电源</a></li>
+        <li><a href="#模块分离">模块分离</a></li>
+        <li><a href="#地的类型-地平面分割">&ldquo;地&quot;的类型-地平面分割</a></li>
+        <li><a href="#电源完整性的测量">电源完整性的测量</a></li>
+        <li><a href="#电阻电容电感">电阻，电容，电感</a></li>
+        <li><a href="#功率开关管">功率开关管</a></li>
+        <li><a href="#运放芯片">运放芯片</a></li>
+        <li><a href="#开关电源芯片">开关电源芯片</a></li>
+        <li><a href="#线性电源芯片">线性电源芯片</a></li>
+        <li><a href="#mcu--mpu">MCU / MPU</a></li>
+      </ul>
+    </li>
+    <li><a href="#15-硬件测试规范化">1.5 硬件测试规范化</a></li>
+    <li><a href="#175-元件原理图和封装的准备">1.75 元件原理图和封装的准备</a></li>
+    <li><a href="#2-sch-绘制规范和-ad-使用">2 SCH 绘制规范和 AD 使用</a>
+      <ul>
+        <li><a href="#sch-中的快捷键">SCH 中的快捷键</a></li>
+        <li><a href="#最基本的-sch-绘制过程">最基本的 SCH 绘制过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-pcb-绘制规范和-ad-使用">3 PCB 绘制规范和 AD 使用</a>
+      <ul>
+        <li><a href="#板层标识定义">板层标识定义</a></li>
+        <li><a href="#pcb-中的快捷键">PCB 中的快捷键</a></li>
+        <li><a href="#最基本的-pcb-绘制过程">最基本的 PCB 绘制过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#35-ad20-sch--pcb-常用设置">3.5 AD20 SCH &amp; PCB 常用设置</a>
+      <ul>
+        <li><a href="#ad-20-软件设置">AD 20 软件设置</a></li>
+        <li><a href="#ad-20-快捷键--绘制技巧">AD 20 快捷键 &amp; 绘制技巧</a></li>
+        <li><a href="#通用-ad-规范-今后尽量适用">通用 AD 规范-今后尽量适用</a></li>
+        <li><a href="#层次原理图设计">层次原理图设计</a></li>
+        <li><a href="#布局复制">布局复制</a></li>
+        <li><a href="#总线连接">总线连接</a></li>
+        <li><a href="#差分走线设计">差分走线设计</a></li>
+        <li><a href="#等长线蛇形线设计">等长线/蛇形线设计</a></li>
+        <li><a href="#添加-logo-图案">添加 LOGO 图案</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-pcb-布局布线规范">4 PCB 布局布线规范</a>
+      <ul>
+        <li><a href="#幼稚园级">幼稚园级</a></li>
+        <li><a href="#中学生级">中学生级</a></li>
+        <li><a href="#本科级">本科级</a></li>
+        <li><a href="#pcb-检查项">PCB 检查项</a></li>
+      </ul>
+    </li>
+    <li><a href="#45-pcb-检查工具">4.5 PCB 检查工具</a></li>
+    <li><a href="#5-ad-导出-bom-表">5 AD 导出 BOM 表</a></li>
+    <li><a href="#6-ad-导出-gerber-和-钻孔文件">6 AD 导出 Gerber 和 钻孔文件</a></li>
+    <li><a href="#7-ad-导入导出配置文件">7 AD 导入导出配置文件</a></li>
+    <li><a href="#8-使用-keyshot-10-渲染三维模型">8 使用 KeyShot 10 渲染三维模型</a>
+      <ul>
+        <li><a href="#基本步骤">基本步骤</a></li>
+        <li><a href="#keyshot-的几个初级技巧">KeyShot 的几个初级技巧</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+<p>本文的源地址 Github：<a href="https://github.com/Staok/thoughs-about-hardware-design" target="_blank" rel="noopener noreffer">Staok/thoughs-about-hardware-design: 介绍和罗列关于硬件设计所需要考虑的各个方面。纯个人经验总结，非科班念经。永远地不定期更新。CC-BY-NC-SA 4.0。 (github.com)</a>。今后只在上面的链接里，这里不会跟进。</p>
+<p>编辑整理 by <a href="https://github.com/Staok" target="_blank" rel="noopener noreffer">Staok</a>，始于 2020.7 且无终稿。转载请注明作者及出处。</p>
+<p>本文件是“瞰百易”计划的一部分，尽量遵循<a href="https://github.com/Staok/Please-stay-in-the-future" target="_blank" rel="noopener noreffer">“二项玻”定则</a>，致力于与网络上碎片化严重的现象泾渭分明（这中二魂&hellip;）！</p>
+<p>本文系广泛撷取、借鉴和整理，参考的公开文档、书籍和网页<strong>不可数</strong>、太多了。</p>
+<p>适合刚入门的人阅读和遵守，已经有较多经验的人看一看图个乐。如有错误恭谢指出！</p>
+<hr>
+<h2 id="o-目录">O 目录</h2>
+<p>[TOC]</p>
+<hr>
+<h2 id="05-其他优秀的参考文章">0.5 其他优秀的参考文章</h2>
+<p>（永远的 TODO）以下基本都是作者还没有看到的（看过之后的都会把精髓写在本文）。</p>
+<ul>
+<li>
+<p><a href="https://uinika.gitee.io/Electronics/PCB/" target="_blank" rel="noopener noreffer">PCB 基本布线规范与设计原则 by Hank</a></p>
+</li>
+<li>
+<p>基本数模电学习和查询推荐《新概念模拟电路》——西安交通大学电工电子中心，杨建国。</p>
+</li>
+<li>
+<p>《硬件系统工程师宝典》——EDA精品智汇馆，介绍了硬件系统设计概要、信号完整性、电源完整性、EMC/EMI、原理图和PCB设计详情等。</p>
+</li>
+<li>
+<p>本条是作者的备注：</p>
+<p>本地收集的文章：</p>
+<ul>
+<li>《PCB小知识》系列文章，路径：【3 硬件、电路】\【PCB设计规范】\ PCB小知识。</li>
+<li>有关高速PCB的独立文章，路径：【3 硬件、电路】\【PCB设计规范】\ 高速PCB。</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>ADI 智库文章：《PCB设计秘籍》、《高速电路设计指南》（这个主要针对高速数模转换器件的PCB技巧）、《非隔离式开关电源的PCB布局考虑》、《Power技术问题解答》（这个针对常用 LDO 和 DCDC 的常见问题做梳理）、《电源设计基础知识精选》（对电源方方面面的内容做大梳理）等，具体文章免费在下面链接下载：<a href="https://www.analog.com/cn/education/landing-pages/002/chinese-ebook.html" target="_blank" rel="noopener noreffer">ADI电子书-您绝对值得拥有的电子书 | 教育 | 亚德诺半导体 (analog.com)</a>，或者在 微信里添加 “ADI智库” 小程序，在小程序里面搜索这些文章的名称，即可下载。</p>
+</li>
+<li>
+<p>MPS：PCB 布局指南：《电机驱动PCB布局指南》上、下篇、《低EMI DCDC变换器PCB设计》。</p>
+</li>
+<li>
+<p>TI 的 有关电源的文章。</p>
+</li>
+<li>
+<p>网上传开的华为的硬件规范。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/8GRIrdKN4gmoB7gNsvI-qg" target="_blank" rel="noopener noreffer">华为内部硬件开发设计流程 (qq.com)</a>。</p>
+</li>
+<li>
+<p>..</p>
+</li>
+</ul>
+<p>AD 的更多丰富技巧和高速布线：</p>
+<ul>
+<li>综合类（高级技巧）：
+<ul>
+<li>AD官方：<a href="https://www.bilibili.com/video/BV1D7411T7Pr" target="_blank" rel="noopener noreffer">Altium Designer 全套最权威教学|【官方PCB设计培训】|Altium 战疫免费云公益课堂 | 共27节|AD20|PCB Layout_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>；</li>
+<li>凡亿：<a href="https://space.bilibili.com/11979252/channel/detail?cid=77461" target="_blank" rel="noopener noreffer">凡亿教育的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili</a>；</li>
+<li>..</li>
+</ul>
+</li>
+<li>高速板设计（蛇形线 和 Active route）（看过之后都详细记下来）：
+<ul>
+<li>AD官方：<a href="https://www.bilibili.com/video/BV1oy4y1v7z1" target="_blank" rel="noopener noreffer">【官方培训】Altium Designer 高速DDR3模块全流程实战PCB设计 | AD20 教程 | 共5节|PCB Layout_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>；</li>
+<li>AD官方：<a href="https://www.bilibili.com/video/BV1x441187Bd" target="_blank" rel="noopener noreffer">DDR存储器布局布线设计思路解析_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>；</li>
+<li>凡亿：<a href="https://www.bilibili.com/video/BV1SE411n7os" target="_blank" rel="noopener noreffer">【PCB自动布线】 6层PCB高速ActiveRoute自动布线 速度就是快 Altium Designer 20_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>；</li>
+<li>文章：<a href="https://www.bilibili.com/read/cv3479922/" target="_blank" rel="noopener noreffer">AD19如何使用强大的自动布线功能 - 哔哩哔哩专栏 (bilibili.com)</a>；</li>
+<li>文章：<a href="https://blog.csdn.net/qq_34885615/article/details/77965021" target="_blank" rel="noopener noreffer">(32条消息) Altium Designer 的ActiveRoute使用_MrZhanghx的博客-CSDN博客</a>；</li>
+<li><code>./额外文档/高速布线 教程/AD18中ActiveRoute使用.pdf</code>。</li>
+<li>..</li>
+</ul>
+</li>
+</ul>
+<p>2T 移动硬盘里面的更多比较全的技巧视频 <code>【电子 学习】\【Altium.Designer】视频+教材\Altium 技巧经验 较多</code>。</p>
+<h2 id="1-最基本的电路检查项和器件选型">1 最基本的电路检查项和器件选型</h2>
+<h3 id="关于电路模块化">关于电路模块化</h3>
+<p>分为两种层面的 &ldquo;模块化&rdquo; ，原理图形式的模块化 和 电路板实体的模块化。</p>
+<ul>
+<li>电路原理图必须要模块化，便于以后的开发可以直接参考或复制之前已经设计的固定下来的功能模块。</li>
+<li>电路板实体的模块化（接口形式可以是 插接键 或者 邮票孔 ），要视具体应用而定：如果电路板要抗震、要空间集成度高（即占用空间紧张）、要低噪声（即精密设计），那么就不宜用电路板实体的模块化，那么此时直接用原理图模块化的形式（可以借鉴或复制之前设计的模块化的原理图）进行原理图层面的框图连接，然后所有器件画在一个板子上，PCB也直接借鉴之前的设计，这样就实现比较高效的设计。</li>
+</ul>
+<p>另外要注意的：</p>
+<ul>
+<li>标准化、通用化和可靠性设计高于功能设计；</li>
+<li>接口要考虑到电平兼容，比如 TTL 和 CMOS 两大电平标准；</li>
+<li>设计系统要尽量利用硬件资源和外设资源，减少 cpu 负担。</li>
+</ul>
+<h3 id="保护机制">保护机制</h3>
+<ul>
+<li>过压，欠压，防反接，软起动。</li>
+<li>过流，过温。</li>
+<li>瞬态抑制，静电保护，浪涌保护，EMC/EMI，RC消火花。</li>
+<li>通讯接口、驱动 I/O 保护：加缓冲，加隔离（信号隔离+电源隔离）。</li>
+<li>共模、差模干扰抑制。</li>
+<li>共阻抗地干扰抑制（高频）。</li>
+</ul>
+<p>更多请参考 <a href="https://github.com/Staok/protection-circuits" target="_blank" rel="noopener noreffer">Staok/protection-circuits: 对保护电路中的过流、过压、软起动、防反接、通讯和信号隔离、电平转换、防共地干扰、TVS瞬态抑制、共模抑制和电磁兼容做一个大总结 (github.com)</a>。</p>
+<p>关于隔离：</p>
+<ul>
+<li>电源隔离：常为使用变压器的磁路形式隔离（如金升阳等的电源模块）</li>
+<li>信号隔离：常有缓冲/中继（74 系列的244、245 等等）、光耦隔离和磁隔离（如 I2C、SPI 专用的磁隔离芯片）等等；要注意的是信号的隔离往往是两个单独的电路回路之间的信号连接，所以如果用光耦进行信号隔离，那么光耦两边的电源连接应该用两边对应的单独电路回路里面的电源，而不是公用一个地或者电源，这样起不到隔离效果。</li>
+</ul>
+<h3 id="电源">电源</h3>
+<ul>
+<li>确定入、出的压、流范围，纹波，温度特性。</li>
+<li>保护机制完善程度考虑（参考上一小节）。</li>
+<li>布局布线考虑。</li>
+<li>合理的设计和明确电源轨。</li>
+</ul>
+<h3 id="模块分离">模块分离</h3>
+<ul>
+<li>要进行电源分割、空间远离和地线单独安排等措施。</li>
+<li>各个部分接各自独立的“地”，最后都各自单点接公共地。</li>
+<li>模块特性区分：
+<ul>
+<li>数字部分供电电源，给数字电路；模拟部分供电电源，给模拟电路。</li>
+<li>强信号、大电流部分 与 弱信号（又分高频、低频）部分。</li>
+<li>高电压区域 与 低电压区域。</li>
+<li>干扰源 与 敏感元件。</li>
+</ul>
+</li>
+</ul>
+<h3 id="地的类型-地平面分割">&ldquo;地&quot;的类型-地平面分割</h3>
+<p>要划分这些“地”，防止互相干扰，每一个“地”单独划分区域，单独覆铜；一般方法是单点接地，都连接到电源地上，参考上面“电源”中配图。</p>
+<ul>
+<li>
+<p>电源地（PGND）（各个电压的地）</p>
+</li>
+<li>
+<p>模拟地（AGND）</p>
+</li>
+<li>
+<p>数字地（DGND）</p>
+</li>
+<li>
+<p>负载地（外接的电机等大负载进行隔离）</p>
+</li>
+<li>
+<p>外接传感器地（外接模块地隔离，或者共模电感隔离）</p>
+</li>
+<li>
+<p>机壳地，外壳地</p>
+</li>
+<li>
+<p>以下为接地的考虑：</p>
+</li>
+<li>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e7%94%b5%e6%ba%90%e5%b8%83%e5%b1%801.png"
+        data-srcset="assets/%e7%94%b5%e6%ba%90%e5%b8%83%e5%b1%801.png, assets/%e7%94%b5%e6%ba%90%e5%b8%83%e5%b1%801.png 1.5x, assets/%e7%94%b5%e6%ba%90%e5%b8%83%e5%b1%801.png 2x"
+        data-sizes="auto"
+        alt="assets/电源布局1.png"
+        title="电源布局1" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e4%b8%b2%e8%81%94%e5%8d%95%e7%82%b9&#43;%e5%b9%b6%e8%81%94%e5%8d%95%e7%82%b9.png"
+        data-srcset="assets/%e4%b8%b2%e8%81%94%e5%8d%95%e7%82%b9&#43;%e5%b9%b6%e8%81%94%e5%8d%95%e7%82%b9.png, assets/%e4%b8%b2%e8%81%94%e5%8d%95%e7%82%b9&#43;%e5%b9%b6%e8%81%94%e5%8d%95%e7%82%b9.png 1.5x, assets/%e4%b8%b2%e8%81%94%e5%8d%95%e7%82%b9&#43;%e5%b9%b6%e8%81%94%e5%8d%95%e7%82%b9.png 2x"
+        data-sizes="auto"
+        alt="assets/串联单点&#43;并联单点.png"
+        title="串联单点&#43;并联单点" /></p>
+</li>
+</ul>
+<p>更多参考文档<code>./额外文档/单点接地和多点接地剖析.doc</code>。</p>
+<h3 id="电源完整性的测量">电源完整性的测量</h3>
+<ul>
+<li>纹波和噪声的测量。</li>
+<li>输出阻抗的测量。</li>
+<li>环路增益的测量。</li>
+<li>滤波器件（电容/磁珠等）性能参数的测量。</li>
+</ul>
+<h3 id="电阻电容电感">电阻，电容，电感</h3>
+<ul>
+<li>电阻：阻值，功率，精度，温漂，品牌厂家，封装，价格，热噪声。</li>
+<li>电容：容值，耐压，材质（优先选：固态，铝聚合物，陶瓷电容（NPO，X7R），MLCC 独石电容，钽电容（大容量的钽电容耐压很低）），ESR（等效电阻，要低），纹波电流额定值（rated ripple current），温度特性，泄露电流，封装，寿命年限。</li>
+<li>电感：感值（看感值随温度下降的图表），饱和电流（或温度特性），直流电阻（DCR），封装大小（优先选：一体成型的 0630/4040，线艺公司的扁铜带/扁铜线型，铁硅铝（做差模电感最合适））。</li>
+<li>关于阻容的封装的补充说明：电阻的直插（金属）封装比表贴（碳膜）和电容的直插（MLCC独石，NPO或X7R）比表贴（陶瓷，NPO或X7R），要来的更加稳定（如热稳定），噪声可能更小。对于要求精密、稳定的硬件可选此。</li>
+</ul>
+<h3 id="功率开关管">功率开关管</h3>
+<ul>
+<li>
+<p>Vds（漏源极电压），Vgs（栅极源极电压），Ids（漏源电流），Rds(on)（导通电阻）。</p>
+</li>
+<li>
+<p>分布/寄生电容（符号：Cs，Cg。其越小，开关速度越快，开关损耗越小，普通硅基材料 MOS 可选 TI 的 NexFET 型）；封装。</p>
+</li>
+<li>
+<p>目前三类 MOS 开关管：硅基（Si），碳化硅（SiC），氮化镓（GaN），目前英飞凌（Infineon）能提供很广泛的 MOS 选型和对应的预驱 IC，官网有不少选型指导手册。下图是三类 MOS 的适用范围：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/Wide-Bandgap-Semiconductors-%28SiCGaN%29.jpg"
+        data-srcset="assets/Wide-Bandgap-Semiconductors-%28SiCGaN%29.jpg, assets/Wide-Bandgap-Semiconductors-%28SiCGaN%29.jpg 1.5x, assets/Wide-Bandgap-Semiconductors-%28SiCGaN%29.jpg 2x"
+        data-sizes="auto"
+        alt="assets/Wide-Bandgap-Semiconductors-(SiCGaN).jpg"
+        title="Infineon image wide bandgap semiconductors Si-Sic-GaN" /></p>
+</li>
+</ul>
+<p>总结目前适用范围：</p>
+<ul>
+<li>传统硅基：成熟、稳定可靠，低压，低电流，低频；</li>
+<li>碳化硅：高压领域，强电；</li>
+<li>氮化镓：低压大电流，高频，强减小功率变换器的体积。（不过预驱参数和传统硅基不同，需要细看）。</li>
+</ul>
+<p>以碳化硅为例，相比于 IGBT，其低阻值，高频率和高温工作（250 ℃），可明显将目前大功率变换器小型化，甚将改变工程设计模式。且碳化硅做的二极管，反向过压比硅基的小的多的多。碳化硅的开关管的开关损耗比传统硅基要减少 90%（理想）。</p>
+<p>更多阅读：</p>
+<ul>
+<li>
+<p><a href="https://www.infineon.com/cms/en/product/wide-band-gap-semiconductors-sic-gan/" target="_blank" rel="noopener noreffer">Wide Bandgap Semiconductors (SiC/GaN)</a>。</p>
+</li>
+<li>
+<p><a href="https://www.infineon.com/dgdl/Infineon-Experience_the_difference_in_power_CoolMOS_CoolSiC_CoolGaN-ProductSelectionGuide-v01_00-CN.pdf?fileId=5546d46262b31d2e0162b59d5869079c" target="_blank" rel="noopener noreffer">体验三类 MOS： CoolMOS™ 7- CoolSiC™ - CoolGaN™ 和互补的EiceDRIVER™ IC.pdf</a>。</p>
+</li>
+<li>
+<p><a href="https://www.infineon.com/cms/cn/product/power/" target="_blank" rel="noopener noreffer">英飞凌功率器件选型</a>。</p>
+</li>
+<li>
+<p><a href="https://www.ti.com/power-management/mosfets/overview.html" target="_blank" rel="noopener noreffer">德州仪器（TI）的 NexFET MOS 选型（CSD 系列）</a>。</p>
+</li>
+<li>
+<p>谨防买到假货 MOS 管，识别经验现有两点（真实趟过雷的），一点是如下图识别丝印大小（左边两个真品，右边两个赝品），另一点是真货 MOS 的边缘是圆角，而方角的可能是假货，也不是绝对，需要进一步测量验证，比如加 Vgs，然后测量 Rds，假货肯定 内阻不正常 / 最大承受电流很低 等等。</p>
+<p><img src="assets/谨防买到假货MOS管.bmp" alt="谨防买到假货 MOS 管" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="运放芯片">运放芯片</h3>
+<p>括号内为最廉价运放的典型值。</p>
+<ul>
+<li>输入、输出电压范围（供电是否必须双电源，输出是否轨到轨），带宽/摆率/电压转换速率（SR，0.5V/us），开环差模增益（Aod，100dB）/频率响应/伯德图/频带宽（-3dB的频率，0.5~2MHz），放大倍数温漂。</li>
+<li>差模输入阻抗（Rid，大于2MΩ），共模输入阻抗，共模抑制比（KCMR，大于80dB）。</li>
+<li>输入失调电压（Uio，小于2mV），输入失调电流（Iio，0.2~2uA），输入偏置电流（Iib，0.3~7uA），它们的温漂。</li>
+<li>功耗（80mW）。</li>
+</ul>
+<h3 id="开关电源芯片">开关电源芯片</h3>
+<p>即 DC-DC 的 BUCK、BOOST、BUCK-BOOST 等。</p>
+<ul>
+<li>拓扑形式，频率，是否集成开关管。</li>
+<li>输入、输出的电压、电流范围。输出是否可调。</li>
+<li>是否带 comp 环路补偿端。</li>
+<li>静态功耗。</li>
+</ul>
+<h3 id="线性电源芯片">线性电源芯片</h3>
+<p>即 LDO。</p>
+<ul>
+<li>输入、输出的电压、电流范围。输出是否可调。</li>
+<li>根据不同功率选用不同封装的具体型号（如 78 系类有 m、l 系列等，1117 系列有 sot-223、sot-89 等系列）。</li>
+<li>静态功耗（如 HT7333 最低 1uA）。</li>
+<li>输出噪声。</li>
+</ul>
+<h3 id="mcu--mpu">MCU / MPU</h3>
+<p><a href="https://github.com/Staok/ARM-Linux-Study/blob/main/ARM%20%26%20Linux%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E3%80%90%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85%20%E7%95%AA%E5%A4%9601%E3%80%91ARM%20%E7%B3%BB%E5%88%97%E5%BF%AB%E9%80%9F%E9%B8%9F%E7%9E%B0.md" target="_blank" rel="noopener noreffer">ARM &amp; SOC 系列快速鸟瞰——ARM 内核各系列介绍和各大厂的选型总结</a>。</p>
+<ul>
+<li>内核架构，RAM，ROM，I/O数量，通讯接口（UART，SPI，I2C，CAN，USB，SDIO等），其他特色外设，抗扰能力。</li>
+<li>官方手册、工具链是否齐全，官方是否提供 EVK 开发板及其 BSP 底层支持包。</li>
+<li>最小系统：供电电源，时钟（晶振等），复位（RC + 开关，内部看门狗，专用看门狗芯片等），SRAM（可选），FLASH（可选）。</li>
+<li>功耗，价格，封装大小，供货周期。</li>
+<li>如无必要，勿增实体！</li>
+</ul>
+<h2 id="15-硬件测试规范化">1.5 硬件测试规范化</h2>
+<p>硬件测试（或称可靠性检验）的指标条目、每个项目的测试步骤和测试报告等规范化。</p>
+<p>（这条目前对于我个人是空白的，以后慢慢积累补上）。</p>
+<h2 id="175-元件原理图和封装的准备">1.75 元件原理图和封装的准备</h2>
+<p>法一：淘宝大法。淘宝上有很多卖封装的，也不贵，买一次一劳永逸真的划算，如 源创客 的等。</p>
+<p>法二：开源大法。如 <a href="https://github.com/issus/altium-library" target="_blank" rel="noopener noreffer">issus/altium-library</a>、<a href="https://github.com/KitSprout/AltiumDesigner_PcbLibrary" target="_blank" rel="noopener noreffer">KitSprout/AltiumDesigner_PcbLibrary</a> 、嘉立创的元件库 <a href="https://gitee.com/JLC_SMT" target="_blank" rel="noopener noreffer">嘉立创SMT (JLC_SMT) - Gitee.com</a> 等等。</p>
+<p>法三：原厂大法。选定大厂的芯片后，一些大厂官网会直接提供该芯片对应的原理图和 PCB 封装，如 ST 等大厂官网对应 IC 页中寻找提供的 PCB 封装进行下载，具体 <a href="https://blog.csdn.net/XiaoQingCaiGeGe/article/details/83864576" target="_blank" rel="noopener noreffer">如何利用 Ultra Librarian 生成 Altium designer 器件封装</a>。</p>
+<p>法四：经销商/三方大法。如在 (1)贸泽电子 官网搜索芯片，会提供 <a href="https://componentsearchengine.com/">https://componentsearchengine.com/</a> 网址所提供的芯片原理图、PCB 封装和 3D 模型文件，利用 Library Loader 软件（官网下载）或者针对 AD 的 Altium Library Loader 软件对器件模型文件转换成 Altium 软件格式的库文件。还有 (2)立创商城，搜索器件后可以得到 立创 EDA 的器件原理图和封装，导出到 Altium 即可，<a href="https://www.bilibili.com/video/BV1of4y1S7oi" target="_blank" rel="noopener noreffer">如何将嘉立创的原理图封装导入到AD20?</a>。</p>
+<p>法五：以上方法都没有，是特殊的器件，可以自制。对于原理图，一般元件的引脚和其划分不会特别复杂，应该很快就能画好；对于PCB 封装，常见的可用 AD 的 IPC 自动创建常用封装工具，先选择封装类型，再根据手册设置各种长宽参数，自动生成PCB封装以供使用，不常见的那只能最后的最后才自己画啦，按照芯片手册提供的封装规格，尺寸的单位看准了。</p>
+<p>至于 3D 模型若没有，简单的可在 AD 的 PCB 库中的元件上添加 3D 实体（通常在机械1层）自己画，复杂的可去</p>
+<ul>
+<li><a href="http://bbs.21dianyuan.com/forum.php?mod=viewthread&amp;tid=174773" target="_blank" rel="noopener noreffer">找3D模型和导入的一个教程</a>；</li>
+<li><a href="https://www.iclib.com/" target="_blank" rel="noopener noreffer">IC封装网-行业IPC标准化的元件库及PCB封装库资源下载平台 (iclib.com)</a>；</li>
+<li><a href="https://www.3dcontentcentral.cn/default.aspx" target="_blank" rel="noopener noreffer">3D ContentCentral - 免费 3D CAD 模型、2D 工程图和供应商目录</a>；</li>
+</ul>
+<p>等网站下载。</p>
+<h2 id="2-sch-绘制规范和-ad-使用">2 SCH 绘制规范和 AD 使用</h2>
+<p>个人规范，仅供参考。这里是针对 AD10 版本。</p>
+<p>在使用 AD 时候，应先导入我的软件配置和 PCB 规则 Rules 文件，具体文件和方法说明在“AD 软件设置和PCB规则Rules配置文件”文件夹中。</p>
+<h3 id="sch-中的快捷键">SCH 中的快捷键</h3>
+<ul>
+<li>拖住器件时，按 x、y 为镜像翻转。</li>
+<li>选中一根线，Ctrl+R，可以复制重复放置。</li>
+<li>先点 Tools -&gt; Cross Probe，扫描所有原理图中相连的线，再 ctrl + 鼠标左击，点击一根线全局高亮。</li>
+<li>原理图和 PCB 界面分别选择 Tools -&gt; Cross Select Mode，可以在 SCH 和 PCB 界面交叉选择，即同时高亮选中同一个元件，有利于定位。</li>
+<li>&hellip;</li>
+</ul>
+<h3 id="最基本的-sch-绘制过程">最基本的 SCH 绘制过程</h3>
+<ol>
+<li>
+<p>对电路原理图进行电源、主控和其他外设等模组分页绘制（这里仅为示例，没有用 层次原理图设计模式，详看同名章节）；第一页可以是目录页，附文详细说明等，可以再加上历史版本和改动说明；第二页可以是原理图框图；原理图第三页可以加上 电源轨框图 示意。后二者在原理图比较复杂的情况下，很有必要。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-1.png"
+        data-srcset="assets/image-1.png, assets/image-1.png 1.5x, assets/image-1.png 2x"
+        data-sizes="auto"
+        alt="assets/image-1.png"
+        title="image-1" /></p>
+<p>原理图第一页的 目录 规范示意：</p>
+<p><img src="assets/原理图第一页的-目录-规范示意.png" alt="原理图第一页的 目录 规范示意.png"  /></p>
+<p><img src="assets/原理图第一页的-目录-规范示意-2.png" alt="原理图第一页的 目录 规范示意 2" style="zoom: 90%;" /></p>
+<p>原理图第一页的 历史版本 规范示意：</p>
+<p><img src="assets/原理图第一页的-历史版本-规范示意.png" alt="原理图第一页的 历史版本 规范示意" style="zoom:110%;" /></p>
+<p><img src="assets/原理图第一页的-历史版本-规范示意-2.png" alt="原理图第一页的 历史版本 规范示意 2" style="zoom: 80%;" /></p>
+<p>原理图第一页的 目录 和 历史版本 和 说明 兼有，示意：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%80%e9%a1%b5%e7%9a%84-%e7%9b%ae%e5%bd%95-%e5%92%8c-%e5%8e%86%e5%8f%b2%e7%89%88%e6%9c%ac-%e5%85%bc%e6%9c%89%e7%9a%84%e7%a4%ba%e6%84%8f.png"
+        data-srcset="assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%80%e9%a1%b5%e7%9a%84-%e7%9b%ae%e5%bd%95-%e5%92%8c-%e5%8e%86%e5%8f%b2%e7%89%88%e6%9c%ac-%e5%85%bc%e6%9c%89%e7%9a%84%e7%a4%ba%e6%84%8f.png, assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%80%e9%a1%b5%e7%9a%84-%e7%9b%ae%e5%bd%95-%e5%92%8c-%e5%8e%86%e5%8f%b2%e7%89%88%e6%9c%ac-%e5%85%bc%e6%9c%89%e7%9a%84%e7%a4%ba%e6%84%8f.png 1.5x, assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%80%e9%a1%b5%e7%9a%84-%e7%9b%ae%e5%bd%95-%e5%92%8c-%e5%8e%86%e5%8f%b2%e7%89%88%e6%9c%ac-%e5%85%bc%e6%9c%89%e7%9a%84%e7%a4%ba%e6%84%8f.png 2x"
+        data-sizes="auto"
+        alt="assets/原理图第一页的-目录-和-历史版本-兼有的示意.png"
+        title="原理图第一页的 目录 和 历史版本 兼有，示意" /></p>
+<p>原理图第二页的 框图 示意：</p>
+<p><img src="assets/原理图第二页的-框图-示意.png" alt="原理图第二页的 框图 示意" style="zoom: 80%;" /></p>
+<p><img src="assets/原理图第二页的-框图-示意-2.png" alt="原理图第二页的 框图 示意 2" style="zoom:67%;" /></p>
+<p>原理图第三页的 电源轨框图 示意：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%89%e9%a1%b5%e7%9a%84-%e7%94%b5%e6%ba%90%e8%bd%a8%e6%a1%86%e5%9b%be-%e7%a4%ba%e6%84%8f.png"
+        data-srcset="assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%89%e9%a1%b5%e7%9a%84-%e7%94%b5%e6%ba%90%e8%bd%a8%e6%a1%86%e5%9b%be-%e7%a4%ba%e6%84%8f.png, assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%89%e9%a1%b5%e7%9a%84-%e7%94%b5%e6%ba%90%e8%bd%a8%e6%a1%86%e5%9b%be-%e7%a4%ba%e6%84%8f.png 1.5x, assets/%e5%8e%9f%e7%90%86%e5%9b%be%e7%ac%ac%e4%b8%89%e9%a1%b5%e7%9a%84-%e7%94%b5%e6%ba%90%e8%bd%a8%e6%a1%86%e5%9b%be-%e7%a4%ba%e6%84%8f.png 2x"
+        data-sizes="auto"
+        alt="assets/原理图第三页的-电源轨框图-示意.png"
+        title="原理图第三页的 电源轨框图 示意" /></p>
+</li>
+<li>
+<p>对于每一页SCH（这里仅为示例，没有用 层次原理图设计模式，详看同名章节）：</p>
+<ul>
+<li>
+<p>各个子模块用线格划分；</p>
+</li>
+<li>
+<p>并在各个格子里写上子模块名称；</p>
+</li>
+<li>
+<p>页面右下角写上本页名称，x / Total（x 当前页编号，Total 为总页数），作者和日期；</p>
+</li>
+<li>
+<p>可在子模块旁边放上实物图片、官方推荐PCB图等方便画原理图；</p>
+</li>
+<li>
+<p>信号/小电流线用细线，电源/驱动/大电流线用粗线。</p>
+</li>
+</ul>
+<p><img src="assets/image-2.png" alt="image-2" style="zoom:150%;" /></p>
+</li>
+<li>
+<p>原理图作画要布局工整，走线清晰，注释到位！</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-3.png"
+        data-srcset="assets/image-3.png, assets/image-3.png 1.5x, assets/image-3.png 2x"
+        data-sizes="auto"
+        alt="assets/image-3.png"
+        title="image-3" /></p>
+</li>
+<li>
+<p>每个器件的命名。在 Designator 写上准编号，电容是C?，电阻是R?，电感L?，芯片IC?，晶体管Q?，以此类推；在 Comment 写上器件的名称。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-4.png"
+        data-srcset="assets/image-4.png, assets/image-4.png 1.5x, assets/image-4.png 2x"
+        data-sizes="auto"
+        alt="assets/image-4.png"
+        title="image-4" /></p>
+</li>
+<li>
+<p>型号名补全，查看器件手册的发货信息（Order information），确定具体的封装、温度范围和功能等的一个器件型号全名，在原理图的器件中写清，方便导出 BOM 表和采购。</p>
+</li>
+<li>
+<p>原理图中元件标识的规范，供参考，不是必须。如下图，电阻原理图的左上角、右上角、左下角和右下角以此标识 Designator、Comment（一般为阻值）、封装和精度，对于电容类似，对于电感要有饱和电流标识，其他器件同理。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e5%8e%9f%e7%90%86%e5%9b%be%e4%b8%ad%e5%85%83%e4%bb%b6%e6%a0%87%e8%af%86%e7%9a%84%e8%a7%84%e8%8c%83.png"
+        data-srcset="assets/%e5%8e%9f%e7%90%86%e5%9b%be%e4%b8%ad%e5%85%83%e4%bb%b6%e6%a0%87%e8%af%86%e7%9a%84%e8%a7%84%e8%8c%83.png, assets/%e5%8e%9f%e7%90%86%e5%9b%be%e4%b8%ad%e5%85%83%e4%bb%b6%e6%a0%87%e8%af%86%e7%9a%84%e8%a7%84%e8%8c%83.png 1.5x, assets/%e5%8e%9f%e7%90%86%e5%9b%be%e4%b8%ad%e5%85%83%e4%bb%b6%e6%a0%87%e8%af%86%e7%9a%84%e8%a7%84%e8%8c%83.png 2x"
+        data-sizes="auto"
+        alt="assets/原理图中元件标识的规范.png"
+        title="原理图中元件标识的规范" /></p>
+</li>
+<li>
+<p>网络标识的命名规范，基于 &ldquo;器件名（或器件类型） _ IO性质（数字还是ADC） _ IO名（管脚名）&quot;。中间常用于 MCU 的网络命名，其他非 MCU 器件非必须。例如，&ldquo;MCU _  IO _ KEY1&rdquo;、&ldquo;TPS5450 _ SW&rdquo;、&ldquo;DRV _ EN _ BUCK  &ldquo;等，如下图示意。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e7%bd%91%e7%bb%9c%e6%a0%87%e8%af%86%e7%9a%84%e5%91%bd%e5%90%8d%e8%a7%84%e8%8c%83-%e7%a4%ba%e6%84%8f.png"
+        data-srcset="assets/%e7%bd%91%e7%bb%9c%e6%a0%87%e8%af%86%e7%9a%84%e5%91%bd%e5%90%8d%e8%a7%84%e8%8c%83-%e7%a4%ba%e6%84%8f.png, assets/%e7%bd%91%e7%bb%9c%e6%a0%87%e8%af%86%e7%9a%84%e5%91%bd%e5%90%8d%e8%a7%84%e8%8c%83-%e7%a4%ba%e6%84%8f.png 1.5x, assets/%e7%bd%91%e7%bb%9c%e6%a0%87%e8%af%86%e7%9a%84%e5%91%bd%e5%90%8d%e8%a7%84%e8%8c%83-%e7%a4%ba%e6%84%8f.png 2x"
+        data-sizes="auto"
+        alt="assets/网络标识的命名规范-示意.png"
+        title="网络标识的命名规范 示意" /></p>
+</li>
+<li>
+<p>初次研制阶段，可多用 0 欧电阻、磁珠和跳线帽等，留出可以可测试、可断开和可配置的地方，方便逐个电源域、逐个模块的测试电流、功能裁剪等。比如加在电源出口，初次上电前可以先断开，不给后面的的电路供电，上电后测量电压和纹波，合理后，即可再接上，或者可以在此缺口直接测量电流。</p>
+</li>
+<li>
+<p>原理图中接口件，旁边放上实物图，图片设置为内嵌型。</p>
+</li>
+<li>
+<p>原理图画好后该给各个元件建立唯一编号。打开“工具”-&gt;“注解”，点 Reset All ，再点“更新更改列表”，最后执行“接受更改”。</p>
+</li>
+<li>
+<p>对原理图进行编译和查错。依次点 “工程”-&gt;“Compile Document” 和 “工程”-&gt;“Compile PCB Project”。没错后即可导入PCB。</p>
+</li>
+</ol>
+<h2 id="3-pcb-绘制规范和-ad-使用">3 PCB 绘制规范和 AD 使用</h2>
+<p>个人规范，仅供参考。这里是针对 AD10 版本。</p>
+<h3 id="板层标识定义">板层标识定义</h3>
+<ul>
+<li>Top Overlay 为丝印层。</li>
+<li>Top Solder 为开窗层。</li>
+<li>Keep-out Layer 为板边界。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-5.png"
+        data-srcset="assets/image-5.png, assets/image-5.png 1.5x, assets/image-5.png 2x"
+        data-sizes="auto"
+        alt="assets/image-5.png"
+        title="image-5" /></p>
+<h3 id="pcb-中的快捷键">PCB 中的快捷键</h3>
+<ul>
+<li>q 为单位在 mil 和 mm 之间切换。</li>
+<li>拖住器件，按下 L 切换器件所在层。</li>
+<li>Ctrl+鼠标左键点击一根线为高亮此线，点右下角“清除”清除高亮。</li>
+<li>按住 Alt，鼠标在板子器件上移动，会显示器件轮廓。</li>
+<li>Shift+s：为高亮所在层，重复操作取消高亮。</li>
+<li>处于布线状态时，shift+空格为改变线类型，空格为改变线凹凸。</li>
+<li>Ctrl+g：为选择切换栅格类型为线或点。</li>
+<li>Backspace 为布线时回到上一步。</li>
+<li>线状态下按*（乘号）为带过孔换层。</li>
+<li>Ctrl+m：为测量长度。</li>
+<li>Ctrl+左键点一下对正在布的线完成自动布线连接。</li>
+<li>Ctrl+h：再点一根线会全选之，然后 del 删除整根线。</li>
+<li>Shift+h：PCB 的左上角状态栏是否显示。</li>
+<li>Shift+g：PCB 左上角状态栏是否固定不动。</li>
+<li>键盘上边数字“3”为显示 3D 视图，数字“2”还原。</li>
+<li>3D 视图中依次点“v”、“b”-&gt;翻转板。</li>
+<li>按 L 按键，在视图选项中隐藏相关元素，比如隐藏覆铜（Polygons）。</li>
+</ul>
+<h3 id="最基本的-pcb-绘制过程">最基本的 PCB 绘制过程</h3>
+<p>要全程符合“PCB 布局布线规范”章节内容。如果有双屏幕的话，在画 PCB 的时候我一般会把原理图视图放在左屏（在 AD 软件中将原理图标签拖过去就是），PCB 视图放在右屏，或者相反，这样双屏左右对照着看和画，不用来回切。</p>
+<ol>
+<li>
+<p>先定义PCB规则。点开“设计”-&gt;“规则”，主要设置线宽范围，元件最小间距，焊盘的开窗范围，默认过孔尺寸，覆铜类型为直接连接等。</p>
+<p>过孔尺寸：焊盘比孔至少大6mil。例如最小孔直径为12mil（0.305mm），焊盘直径至少18mil。</p>
+</li>
+<li>
+<p>划定板边界。在 Keep-out Layer 层绘制板边界闭合线，然后执行“设计”-&gt;“板子形状”-&gt;“按照选择对象定义”。</p>
+</li>
+<li>
+<p>放置 PCB 原点到 PCB 边界的左下角。依次点击“编辑”、“原点”和“放置”，然后放置原点。</p>
+</li>
+<li>
+<p>把每个模块包含的所有元件移动到一堆。</p>
+<ul>
+<li>
+<p>首先开启交叉选择，分别打开在原理图和PCB界面的“工具”-&gt;“交叉选择模式”选项。</p>
+</li>
+<li>
+<p>在原理图界面中，选中一个子模块内所有器件，再到PCB界面，点“排列工具”-&gt;“在区域内排列器件”，在空白区域内拖出一个矩形，此子模块所有的器件便都堆在此矩形区域内。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>PCB中显示元件的原名（此步骤非必须）。</p>
+<ul>
+<li>
+<p>随便选中一个元件，右键点开“查找相似对象”，都是“any”情况下点“应用”，此时所有器件已全选，再点“确定”，出现“PCB Inspector”窗口，在其中取消选中“Show Name”，打开选中“Show Comment”即可。</p>
+</li>
+<li>
+<p>PCB Inspector 对于多器件批量改属性特别好用。选中要统一修改的器件，然后按 F11 调出 PCB Inspector 窗口，然后在 PCB Inspector 窗口改属性，所选中的多个器件就一同更改了。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>多层板（多于 2 层的偶数层）。</p>
+<ul>
+<li>在 PCB 里连按快捷键“D”、“K”调出层叠管理，或者在“设计”里面找“叠层管理”，或者空白处右击，“选项”里的“层叠管理”。</li>
+<li>多层板的推荐板层分布图在“PCB 布局布线规范”章节的“中学生级”里。</li>
+<li>注意内电层在拼板的时候网络会丢失，暂时没有简便的办法。有内电层在需要拼板的时候，建议这样处理：先把PCB文件直接复制一个，命名为“xxx 不含内电层版.PcbDoc”，然后打开此文件，执行以下步骤：
+<ol>
+<li>先把内电层的分割线都删掉，然后 D K 快捷键调出板层管理，把内电层（负片层）删掉，换为普通层（正片层）。</li>
+<li>然后在新的普通曾里按照原来分割线的形状覆铜，网络选择跟原来一样。</li>
+</ol>
+</li>
+<li>四层板举例：
+<ol>
+<li>在“层叠管理”中，在中间添加“Signal1”和“Signal2”两个信号层，或者添加“GND”和“VCC”两个内电层(Internal Plane)；</li>
+<li>前者的信号层可直接布线。后者的内电层特性为负片，即布线的地方不铺铜，什么都不画的时候是一整块铜皮，专用于电源划块，即内电层分割；双击一个封闭区域可设置此区域覆铜连接的net。</li>
+<li>信号层和内电层可以各有一个，混搭组成四层板，这样内电层专走电源和地，还多了一个信号层。</li>
+<li>其他注意点：画线不要用交互式走线，要用工具栏中的“应用工具”的“走线”等功能；典型内层厚度为1.4mil；通常采用默认的 Layer Pairs（层成对）模式；不允许在内电层上布置信号线；内电层不同区域之间的间隔宽度不小于 40mil。</li>
+<li>典型四层板板层分布为（由上到下）：
+<ul>
+<li>信号层 - 内电层（GND层） - 电源层 - 信号层（把信号层露在外面是为了好实物修改，也可不这样）；</li>
+<li>信号层 - 内电层（GND+VCC层）- 信号层 - 信号层。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>元器件布局。</p>
+<ul>
+<li>布局的好，走线容易，布局不好，走线困难。</li>
+<li>先大后小，先难后易，均匀分布，整齐划一。</li>
+<li>数模分离；功率驱动和信号处理分离；高频低频分离。</li>
+<li>间隔充分，模块独立。</li>
+<li>根据主信号流向摆放主要元器件。</li>
+<li>整齐美观，有规律。</li>
+<li>器件布局和走线推荐，优先参考 IC 的数据手册。</li>
+</ul>
+<p>更多布局规则请参考“4 PCB 布局布线规范”章节的内容。</p>
+</li>
+<li>
+<p>布线。</p>
+<ul>
+<li>除非可以混过去的项目，否则坚决不用自动布线（你晓得）。</li>
+<li>不手动布地线，地线的布线在下一小节“后续工作和润色”中用覆铜和过孔解决。</li>
+<li>对于两层板而言：先走电源线，再走信号线；对于四层板而言：摆好器件，先划分好内电层区域，再走电源线，再走信号线。</li>
+<li>电源线足够粗，功率走线必要时考虑开窗加锡。功率走线可以用覆铜来布线，然后原地复制粘贴一个再换成开窗层，得到整块覆铜的开窗。</li>
+<li>走信号线时，模拟信号、高速信号和时钟线优先布线。电流和地路径不形成环。</li>
+</ul>
+<p>AD 10 的等长线/蛇形线设计：</p>
+<ul>
+<li>画法参考文档<code>./额外文档/AD10 蛇形等长线的画法和规则设定.pdf</code>；</li>
+<li>先走好线，然后等长线都加到一个网络，按T R，选择最长线确定，移动鼠标拖蛇形线。</li>
+<li>快捷键：“1、2”改弧度，“3、4”改间距，“，、。”改绕长，在左下角导航选“PCB”窗口，可见加入网络的要等长的线及其各自的长度。</li>
+</ul>
+<p>多跟线一块走：先选中多跟线，点“交互式布多跟线”，再点任一个线，就并排走了。</p>
+<p>更多布线规则请参考“4 PCB 布局布线规范”章节的内容。</p>
+<ul>
+<li>检查布线完成情况：工具栏 &ldquo;Report&rdquo;，&ldquo;Board information&rdquo;，勾上 &ldquo;Routing information&rdquo;，点 &ldquo;Report&rdquo;，新页面中查看布线的完成情况。如果还差最后几根不容易发现的线，在 PCB 页面中以 shitf + s 显示单独层来查看未连接的线。</li>
+</ul>
+</li>
+<li>
+<p>后续工作和润色。</p>
+<ul>
+<li>永远不要手动消除 DRC 报警或报错，要么修改 PCB，要么修改到合适的规则。</li>
+<li>板边缘圆润。</li>
+<li>电源芯片下方的 PAD 处仅加一个超大的过孔，而不是一堆小过孔，小过孔会被焊锡堵住。</li>
+<li>加泪滴。</li>
+<li>加螺丝定位孔。</li>
+<li>覆铜，原理图和器件布局时候按照“地”的划分而讲究，覆铜也按照这个讲究来讲究。</li>
+<li>每一块覆铜之间间隔在2mm以上，尤其是高压和低压区域的覆铜。</li>
+<li>对于覆铜，确保不出现较大的（超过 150mil）死铜、孤铜。覆铜不要有尖端或者细支延申或者存在于焊盘之间的覆铜的细线，可以在要去掉尖端的地方放置多边形占着地方，然后重新更新一下覆铜，尖端的地方就没有了。</li>
+<li>敷铜不要有尖锐的边角，四周要圆润。</li>
+<li>绕着模块加大的过覆铜过孔，板子四周加一圈过覆铜过孔，板子内多加过覆铜过孔增加回流路径。</li>
+<li>每一个滤波旁路电容的地脚旁边放一个地过孔。</li>
+<li>每一个芯片底部有尽量完整的地覆铜和过孔。</li>
+<li>注意过孔不要露铜。</li>
+<li>在丝印层加板子的接口（电源、通讯接口等）、Logo等标识。</li>
+<li>留下必要的测试点（开窗点），直径至少大于 0.4mm，测试点周围至少 2.54mm 空间以内要保持空旷。</li>
+</ul>
+</li>
+<li>
+<p>工艺边</p>
+<p>工艺边是为了满足自动化贴片的需要而增加的辅助部分，生产完成之后会被移除，一般设计为 5mm。</p>
+<ul>
+<li>定位孔: 用于 PCB 加工和测试时的定位，一般设计为 2mm 的过孔。</li>
+<li>Mark 点: 用于自动化贴片机进行识别定位，通常设计为 1mm 的焊盘。</li>
+</ul>
+</li>
+<li>
+<p>PCB 画好后，执行 DRC 检查！</p>
+</li>
+<li>
+<p>拼板。</p>
+<ol>
+<li>新建一个PCB，选择“放置”-&gt;“内嵌板阵列”或者拼板之类的（不同版本名字不同），选择要拼板的源文件、更改阵列参数和更改间距参数等即可。</li>
+<li>两板的连接处中间加两排或者一排过孔（邮票孔：一般0.8mm大小的非金属化过孔，间距1.1mm，五个为宜），拿到后可直接掰开，掰开后再处理平滑一下边缘，而省去切割；应该注意便于板掰开的过孔要足够多，不用吝啬，如果寥寥几个过孔的话掰开仍然很困难。</li>
+<li>或者用粘贴的方法。把要拼的板子的PCB文件复制一份，打开新复制的文件，全选并复制，原点要在最左下角，然后点特殊粘贴，只勾选“duplicate designator”（如果勾选“Keep Net Name”，那么多个板同名线会显示未连接），然后点“粘贴”或者“矩阵粘贴”，然后选不进行重新覆铜即可。</li>
+</ol>
+</li>
+</ol>
+<p>可点击“生成PCB封装库”，把当前 PCB 里面所有器件的封装单独做一个 PCB 封装库。</p>
+<p>缩减PCB文件体积 <a href="https://jingyan.baidu.com/article/5d6edee2e97ccb99eadeecf4.html" target="_blank" rel="noopener noreffer">Altium Designer PCB文件太大怎么办-百度经验 (baidu.com)</a>。</p>
+<p>更多常用技巧都总结在<code>./PCB LOGO-画法集合-PCB工具-规则文件/PCB实验-画板技巧综合.PcbDoc</code>里。</p>
+<h2 id="35-ad20-sch--pcb-常用设置">3.5 AD20 SCH &amp; PCB 常用设置</h2>
+<p>这里没有说到的都与上面 &ldquo;2 SCH 绘制规范和 AD 使用&rdquo; 章节中的一样。</p>
+<h3 id="ad-20-软件设置">AD 20 软件设置</h3>
+<ul>
+<li>
+<p>改中文界面：AD20 界面右上角的设置图标，选 &ldquo;system&rdquo;，选 &ldquo;General&rdquo;，选 &ldquo;Use local resource&rdquo;，重启软件。但建议使用全英文。</p>
+</li>
+<li>
+<p>窗口找不到：AD20 界面右上角的设置图标，选 &ldquo;system&rdquo;，选 &ldquo;View&rdquo;，选 Desktop 中的 &ldquo;Reset&rdquo;。</p>
+</li>
+<li>
+<p>自定菜单项的快捷键：按住 Ctrl 键点击所选功能项，打开 Edit Command 窗口，并设置快捷键，注意不要与已有快捷键的提示（Currently in use by）冲突；取消快捷键：在快捷键选项框中下拉选择 None 即可。</p>
+</li>
+<li></li>
+</ul>
+<h3 id="ad-20-快捷键--绘制技巧">AD 20 快捷键 &amp; 绘制技巧</h3>
+<ul>
+<li>
+<p>在拖动元件的时候按 &ldquo;Tab&rdquo; 键调出元件属性进行参数修改和设置等。</p>
+</li>
+<li>
+<p>在原理图中器件的属性界面有 &ldquo;Pin&rdquo; 标签栏，进去可以选择显示/隐藏引脚标号和名称。</p>
+</li>
+<li>
+<p>取消高亮：Shift + c，或者右键点 &ldquo;Clear Filter&rdquo;。</p>
+</li>
+<li>
+<p>拖动元件，按住 &ldquo;Ctrl&rdquo; 的时候器件不会吸附网格而自由移动。</p>
+</li>
+<li>
+<p>修改器件移动时的网格，SCH 为修改 &ldquo;Snap Grid&rdquo; 参数，PCB 为 ctrl+g 或者在属性中双击 &ldquo;Grid Manager&rdquo; 调出 Grid Edtior，修改 Steps 参数；PCB中修改 Steps 可以以准确、固定的间距放置多个器件。</p>
+</li>
+<li>
+<p>跨图连接器 Off Sheet Connector，尽量不要用，这就像 C 中的 goto 一样容易混乱，要么设计成 层次原理图设计，要么设置网络标号为全局使用（选择 project-&gt;project options-&gt;options，在 Net &hellip; Scope 中选 &ldquo;Global &hellip;&rdquo; 即可）。</p>
+</li>
+<li></li>
+<li></li>
+<li>
+<p>&hellip;</p>
+</li>
+<li>
+<p>SCH 中的：</p>
+<ul>
+<li>多个相似器件的批量修改，如所有电容的 Designator 修改为 &ldquo;C?&quot;，或者统一修改封装等等：右击一个器件，点 &ldquo;Find Similar&rdquo;，把 Symbol Refrence 选为 same，或者其他选为 same，然后点 Apply，会高亮出所有相似器件，然后鼠标在空白处按住左键拖动框选所有相似器件，便可以在属性栏中批量修改属性，调出属性栏可以按 F11。或者手动单独多选要批量修改的多个器件，然后在属性栏中可以批量修改。PCB 中同理，可用于批量修改封装、修改焊盘/过孔等等，只是在 &ldquo;Find Similar&rdquo; 步骤中点 Apply 后相似器件会自动都被选中，直接在属性栏批量修改即可。</li>
+<li>..</li>
+</ul>
+</li>
+<li>
+<p>PCB 中的：</p>
+<ul>
+<li>按住 xxx（暂时不知道），鼠标在板子器件上移动，会显示器件轮廓。</li>
+<li>隐藏覆铜：按 L 按键，在视图选项（View Options）中选择关闭覆铜（Polygons）显示。</li>
+<li>切换三种布线模式（忽略，避开，推挤）：Shift+r。</li>
+<li>把选中的器件排列到框里：&ldquo;Tools&rdquo;，&ldquo;Component Placement&rdquo;，&rdquo;.. Within Rectangle&rdquo;；或者设置个快捷键。</li>
+<li>覆铜：选择好网络、选择移除死铜、设定移除小于比如 10mil 的铜片和选择 &ldquo;Pour Over Same Net ..&quot;；移动覆铜后，要右键选 &ldquo;Polygon Actions&rdquo; 的 &ldquo;Repour All&rdquo;。覆铜的属性栏里面的 Actions 里面有重新覆铜、设置网络（再手动点一根要连接的网络的线）、前置/后置和修改（手动画线微调边缘）等。</li>
+<li>挖掉一块覆铜：选 Polygon Pour Cutout 工具，在已经覆铜的区域画个框，然后重新覆铜 &ldquo;Repour All&rdquo;。</li>
+<li>批量放过地孔：给覆铜添加或者围绕某个线添加，选 Tools 的 Via Stitching/Shielding，在里面设置孔连接的网络、孔分布和孔大小等信息，可以选择给整个板面均匀加接地孔（孔间距可以打一些防止孔过多了），也可以选择给信号线的周围围绕着加接地孔，比较方便。</li>
+<li>只能选择某种类型要素而其他元素不能被选中，方便只修改某一类元素而防止误碰其他要素：点工具栏的 Selection Filter，哪一项打开哪一项就能被选中，反之不能被选中；一般在覆铜后可以把覆铜 Polygons 关闭使能选中。</li>
+<li>调节 PCB 线高亮时候与背景对比的程度：点右下角 Panels，点进 View Configuration，在 View Options 栏中下面调节 Mask and dim，还可以调节 Object Visibility，可以把 覆铜 Polygons 的亮度调低，以区分覆铜和走线、焊盘。</li>
+<li>板子镂空：先围绕要镂空的区域画 Keep-out-layer 闭合曲线，然后工具栏选择 Designer，Board Shape，Define Board Cutout，然后围绕刚才画的镂空区域的 Keep-out-layer 闭合曲线 画一圈。</li>
+<li>..</li>
+</ul>
+</li>
+<li>
+<p>器件原理图库绘制的技巧：</p>
+<ul>
+<li>引脚名字上要加横线表示低有效：绘制器件原理图库，在名字的每一个字符中间加 &quot; \ &quot; 字符即可。</li>
+<li>快速添加各个引脚名：在一个器件原理图库的界面，其属性的 &ldquo;Pin&rdquo; 标签中，下面有笔形状的 &ldquo;编辑&rdquo; 按钮，点进去可以以表格形式编辑当前器件各个引脚属性。</li>
+<li>..</li>
+</ul>
+</li>
+</ul>
+<p>更多 AD20 快捷键参考<code>./额外文档/AD20常用快捷键总结（北冥有鱼）.xlsx</code>。</p>
+<h3 id="通用-ad-规范-今后尽量适用">通用 AD 规范-今后尽量适用</h3>
+<ul>
+<li>导入 AD20 软件配置文件，参考 &ldquo;7 AD 导入导出配置文件&rdquo; 章节。</li>
+<li>统一的标题栏：每一页原理图都使用 A4 大小，标题栏使用模板文件<code>./PCB LOGO-画法集合-PCB工具-规则文件/标题栏模板/A4 - 瞰百易.SchDot</code>，将其复制到 AD20 安装目录下的 <code>/Altium/AD20/Documents/Templates</code>，然后在 SCH 界面的属性栏的 Page Options 的 Formatting And Size 中选 Template，下拉选择 &ldquo;A4 - 瞰百易&rdquo; 选项，在属性栏的 参数页面加上 标题、作者、版本号等等信息。</li>
+<li>统一的设计模式：原理图都使用 &ldquo;层次原理图设计&rdquo; 的模式。</li>
+<li>导入 AD20 的 PCB Rules 规则配置文件，参考 &ldquo;7 AD 导入导出配置文件&rdquo; 章节。针对线宽的规则可以做依不同 Class 设置不同线宽规则，并在 Rules 界面的左下角设置优先级（手动布线时低优先级不起作用）；针对高速线的规则要依 Class 单独设置规则，详见下面的 &ldquo;等长线/蛇形线设计&rdquo; 小节。</li>
+<li></li>
+<li></li>
+<li>准备焊接实物 PCB 的准备：AD20 中 PCB 界面右下角 Panels 里面打开 PCB List 栏，选 View All Objects，再选 Components，即列出所有器件并按照 Comment 排列，可以选中所有一个值的阻/容器件然后器件会高亮显示，并且 PCB List 栏的下面会显示被选中元件的数量，接着焊接这一值的阻/容器件，然后换下一波相同值的器件，以此类推。使用钢网和加热台快速手工贴片：<a href="https://www.bilibili.com/video/BV1V5411b7Wa" target="_blank" rel="noopener noreffer">如何快速高质量手工PCB贴片</a>。</li>
+<li>..</li>
+</ul>
+<h3 id="层次原理图设计">层次原理图设计</h3>
+<p>顶层以框图形式，方便原理图各个子系统部分模块、固定和规范化，也方便从顶层快速了解整个原理图工程。通常先把各个子系统的局部电路原理图画好，放置好端口 Port，最后在顶层做框图把各个模块连接。以下介绍的是自下而上的画，若是架构设计人员可以自上而下设计。</p>
+<ol>
+<li>一个模块只用一页原理图，画好各个子系统电路模块原理图，并添加好  Net Label（局域级别有效），然后再添加各个模块对外连接的 Port，并填好 Port 的网络标号名字（可以与 Net Label 重名），输入输出类型；</li>
+<li>新建一个顶层原理图文件，在其中 点工具栏 Design，点 Creat Sheet Symbol Form Sheet，选择一个子原理图模块，放置 Sheet Symbol，其中的 Port 和  Sheet 框图的大小均可调整，然后连线；如果子原理图模块更新了端口，在 Top 层的 Sheet Symbol 上右击，选择 Sheet Symbol Actions 里面的 Sync.. 同步即可。</li>
+</ol>
+<p>在所有原理图都是平级的时候（即没有顶层 Top 原理图 SCH 的时候）：当单独使用 Port 或 Net Lable 时候，这两个都是全局作用的；当同时使用的时候，Port 是全局作用的，Net Lable 是局域级别作用的（即所在 SCH 页内）；从电源符号那一栏中拖出的（有 GND、VCC 等各种电源符号）的网络标号总是全局作用的，因为其名字都带 Port。但是当原理图有分层的时候，Port （包括电源符号的 Port）也变成局域级别作用，仅当在上级原理图中用线连接后才会连接。</p>
+<h3 id="布局复制">布局复制</h3>
+<p>针对多个一样的模块，PCB 中器件摆放/布局都一样化。</p>
+<ol>
+<li>先布局好一套模块，另外几套模块的位置可以乱，先放着；</li>
+<li>打开 Panels 中的 PCB List，选择 View Selected Objects，再选 Components，再把上面布局好的一套模块的所有器件选中，这时 PCB List 中会显示所有被选中的器件信息表，找到表中的 X1 和 Y1，右击选择 Switch to edit mode，然后选中 X1 和 Y1 复制，然后选中另外一套模块的所有器件，在其 X1 和 Y1 上粘贴即可，这时两套是重叠的，不要取消刚才的选中状态，进行整体平移到两套不重叠，然后选中第一套模块的所有器件，在 PCB List 中复制所有的 Rotation，然后选中第二套模块的所有器件，在其 Rotation 栏粘贴即可。</li>
+</ol>
+<h3 id="总线连接">总线连接</h3>
+<p>看图自学。</p>
+<p>Sheet 2 SCH 图：</p>
+<p><img src="assets/总线连接-Sheet2-SCH.png" alt="总线连接 Sheet2 SCH" style="zoom:50%;" /></p>
+<p>Sheet 3 SCH 图：</p>
+<p><img src="assets/总线连接-Sheet3-SCH.png" alt="总线连接 Sheet3 SCH" style="zoom:50%;" /></p>
+<p>Top SCH 图：</p>
+<p><img src="assets/总线连接-Top-SCH.png" alt="总线连接 Top SCH" style="zoom: 67%;" /></p>
+<p>PCB 效果：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e6%80%bb%e7%ba%bf%e8%bf%9e%e6%8e%a5-PCB-%e6%95%88%e6%9e%9c.png"
+        data-srcset="assets/%e6%80%bb%e7%ba%bf%e8%bf%9e%e6%8e%a5-PCB-%e6%95%88%e6%9e%9c.png, assets/%e6%80%bb%e7%ba%bf%e8%bf%9e%e6%8e%a5-PCB-%e6%95%88%e6%9e%9c.png 1.5x, assets/%e6%80%bb%e7%ba%bf%e8%bf%9e%e6%8e%a5-PCB-%e6%95%88%e6%9e%9c.png 2x"
+        data-sizes="auto"
+        alt="assets/总线连接-PCB-效果.png"
+        title="总线连接 PCB 效果" /></p>
+<h3 id="差分走线设计">差分走线设计</h3>
+<p>这里的步骤以 嘉立创 提供的计算工具和下单助手提供的阻抗生产选项为准。下面以 USB 差分走线（阻抗一般为 90 Ω）为例。</p>
+<ol>
+<li>
+<p>嘉立创提供的阻抗计算工具；</p>
+<p><img src="assets/嘉立创-阻抗计算.png" alt="嘉立创 阻抗计算" style="zoom: 67%;" /></p>
+</li>
+<li>
+<p>嘉立创下单助手的 工艺信息 一栏选择 &ldquo;需要阻抗&rdquo;，并选择层压结构（一般为第一个 JLC7628）；</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/%e5%98%89%e7%ab%8b%e5%88%9b-%e5%b1%82%e5%8e%8b%e7%bb%93%e6%9e%84.png"
+        data-srcset="assets/%e5%98%89%e7%ab%8b%e5%88%9b-%e5%b1%82%e5%8e%8b%e7%bb%93%e6%9e%84.png, assets/%e5%98%89%e7%ab%8b%e5%88%9b-%e5%b1%82%e5%8e%8b%e7%bb%93%e6%9e%84.png 1.5x, assets/%e5%98%89%e7%ab%8b%e5%88%9b-%e5%b1%82%e5%8e%8b%e7%bb%93%e6%9e%84.png 2x"
+        data-sizes="auto"
+        alt="assets/嘉立创-层压结构.png"
+        title="嘉立创 层压结构" /></p>
+</li>
+<li>
+<p>在 PCB 的 规则 Rules 中，点进 DiffPairsRouting 栏里，改差分走线的 最小间隙和优选间隙 为步骤1中指定的（7 mil），最小宽度、优选宽度和最大宽度 改为步骤1中指定的（9.72 mil），</p>
+</li>
+<li>
+<p>在 SCH 或 PCB 中添加差分对，<a href="https://www.sohu.com/a/152779501_744981" target="_blank" rel="noopener noreffer">一个详细步骤文章</a>，<a href="http://www.360doc.com/content/17/0705/10/33246491_668901190.shtml" target="_blank" rel="noopener noreffer">另一个详细步骤文章</a>，然后在 PCB 页面中打开 panels 的 PCB 栏，在其中选择 Differential Pairs Editor，可以看到差分对的名称以及其具体的每一个差分线。</p>
+</li>
+<li>
+<p>在 PCB 界面中选择 &ldquo;交互式差分对走线&rdquo; 进行走线。</p>
+</li>
+</ol>
+<h3 id="等长线蛇形线设计">等长线/蛇形线设计</h3>
+<p>这里是针对 AD20 的操作。</p>
+<ol>
+<li>PCB 界面的右下角 Panels 按钮里面打开 PCB 栏，左边 PCB 栏中显示 Nets，在 Net Classes 栏里面添加要等长的线的 Class 命和线；</li>
+<li>然后在 Rules 里面，High Speed 里面的 Matched Lengths 上右击新建一个规则，进去在 Where The Object Matches 栏里面的 第一个选 Net Class，第二个选 要等长的线的 class，然后在下面设置 Tolerance，容忍等长的误差，最好填小一点如 3 mil。</li>
+<li>PCB 界面 工具栏 选择 Interactively Tune Trace Lengths 工具，从最短的线开始画线进行等长变化的区域；快捷键：“1、2”改弧度，“3、4”改间距，“，、。”改绕长，在左下角导航选 “PCB” 窗口，可见加入网络的要等长的线及其各自的长度；走线等长变化的区域可以调整，直接对等长变化区域选中的矩形框的四周拖拽，改变等长区域；删除等长，直接选中线的等长变化区域再按 del。</li>
+</ol>
+<h3 id="添加-logo-图案">添加 LOGO 图案</h3>
+<p>两个方法，推荐用第二种。</p>
+<ol>
+<li>PCB Logo Creator 生成丝印图案的方法，具体教程 pdf 和所需软件在 <code>./PCB LOGO-画法集合-PCB工具-规则文件/创建 PCB Logo 图形/PCB Logo Creator 生成丝印图案的方法.zip</code> 里面。</li>
+<li>LOGO 字体 添加 PCB 图案的方法，具体教程和所需软件在 <code>./PCB LOGO-画法集合-PCB工具-规则文件/创建 PCB Logo 图形/LOGO 字体 添加 PCB 图案的方法.zip</code> 。<a href="https://www.bilibili.com/video/BV1kC4y1a7bM" target="_blank" rel="noopener noreffer">AD20 添加字体logo 视频教程 - 北冥有鱼</a>。</li>
+</ol>
+<h2 id="4-pcb-布局布线规范">4 PCB 布局布线规范</h2>
+<h3 id="幼稚园级">幼稚园级</h3>
+<ol>
+<li>
+<p>走线没有锐角和直角拐弯，可以走 T 型线。</p>
+</li>
+<li>
+<p>元件引脚下的焊盘不能放过孔。</p>
+</li>
+<li>
+<p>功率线、信号线尽可能短，功率线要足够粗，必要时应开窗加锡，并且大电流线、电源线之间的间隔应大于30mil，内电层不同区域之间的间隔宽度不小于 40mil。</p>
+</li>
+<li>
+<p>大电流、高功率的走线及其经过的器件应尽量按照能量流动的&quot;好走&quot;的路线布局和布线，尽量减少拐弯和跨层，让其一马平川的流动。</p>
+<p>线宽和电流能力关系表：</p>
+<p><img src="assets/image-6.jpg" alt="image-6" style="zoom:116%;" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-6-1.png"
+        data-srcset="assets/image-6-1.png, assets/image-6-1.png 1.5x, assets/image-6-1.png 2x"
+        data-sizes="auto"
+        alt="assets/image-6-1.png"
+        title="image-6-1" /></p>
+<p>过孔直径和电流能力关系表：（看工程实践一栏；孔径高于 0.5mm 时，每增加 0.5mm ，电流能力增加 0.5A ）</p>
+<p><img src="assets/image-6-2.png" alt="image-6-2" style="zoom:107%;" /></p>
+<p>推荐过孔孔径：（单位 mm）</p>
+<ul>
+<li>信号线——0.3过孔，0.5外径，0.84电流；</li>
+<li>弱电电源线——0.5过孔，0.8外径，1A电流；</li>
+<li>大电流(多个)——1过孔，1.5外径，1.5~4A电流；</li>
+<li>大电流（多个）——1.5过孔，2外径，2~5A电流。</li>
+</ul>
+<p>PCB走线与电流关系更多参考文档：./额外文档/PCB走线与电流关系.pdf 。</p>
+</li>
+<li>
+<p>去耦电容（旁路电容）尽量靠近 IC 等器件的电源输入端，滤波电容可以放置在芯片的背面，靠近芯片的电源和地引脚。</p>
+</li>
+<li>
+<p>多采用星形拓扑结构，少采用菊花链布局，缩短电源的公共回路。</p>
+</li>
+<li>
+<p>电源变换元器件（如变压器、DC/DC 变换器、三端稳压管等）应该留有足够的散热空间；干扰源（DC/DC 变换器、晶振、变压器等）底部不要布线，以免干扰。</p>
+</li>
+<li>
+<p>差分信号（如 USB 和 CAN 的信号线、运放输入，电流采集的差分电压信号和晶振的差分时钟信号等）紧靠并排走线。</p>
+</li>
+<li>
+<p>留下必要的测试点（开窗点），留螺丝孔。</p>
+</li>
+<li>
+<p>丝印方向尽量在两个方向以内，避免人看的时候不断转板子。过孔尽量不要放在丝印上，</p>
+</li>
+<li>
+<p>用丝印标识出从板子引出的 引脚 功能，接口说明，开关、拨码开关的功能表，LED 指示的功能。</p>
+</li>
+<li>
+<p>画出 LOGO，板子名称，板子版本号，防静电（手勿触碰）、高压提醒等丝印层标识。</p>
+</li>
+</ol>
+<h3 id="中学生级">中学生级</h3>
+<ol>
+<li>
+<p>多层板：时钟频率到 5MHZ 或脉冲上升时间小于 5ns（五五准则），则 PCB 板须采用多层板。</p>
+</li>
+<li>
+<p>多层板：多层板的关键信号层最好位于两个地平面之间，即其电路模块的上下层所对应的区域都用地平面覆盖。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-8.png"
+        data-srcset="assets/image-8.png, assets/image-8.png 1.5x, assets/image-8.png 2x"
+        data-sizes="auto"
+        alt="assets/image-8.png"
+        title="image-8" /></p>
+</li>
+<li>
+<p>多层板：电源平面应相对于其相邻地平面内缩 5H-20H（H 为电源和地平面的距离，若内缩 20H 则可以将 70% 的电场限制在接地边沿内，内缩 1000H 则可以将 98% 的电场限制在内）。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-9.png"
+        data-srcset="assets/image-9.png, assets/image-9.png 1.5x, assets/image-9.png 2x"
+        data-sizes="auto"
+        alt="assets/image-9.png"
+        title="image-9" /></p>
+</li>
+<li>
+<p>多层板的推荐板层分布图：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/image-7.png"
+        data-srcset="assets/image-7.png, assets/image-7.png 1.5x, assets/image-7.png 2x"
+        data-sizes="auto"
+        alt="assets/image-7.png"
+        title="image-7" /></p>
+</li>
+<li>
+<p>多层板：相邻布线层的走线应尽量垂直；实在无法实现垂直而必出现平行的应互相远离，或时钟、总线、射频线等关键信号走线和其他同层平行走线应满足 3W 原则，3W 原则：线中心距不少于 3 倍线宽（70% 的电场不互相干扰），还有更好的 10W 原则（98% 的电场不互相干扰）。</p>
+</li>
+<li>
+<p>对于变压器、扬声器、电感等会产生磁场的元件，布局时应注意减少磁力线对于印制导线的切割，相邻元件磁场方向应相互垂直，减少彼此之间的耦合。</p>
+</li>
+<li>
+<p>元件的放置要便于调试和维修。大元件边上不能放置小元件；需要调试的元件周围应有足够的空间。发热元件应有足够的空间以利于散热；热敏元件应远离发热元件。</p>
+</li>
+<li>
+<p>接口电路的滤波、防护、隔离器件、EMC和整流等应该靠近接口放置；如果接口处既有滤波又有防护电路，应该遵从先防护后滤波的顺序。I/O接口电路及功率驱动电路尽量靠近 PCB 板边缘，即大功率器件尽可能放在电路板边缘。</p>
+<p>防护电路的检查项详看 &ldquo;1 最基本的电路检查项和器件选型&rdquo; 章节的 &ldquo;保护机制&rdquo;。</p>
+</li>
+<li>
+<p>晶振、继电器、开关电源等强辐射器件远离单板接口连接器至少 1000mil。</p>
+</li>
+<li>
+<p>敏感电路或器件（如复位、看门狗、信号线路等）远离单板各边缘特别是单板接口侧边缘至少 1000mil，或关键信号线距参考平面边沿的距离大于 3H（H 为线距离参考平面的高度）。</p>
+</li>
+<li>
+<p>电源、模拟小信号、高速信号、时钟信号和同步信号等关键信号优先布线。</p>
+</li>
+<li>
+<p>过孔可能会引发信号传输线的阻抗突变，因此需要尽量减少过孔使用的数量，尤其是对于关键信号线。</p>
+</li>
+<li>
+<p>信号线（特别是关键信号线）换层时，应在其换层过孔附近设计地过孔。</p>
+</li>
+<li>
+<p>敏感信号的周围应放置多个接地过孔（宽度大于 50mil 地线或间距小于 300mil 的地孔），提供电磁屏蔽。</p>
+</li>
+<li>
+<p>对于金属外壳接地元件(例如晶振)，应在其投影区的顶层上铺接地铜皮，并在其周围密布上一圈接地孔，提供电磁屏蔽。</p>
+</li>
+<li>
+<p>无论是时钟线、信号线还是电源线，在 PCB上 的走线都应该尽量短，器件紧密排布以减少 PCB 上走线长度；而且时钟线和信号线等在 PCB 上的走线应尽量用地过孔和地平面在空间上包裹；并且在 PCB 板的四周边缘打一圈连地平面的过孔。</p>
+</li>
+<li>
+<p>一个芯片的外围阻容元件应尽量靠近芯片，并尽量接近其所要连接的芯片引脚。例如，电源脚去耦电容靠近电源引脚，匹配电阻布局时候要靠近该信号的驱动端等。</p>
+</li>
+<li>
+<p>MCU 的 IRQ 中断引脚等重要 IO 注意静电保护等，可加 TVS 保护管，防正负过压的保护二极管。</p>
+</li>
+<li>
+<p>开关器件如 MOS，其栅极和源极之间要加 TVS 防过压冲击（设计让 Vgs ≤ 18 V 恒）。MOS 的栅极串电阻的作用：MOS 导通速度过快，高压情况下容易击穿周围的器件或者损坏 MOS（后者为感性上理解）；栅极电阻阻值过大会导致 MOS 管导通速度过慢，开关损耗会巨大。栅极电阻最好紧靠栅极，并且这个是信号线，布线避免与其他线耦合，避免栅极过压。</p>
+</li>
+<li>
+<p>小型化是产品开发的必经之路，挑战极限才有竞争力。</p>
+</li>
+</ol>
+<h3 id="本科级">本科级</h3>
+<p>开始触及知识的盲区了。</p>
+<ol>
+<li>信号完整性（SI）分析。考虑传输延迟（蛇形线），反射（阻抗匹配，线长不要是1/4波长的整数倍），串扰（元件和导线的磁场相互垂直、平行线相互远离（3W原则）、信号线间用地平面隔离等）等等。</li>
+<li>电源完整性（PI）分析。</li>
+<li>阻抗匹配的内容，也需要遵守，属于原理图设计部分：高频电路源与目的之间的阻抗匹配非常重要，错误的匹配会带来信号反馈和阻尼振荡。过量地射频能量则会导致 EMI问题。此时，需要考虑采用信号端接；滤波器选型的阻抗失配准则：对低阻抗噪声源，滤波器需为高阻抗（大的串联电感）；对高阻抗噪声源，滤波器就需为低阻抗（大的并联电容）；降低敏感线路的输入阻抗有效减少引入干扰的可能性；LC滤波器 在低输出阻抗电源和高阻抗数字电路之间，需要LC滤波器，以保证回路的阻抗匹配；降低敏感线路的输入阻抗。</li>
+<li>对于高频电路，需要考虑元件之间的分布参数的影响。</li>
+</ol>
+<h3 id="pcb-检查项">PCB 检查项</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="assets/PCB-%e6%a3%80%e6%9f%a5%e9%a1%b9-0.jpg"
+        data-srcset="assets/PCB-%e6%a3%80%e6%9f%a5%e9%a1%b9-0.jpg, assets/PCB-%e6%a3%80%e6%9f%a5%e9%a1%b9-0.jpg 1.5x, assets/PCB-%e6%a3%80%e6%9f%a5%e9%a1%b9-0.jpg 2x"
+        data-sizes="auto"
+        alt="assets/PCB-检查项-0.jpg"
+        title="图片" /></p>
+<p><a href="https://mp.weixin.qq.com/s/fMdGVFTkOGlQgdq-yfnngA" target="_blank" rel="noopener noreffer">上图图源</a>。</p>
+<h2 id="45-pcb-检查工具">4.5 PCB 检查工具</h2>
+<p>自动化 PCB 检查工具。</p>
+<ul>
+<li><a href="https://dfm.elecfans.com/" target="_blank" rel="noopener noreffer">华秋 DFM</a>：一键分析导入的 PCB 文件，检查项有板子尺寸、孔、线、间距、孤铜等等，排除生产难点、设计缺陷，给出优化建议，结合各种生产因素，自动计算或反算阻抗等等，比较有用。</li>
+<li>etc.</li>
+</ul>
+<h2 id="5-ad-导出-bom-表">5 AD 导出 BOM 表</h2>
+<p>AD10 的教程：<a href="https://jingyan.baidu.com/article/0eb457e501efda42f0a9056a.html" target="_blank" rel="noopener noreffer">Altium Designer（AD）软件导出BOM文件操作步骤-百度经验 (baidu.com)</a>；</p>
+<p>AD20 的教程（推荐使用，还包含自定义 BOM 表模板）：<a href="https://www.bilibili.com/video/BV1FZ4y1M71U" target="_blank" rel="noopener noreffer">AD20如何自定义BOM模板?Altium Designer20 实用技巧系列教程（五）_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>，其中 BOM 模板文件在 <code>./PCB LOGO-画法集合-PCB工具-规则文件/AD20 BOM模板 北冥有鱼</code> 里面，这个模板导出的 BOM 表比较常用、整齐，还包含描述、封装、单位价格（可以在导出 Excel 表格后再填入单价，表中的总价格会自动计算；表格最底部有一栏 PCB ，可以填入价格）等，比较实用。注，视频中的模板的位置，在不同版本 AD20 不同，如果按照视频找不到，那么就应该在 <code>/Altium/AD20/Documents/Templates/</code> 目录下。</p>
+<h2 id="6-ad-导出-gerber-和-钻孔文件">6 AD 导出 Gerber 和 钻孔文件</h2>
+<p>用时再学：</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1n4411L7c9" target="_blank" rel="noopener noreffer">【AD小教程】导出Gerber文件和钻孔文件_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a></li>
+<li><a href="https://www.bilibili.com/video/BV1ea4y1Y7Mx" target="_blank" rel="noopener noreffer">【完结】第26课 Altium Designer20(AD20)+VESC6.4实战教程：调整丝印输出Geber文件并投板（北冥有鱼）完结撒花_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a></li>
+</ul>
+<h2 id="7-ad-导入导出配置文件">7 AD 导入导出配置文件</h2>
+<p>AD 软件的设置和 PCB Rule 设置，两个配置文件的导入和导出，参考本文件夹这里 <code>./PCB LOGO-画法集合-PCB工具-规则文件/AD 软件设置和 PCB 规则 Rules 配置文件/</code>。</p>
+<h2 id="8-使用-keyshot-10-渲染三维模型">8 使用 KeyShot 10 渲染三维模型</h2>
+<p>B站等有很多教程视频，以下只经验之谈。</p>
+<h3 id="基本步骤">基本步骤</h3>
+<ul>
+<li>用Altium Designer导出.step格式的3D模型文件，再导入keyshot，但这个模型不带走线和丝印。</li>
+<li>导出表面贴图：在Altium Deigner里面使用“智能PDF”分别导出正反面的只有“走线和丝印”两个层的图，注意颜色可选，然后可以把这个pdf使用PS简单修一修（比如颜色修改和过孔透明），再导出.png格式的图。省事的做法可以直接在AD的3D视图截图，然后贴到keyshot的PCB板面上。</li>
+<li>PCB板面添加贴图：然后把贴图添加到keyshot中PCB模型的板面的材质里面的标签里面。如果板面不加材质，保持原色，则直接在其材质面板下的纹理下的颜色双击添加图片，映射类型选平面，对准选部件，然后点移动纹理调整，调整使这个图像对齐贴合PCB板面即可，另一面的图片再在标签里添加。</li>
+</ul>
+<h3 id="keyshot-的几个初级技巧">KeyShot 的几个初级技巧</h3>
+<p>（毕竟只是看一下效果，不是专业的）</p>
+<ul>
+<li>3D视图下，tools菜单下的legacy tools可以导出带走线的，带丝印的模型，但是文件太大，keshot会卡，对电脑性能要求很高,我还没测试。
+没试</li>
+<li>高版本的AD，可以导出pdf3d 没试</li>
+<li>单个模型加材质：单击选中一个模型（出现橘色描边），然后添加材质。或者双击这个模型，右边菜单下面点“接触链接材质”</li>
+<li>单独删除模型，先模型右击点分离，便可删除单独部件。</li>
+<li>右边菜单 什么都不选 全局设置的情况下 有 照明和图像里面很多不错的效果可以调整</li>
+<li>材质和打光：https://www.bilibili.com/video/BV14W411d7Hx</li>
+<li>动画制作：https://www.bilibili.com/video/BV1T741177WU</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-06-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/" data-title="【规范】SCH &amp; PCB 设计规范和 AD 的使用" data-hashtags="规范,硬件"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/" data-hashtag="规范"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/" data-title="【规范】SCH &amp; PCB 设计规范和 AD 的使用" data-ralateuid="u/3585238893"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%A7%84%E8%8C%83/">规范</a>,&nbsp;<a href="/tags/%E7%A1%AC%E4%BB%B6/">硬件</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5/" class="prev" rel="prev" title="科幻小说《请留在未来》"><i class="fas fa-angle-left fa-fw"></i>科幻小说《请留在未来》</a>
+            <a href="/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8501-arm-imx6ull%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="【主线剧情01】ARM IMX6ULL 基础学习记录">【主线剧情01】ARM IMX6ULL 基础学习记录<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

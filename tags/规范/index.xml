@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>规范 - 标签 - 欢迎来到 Staok - 瞰百易</title>
+        <link>http://Staok.github.io/tags/%E8%A7%84%E8%8C%83/</link>
+        <description>规范 - 标签 - 欢迎来到 Staok - 瞰百易</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 26 Mar 2021 16:15:14 &#43;0800</lastBuildDate><atom:link href="http://Staok.github.io/tags/%E8%A7%84%E8%8C%83/" rel="self" type="application/rss+xml" /><item>
+    <title>【规范】SCH &amp; PCB 设计规范和 AD 的使用</title>
+    <link>http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/</link>
+    <pubDate>Thu, 30 Jul 2020 16:15:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/</guid>
+    <description><![CDATA[本文的源地址 Github：Staok/thoughs-about-hardware-design: 介绍和罗列关于硬件设计所需要考虑的各个方面]]></description>
+</item><item>
+    <title>【规范】C &amp; MCU 编写规范和其他</title>
+    <link>http://Staok.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</link>
+    <pubDate>Wed, 10 Feb 2021 16:15:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</guid>
+    <description><![CDATA[本文的源文在Staok/coding-style-and-more: C 编写规范和其他。永远地不定期更新。CC-BY-NC-SA 4.0。 (gi]]></description>
+</item><item>
+    <title>【规范】HDL &amp; FPGA 学习和规范</title>
+    <link>http://Staok.github.io/fpga%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%A7%84%E8%8C%83/</link>
+    <pubDate>Mon, 15 Feb 2021 16:15:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/fpga%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%A7%84%E8%8C%83/</guid>
+    <description><![CDATA[本文源文在Staok/HDL-FPGA-study-and-norms: HDL &amp; FPGA 学习和规范。CC-BY-NC-SA 4.0。 (github.co]]></description>
+</item><item>
+    <title>【目录贴】软硬件规范化</title>
+    <link>http://Staok.github.io/%E5%85%B3%E4%BA%8E%E8%BD%AF%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83%E5%8C%96%E7%9A%84%E8%AF%B4%E6%98%8E/</link>
+    <pubDate>Fri, 26 Mar 2021 16:15:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://Staok.github.io/%E5%85%B3%E4%BA%8E%E8%BD%AF%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83%E5%8C%96%E7%9A%84%E8%AF%B4%E6%98%8E/</guid>
+    <description><![CDATA[本文源地址Staok/norm-of-software-and-hardware: 目录贴，个人软硬件规范的索引总贴。以及本科阶段触及的大部分]]></description>
+</item></channel>
+</rss>
