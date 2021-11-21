@@ -3,7 +3,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文源文在[Qitas/HDL-FPGA-study-and-norms: HDL & FPGA 学习和规范。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/HDL-FPGA-study-and-norms)。今后只在上面的链接里，这里不会跟进。
+本文源文在[Qitas/HDL-FPGA-study-and-norms: HDL & FPGA 学习和规范。  (github.com)](https://github.com/Qitas/HDL-FPGA-study-and-norms)。今后只在上面的链接里，这里不会跟进。
 
 编辑整理 by [Qitas](https://github.com/Qitas)，始于 2021.2 且无终稿。转载请注明作者及出处。
 

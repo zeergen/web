@@ -3,7 +3,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文的源地址 Github：[Qitas/thoughs-about-hardware-design: 介绍和罗列关于硬件设计所需要考虑的各个方面。纯个人经验总结，非科班念经。永远地不定期更新。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/thoughs-about-hardware-design)。今后只在上面的链接里，这里不会跟进。
+本文的源地址 Github：[Qitas/thoughs-about-hardware-design: 介绍和罗列关于硬件设计所需要考虑的各个方面。纯个人经验总结，非科班念经。永远地不定期更新。  (github.com)](https://github.com/Qitas/thoughs-about-hardware-design)。今后只在上面的链接里，这里不会跟进。
 
 编辑整理 by [Qitas](https://github.com/Qitas)，始于 2020.7 且无终稿。转载请注明作者及出处。
 

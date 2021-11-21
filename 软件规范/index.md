@@ -3,7 +3,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文的源文在[Qitas/coding-style-and-more: C 编写规范和其他。永远地不定期更新。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/coding-style-and-more)。今后只在上面的链接里，这里不会跟进。
+本文的源文在[Qitas/coding-style-and-more: C 编写规范和其他。永远地不定期更新。  (github.com)](https://github.com/Qitas/coding-style-and-more)。今后只在上面的链接里，这里不会跟进。
 
 本文系广泛撷取、借鉴和整理，侵删。本文适合刚入门的人阅读和遵守，也适合已经有较多编程经验的人参看。如有错误恭谢指出！
 

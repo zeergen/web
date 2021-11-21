@@ -9,7 +9,7 @@
     <pubDate>Fri, 02 Apr 2021 13:26:36 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8501-arm-imx6ull%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-    <description><![CDATA[ARM &amp; i.MX6ULL 基础学习记录 编辑整理 by Qitas 本文大部分内容摘自“100ask imx6ull”开发板的配套资料（如《IMX6ULL裸机开发完全手册》等等），]]></description>
+    <description><![CDATA[ARM &amp; i.MX6ULL 基础学习记录  本文大部分内容摘自“100ask imx6ull”开发板的配套资料（如《IMX6ULL裸机开发完全手册》等等），]]></description>
 </item><item>
     <title>【规范】SCH &amp; PCB 设计规范和 AD 的使用</title>
     <link>http://Qitas.github.io/%E7%A1%AC%E4%BB%B6%E8%A7%84%E8%8C%83/</link>
@@ -23,28 +23,28 @@
     <pubDate>Mon, 05 Apr 2021 12:20:44 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-    <description><![CDATA[ARM &amp; Linux 基础学习记录 编辑整理 by Qitas 本文部分内容摘自“100ask imx6ull”开发板的配套资料（如《嵌入式Linux应用开发完全手册_韦东山全]]></description>
+    <description><![CDATA[ARM &amp; Linux 基础学习记录  本文部分内容摘自“100ask imx6ull”开发板的配套资料（如《嵌入式Linux应用开发完全手册_韦东山全]]></description>
 </item><item>
     <title>【规范】C &amp; MCU 编写规范和其他</title>
     <link>http://Qitas.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</link>
     <pubDate>Wed, 10 Feb 2021 16:15:14 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</guid>
-    <description><![CDATA[本文的源文在Qitas/coding-style-and-more: C 编写规范和其他。永远地不定期更新。CC-BY-NC-SA 4.0。 (gi]]></description>
+    <description><![CDATA[本文的源文在Qitas/coding-style-and-more: C 编写规范和其他。永远地不定期更新。  (gi]]></description>
 </item><item>
-    <title>【主线剧情 番外01】ARM 系列快速鸟瞰</title>
+    <title> ARM 系列快速鸟瞰</title>
     <link>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85-%E7%95%AA%E5%A4%9601-arm%E7%B3%BB%E5%88%97%E5%BF%AB%E9%80%9F%E9%B8%9F%E7%9E%B0/</link>
     <pubDate>Sat, 01 May 2021 12:01:16 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85-%E7%95%AA%E5%A4%9601-arm%E7%B3%BB%E5%88%97%E5%BF%AB%E9%80%9F%E9%B8%9F%E7%9E%B0/</guid>
-    <description><![CDATA[ARM &amp; SOC 系列快速鸟瞰 编辑整理 By Qitas，如有错误恭谢指出，侵删。CC-BY-NC-SA 4.0。 零 鸟瞰 ARM Cortex 系列框图 图中包含现今主流处理器架构和]]></description>
+    <description><![CDATA[ARM &amp; SOC 系列快速鸟瞰 编辑整理 By Qitas，如有错误恭谢指出，侵删。  零 鸟瞰 ARM Cortex 系列框图 图中包含现今主流处理器架构和]]></description>
 </item><item>
     <title>【规范】HDL &amp; FPGA 学习和规范</title>
     <link>http://Qitas.github.io/fpga%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%A7%84%E8%8C%83/</link>
     <pubDate>Mon, 15 Feb 2021 16:15:14 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/fpga%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%A7%84%E8%8C%83/</guid>
-    <description><![CDATA[本文源文在Qitas/HDL-FPGA-study-and-norms: HDL &amp; FPGA 学习和规范。CC-BY-NC-SA 4.0。 (github.co]]></description>
+    <description><![CDATA[本文源文在Qitas/HDL-FPGA-study-and-norms: HDL &amp; FPGA 学习和规范。  (github.co]]></description>
 </item><item>
     <title>【开源电源】巧克力板</title>
     <link>http://Qitas.github.io/%E5%BC%80%E6%BA%90%E7%94%B5%E6%BA%90-%E5%B7%A7%E5%85%8B%E5%8A%9B%E6%9D%BF/</link>

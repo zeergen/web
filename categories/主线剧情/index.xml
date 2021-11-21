@@ -9,21 +9,21 @@
     <pubDate>Fri, 02 Apr 2021 13:26:36 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8501-arm-imx6ull%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-    <description><![CDATA[ARM &amp; i.MX6ULL 基础学习记录 编辑整理 by Qitas 本文大部分内容摘自“100ask imx6ull”开发板的配套资料（如《IMX6ULL裸机开发完全手册》等等），]]></description>
+    <description><![CDATA[ARM &amp; i.MX6ULL 基础学习记录  本文大部分内容摘自“100ask imx6ull”开发板的配套资料（如《IMX6ULL裸机开发完全手册》等等），]]></description>
 </item><item>
     <title>【主线剧情02】ARM Linux 基础学习记录</title>
     <link>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
     <pubDate>Mon, 05 Apr 2021 12:20:44 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-    <description><![CDATA[ARM &amp; Linux 基础学习记录 编辑整理 by Qitas 本文部分内容摘自“100ask imx6ull”开发板的配套资料（如《嵌入式Linux应用开发完全手册_韦东山全]]></description>
+    <description><![CDATA[ARM &amp; Linux 基础学习记录  本文部分内容摘自“100ask imx6ull”开发板的配套资料（如《嵌入式Linux应用开发完全手册_韦东山全]]></description>
 </item><item>
-    <title>【主线剧情 番外01】ARM 系列快速鸟瞰</title>
+    <title> ARM 系列快速鸟瞰</title>
     <link>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85-%E7%95%AA%E5%A4%9601-arm%E7%B3%BB%E5%88%97%E5%BF%AB%E9%80%9F%E9%B8%9F%E7%9E%B0/</link>
     <pubDate>Sat, 01 May 2021 12:01:16 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85-%E7%95%AA%E5%A4%9601-arm%E7%B3%BB%E5%88%97%E5%BF%AB%E9%80%9F%E9%B8%9F%E7%9E%B0/</guid>
-    <description><![CDATA[ARM &amp; SOC 系列快速鸟瞰 编辑整理 By Qitas，如有错误恭谢指出，侵删。CC-BY-NC-SA 4.0。 零 鸟瞰 ARM Cortex 系列框图 图中包含现今主流处理器架构和]]></description>
+    <description><![CDATA[ARM &amp; SOC 系列快速鸟瞰 编辑整理 By Qitas，如有错误恭谢指出，侵删。  零 鸟瞰 ARM Cortex 系列框图 图中包含现今主流处理器架构和]]></description>
 </item><item>
     <title>【主线剧情03】NXP i.MX 系列 u-boot 移植基础详解</title>
     <link>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8503-nxp-i.mx%E7%B3%BB%E5%88%97%E7%9A%84u-boot%E7%A7%BB%E6%A4%8D%E5%9F%BA%E7%A1%80%E8%AF%A6%E8%A7%A3/</link>
@@ -32,7 +32,7 @@
     <guid>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8503-nxp-i.mx%E7%B3%BB%E5%88%97%E7%9A%84u-boot%E7%A7%BB%E6%A4%8D%E5%9F%BA%E7%A1%80%E8%AF%A6%E8%A7%A3/</guid>
     <description><![CDATA[u-boot 移植基础详解 本文系广泛撷取、借鉴和整理（相关的内容在网络上有很多，但很多相互抄，或者是版本太老，或者就是不通用的非常有平台针对性的步骤，碎]]></description>
 </item><item>
-    <title>【主线剧情 番外02】设备树详解</title>
+    <title> 设备树详解</title>
     <link>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85-%E7%95%AA%E5%A4%9602-%E8%AE%BE%E5%A4%87%E6%A0%91%E8%AF%A6%E8%A7%A3/</link>
     <pubDate>Sun, 23 May 2021 16:46:10 &#43;0800</pubDate>
     <author>作者</author>

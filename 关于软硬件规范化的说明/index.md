@@ -3,7 +3,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文源地址[Qitas/norm-of-software-and-hardware: 目录贴，个人软硬件规范的索引总贴。以及本科阶段触及的大部分领域及其顺延的小总结。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/norm-of-software-and-hardware)。今后的更新只在上面的连接里，这里不会跟进。
+本文源地址[Qitas/norm-of-software-and-hardware: 目录贴，个人软硬件规范的索引总贴。以及本科阶段触及的大部分领域及其顺延的小总结。  (github.com)](https://github.com/Qitas/norm-of-software-and-hardware)。今后的更新只在上面的连接里，这里不会跟进。
 
 ## 意义
 

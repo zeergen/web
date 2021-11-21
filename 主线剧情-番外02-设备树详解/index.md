@@ -1,11 +1,11 @@
-# 【主线剧情 番外02】设备树详解
+#  设备树详解
 
 
 # 设备树详解
 
 本文 续接 《【主线剧情03】NXP i.MX 系列 u-boot 移植基础详解》 一文中`移植过程`小节中有关设备树的内容。
 
-编辑整理 By [Qitas](https://github.com/Qitas)，如有错误恭谢指出，侵删。CC-BY-NC-SA 4.0。
+编辑整理 By [Qitas](https://github.com/Qitas)，如有错误恭谢指出，侵删。
 
 ------
 
