@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: http://Staok.github.io/sitemap.xml
+Sitemap: http://Qitas.github.io/sitemap.xml

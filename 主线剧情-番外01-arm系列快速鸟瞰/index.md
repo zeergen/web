@@ -3,7 +3,7 @@
 
 # ARM & SOC 系列快速鸟瞰
 
-编辑整理 By [Staok](https://github.com/Staok)，如有错误恭谢指出，侵删。CC-BY-NC-SA 4.0。
+编辑整理 By [Qitas](https://github.com/Qitas)，如有错误恭谢指出，侵删。CC-BY-NC-SA 4.0。
 
 ------
 

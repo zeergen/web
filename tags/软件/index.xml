@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>软件 - 标签 - 折耳根</title>
-        <link>http://Staok.github.io/tags/%E8%BD%AF%E4%BB%B6/</link>
+        <link>http://Qitas.github.io/tags/%E8%BD%AF%E4%BB%B6/</link>
         <description>软件 - 标签 - 折耳根</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 10 Feb 2021 16:15:14 &#43;0800</lastBuildDate><atom:link href="http://Staok.github.io/tags/%E8%BD%AF%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 10 Feb 2021 16:15:14 &#43;0800</lastBuildDate><atom:link href="http://Qitas.github.io/tags/%E8%BD%AF%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
     <title>【规范】C &amp; MCU 编写规范和其他</title>
-    <link>http://Staok.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</link>
+    <link>http://Qitas.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</link>
     <pubDate>Wed, 10 Feb 2021 16:15:14 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://Staok.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</guid>
-    <description><![CDATA[本文的源文在Staok/coding-style-and-more: C 编写规范和其他。永远地不定期更新。CC-BY-NC-SA 4.0。 (gi]]></description>
+    <guid>http://Qitas.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/</guid>
+    <description><![CDATA[本文的源文在Qitas/coding-style-and-more: C 编写规范和其他。永远地不定期更新。CC-BY-NC-SA 4.0。 (gi]]></description>
 </item></channel>
 </rss>

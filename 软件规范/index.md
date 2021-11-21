@@ -3,7 +3,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文的源文在[Staok/coding-style-and-more: C 编写规范和其他。永远地不定期更新。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Staok/coding-style-and-more)。今后只在上面的链接里，这里不会跟进。
+本文的源文在[Qitas/coding-style-and-more: C 编写规范和其他。永远地不定期更新。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/coding-style-and-more)。今后只在上面的链接里，这里不会跟进。
 
 本文系广泛撷取、借鉴和整理，侵删。本文适合刚入门的人阅读和遵守，也适合已经有较多编程经验的人参看。如有错误恭谢指出！
 
@@ -65,7 +65,7 @@
 
 - 参数化设计的适应性：对比如协议解析、模块/功能数量增减、数据范围的变化适应等地方尽量写的通用，通过参数设定来改变运行时/编译时的功能灵活变化。
 
-- 关于 MCU 的编写框架，我目前大抵就认我自己的开源项目 "[stm32_framework](https://github.com/Staok/stm32_framework)" 的吧，规范都对齐这个项目。
+- 关于 MCU 的编写框架，我目前大抵就认我自己的开源项目 "[stm32_framework](https://github.com/Qitas/stm32_framework)" 的吧，规范都对齐这个项目。
 
     MCU C 的一些规范：
 
@@ -106,9 +106,9 @@
     -   串口通讯协议可以上 Modbus。
     -   CAN 通讯协议可以上 CANOpen。
     -   TCP 通讯协议还有待确定，需要选择一个支持大带宽的。 可以用 json 格式封装数据。
-    
+
     如果要自定串口等接口的通信协议，要考虑的点：
-    
+
     - 一帧有确定的长度；
     - 一帧有确定的帧头和帧尾，帧头和帧尾可以适当多加几个位增加容错；
     - 保证一帧尽量连续传输，没有中断；
@@ -213,7 +213,7 @@
 
    - 变量和函数的命名都只用小写（尽量），宏定义使用全大写（尽量），并遵循 "属什么 _ 是什么 _ 做什么" 的命名形式，如：sys_irq_disable()，属于 sys 级别函数，是 irq 管理，做 dsiable 的功能。不要用晦涩的英文缩写甚至拼音就不用讲了吧。
 
-   - 具有互斥意义的变量或者动作相反的函数应该是用互斥词组命名，如：  
+   - 具有互斥意义的变量或者动作相反的函数应该是用互斥词组命名，如：
 
      > add/remove      begin/end             create/destroy               insert/delete
      > first/last            get/release            increment/decrement    put/get add/delete
@@ -228,7 +228,7 @@
 7. 控制语句总加括号（即使分支执行语句只有一句），括号在竖方向对齐，用 tab 把层次分地清清楚楚，例如：（为了节省空间，下面示例用横向写~）
 
    ```c
-   if( )             for (i = 0; i < 5; ++i)    do                switch (check()) 
+   if( )             for (i = 0; i < 5; ++i)    do                switch (check())
    {                 {                          {                 {
                                                                          case 0:
    }else if( )       }                          }while( );                   fsm_do_a();
@@ -276,41 +276,41 @@
 
     - 私有变量不要放在 .h 里面声明，公有变量的声明（加 extern 修饰符）放在 .h 文件里面以供其他文件调用。
 
-    
+
     - 在 .c 文件中 include 自己对应的 .h 文件和需要用到的 .h 文件，不要引用多余的 .h 文件；.h 文件中同样只引用用到的头文件，但是头文件尽量写成无依赖的，这就考验整个系统的规划和设计。
     - 如果一个模块包含了多个 .c 源文件，那么将它们放入同一个文件夹并用模块名命名，然后只用一个 .h 头文件声明接口。
 
     Every file (header or source) must include license (opening comment includes single asterisk as this must be ignored by doxygen).
     Use the same license as already used by project/library.
-    
+
     ```c
     #ifndef TEMPLATE_H
     #define TEMPLATE_H
-    	
+
     #include <stdint.h>
     #include "all_other_custom_file.h"
-    
+
     /* 当 C 和 C++ 代码混合编译的时候，在下面两个 __cplusplus 标识的中间放 C 部分的声明代码 */
     #ifdef __cplusplus
-    	extern "C" 
+    	extern "C"
     	{
     #endif /* __cplusplus */
-    
+
     ... /* C 部分的声明代码 */
-    
+
     #ifdef __cplusplus
     	}
     #endif /* __cplusplus */
-    
+
     #endif /* TEMPLATE_H */
     ```
-    
+
 18. ...
 
     更多网友总结的杂类细节规范、规则：
 
     - [学C/C++语言，32个必备修养！ (qq.com)](https://mp.weixin.qq.com/s/auLsbmr7SKgoO05HykXpzQ)；
-    - 
+    -
     - etc...
 
 ------
@@ -345,11 +345,11 @@
   ```c
   /* 幅值系数，范围 0~1 */
   float wave_point_A = 0.8;
-  
+
   /* 检查：*/
   if( wave_point_A > 1 ) wave_point_A = 1.0f;
   if( wave_point_A < 0 ) wave_point_A = 0;
-  
+
   /* 限幅：*/
   wave_point_A > 1 ? 1.0f : wave_point_A;
   wave_point_A < 0 ? 0   : wave_point_A;
@@ -413,7 +413,7 @@
       MY_ENUM_TESTA,
       MY_ENUM_TESTB,
   }my_enum_t;
-  
+
   struct SIMPLE_struct_t      struct /* 只用一次的结构体 */        typedef struct
   {                           {                                  {
       int a;                        int a;                            int a;
@@ -430,11 +430,11 @@
       /*               状态               执行函数         跳转条件数量     各个条件跳转后的状态（注：根据跳转条件的优先级从高到低往下写）*/
       {(unsigned int)XXX1_State_1,   fsm_XXX1_state_1_Fun,    2,{     {0,(unsigned int)XXX1_State_5    },
                                                                       {0,(unsigned int)XXX1_State_2    },    }},
-  
+
       {(unsigned int)XXX1_State_4,   fsm_XXX1_state_4_Fun,    1,{     {0,(unsigned int)XXX1_State_5    },    }},
   };
   /*或者*/
-  Simple_struct_t simple = 
+  Simple_struct_t simple =
   {
       .a = 4,
       .b = 5,
@@ -447,11 +447,11 @@
   /* 函数指针定义写法举例 */
   unsigned char (*sys_print_compile_time_fn)(unsigned char);
   typedef uint8_t (*my_func_typedef_fn)(uint8_t p1, const char* p2);
-  
+
   /* 用法 */
   unsigned char (*sys_print_compile_time_fn)(unsigned char);
   typedef unsigned char (*sys_print_compile_time_typedef_fn)(unsigned char is_print_compile_time);
-  
+
   unsigned char print_compile_time(unsigned char is_print)
   {
       if(is_print)
@@ -470,20 +470,20 @@
       }
       return 1;
   }
-  
+
   int main()
   {
       /* 用法1，给函数指针赋值 */
       sys_print_compile_time_fn = print_compile_time;
-      
+
       /* 用法2，定义一个函数指针变量，并赋值 */
       sys_print_compile_time_typedef_fn print_compile_time_fn;
       print_compile_time_fn = print_compile_time;
-      
+
       /* 调用 */
       (*sys_print_compile_time_fn)(1);
       (*print_compile_time_fn)(1);
-  
+
       print_compile_time_fn = print_compile_date;
       (*print_compile_time_fn)(1);
   }
@@ -500,7 +500,7 @@
   ```c
   #define MY_MACRO(x)         ((x) * (x))
   #define MIN(x, y)           ((x) < (y) ? (x) : (y))
-  
+
   #define SET_POINT(p, x, y)  do{ (p)->px = (x); (p)->py = (y); }while(0)
   /*或者下句更好：*/
   #define SET_POINT(p, x, y)  do{        \   /* Backslash indicates statement continues in new line */
@@ -556,7 +556,7 @@
    		 ...
    * 返回：  返回值类型    描述
    ********************************/
-   
+
    /*____________运行错误提示和打印______________________________*/
    /********************************
    * 描述：表示某步骤运行有问题，串口提示，灯提示，声提示
@@ -565,12 +565,12 @@
              3、err_flag  错误类别（可选flag_Fault或flag_Warning）
    * 返回：   NULL
    ********************************/
-   
+
    /*************\
    * Multi-line  *
    * comment     *
    \*************/
-   
+
    /*______________________\\\                               ///__________________________*
    *___________________________________外设初始化函数_______________________________________*
    *_______________________///                               \\\__________________________*/
@@ -590,18 +590,18 @@
    Others:      其它内容的说明
    Log:         修改日志，包括修改内容，日期，修改人等
    *************************************************/
-   
-   
+
+
    // Doxygen 格式
    /**
     * @file main.c
     * @author your name (you@domain.com)
     * @version 0.1
     * @date 2021-06-30
-    * @license GNU General Public License (GPL)  
-    * @brief 
+    * @license GNU General Public License (GPL)
+    * @brief
     * @attention
-    * 
+    *
     */
    ```
 
@@ -609,25 +609,25 @@
 
    > 引用自[软件中声明版权的写法-专业指导文档类资源-CSDN下载](https://download.csdn.net/download/UltraCoder/841110)，侵删。
    >
-   > 正确的格式应该是：Copyright [dates] by [author/owner] 
+   > 正确的格式应该是：Copyright [dates] by [author/owner]
    >
-   > © 通常可以代替Copyright, 但是不可以用(c)。 All Rights Reserved 在某些国家曾经是必须的，但是现在在大多数国家，都不是法律上必须有的字样。 
+   > © 通常可以代替Copyright, 但是不可以用(c)。 All Rights Reserved 在某些国家曾经是必须的，但是现在在大多数国家，都不是法律上必须有的字样。
    >
-   > 参见下面几个正确的格式： 
+   > 参见下面几个正确的格式：
    >
-   > ©1995-2004 Macromedia, Inc. All rights reserved. 
+   > ©1995-2004 Macromedia, Inc. All rights reserved.
    >
-   > ©2004 Microsoft Corporation. All rights reserved. 
+   > ©2004 Microsoft Corporation. All rights reserved.
    >
-   > Copyright © 2004 Adobe Systems Incorporated. All rights reserved. 
+   > Copyright © 2004 Adobe Systems Incorporated. All rights reserved.
    >
-   > ©1995-2004 Eric A. and Kathryn S. Meyer. All Rights Reserved. 
+   > ©1995-2004 Eric A. and Kathryn S. Meyer. All Rights Reserved.
    >
-   > 请注意标点符号和大小写的用法，这也是专业精神的一种体现。 
+   > 请注意标点符号和大小写的用法，这也是专业精神的一种体现。
    >
-   > 现在流行some rights reserved：creativecommons.org 
+   > 现在流行some rights reserved：creativecommons.org
    >
-   > some rights reserved 和copyright 本身并不矛盾，但是其中的界限更多是一个道德问题，真正的保留一部分权力，是指给浏览者fair use 的权利，fair use的界定也决不是随便乱用，或者抄袭。 
+   > some rights reserved 和copyright 本身并不矛盾，但是其中的界限更多是一个道德问题，真正的保留一部分权力，是指给浏览者fair use 的权利，fair use的界定也决不是随便乱用，或者抄袭。
    >
    > 甚至说，除了copyright, 还有copyleft,它的定义是为了程序员开发能够共享源代码的一个方式，英文里free, 并不仅仅是免费。 而且这种的源码公开免费使用，和版权也一点都不冲突。请大家不要误解。
 
@@ -641,15 +641,15 @@
 
   ```c
   static volatile unsigned int *reg_temp = (volatile unsigned int *)(0x20E0084);
-  
+
   /* 置位的标准写法 */
   /* 下句表示把 内存中 0x20E0084 位置的 第1、2、5、14位进行置1，其他位不变 */
   *reg_temp |= ( (1 << 14) | (1 << 5) | (1 << 2) | (1 << 1) );
-  
+
   /* 清位的标准写法 */
   /* 下句表示把 内存中 0x20E0084 位置的 第0、3位进行清0，其他位不变 */
   *reg_temp &= ( ~( (1 << 3) | (1 << 0) ) );
-  
+
    /* 读寄存器 */
   volatile unsigned int val = *reg_temp;
   ```
@@ -657,24 +657,24 @@
 -   创建内存地址上连续区域的结构体，常用于嵌入式开发。
 
     ```c
-    typedef struct 
+    typedef struct
     {
         volatile unsigned int  URXD;            /**< UART Receiver Register, offset: 0x00 */
         volatile unsigned char RESERVED_0[60];
         volatile unsigned int  UTXD;            /**< UART Transmitter Register, offset: 0x40 */
         volatile unsigned int  UCR1;            /**< UART Transmitter Register, offset: 0x44 */
     } Periph_x_Type;
-    
+
     /* Periph_x 这个外设的寄存器的基地址为 0x2020000 */
     #define Periph_x_BASE      (0x2020000u)
-    
+
     /* 设置结构体 Periph_x 的地址为 Periph_x_BASE */
     #define Periph_x           ((Periph_x_Type *)Periph_x_BASE)
-    
+
     /* 读取和设置寄存器（这里以置位举例） */
     Periph_x->UCR1 |= (1 << 2);
     ```
-    
+
 - 关于连接符 “#” 和 “##” 的使用说明，这两个都是预处理命令。
 
   ```c
@@ -683,7 +683,7 @@
   /* 例1： */
   #define A(x)  T_##x
   int A(1) = 10; /* 等效于int T_1 = 10; */
-  
+
   /*  # 转字符串符，字符串化操作（Stringfication） */
   /* 例2： */
   #define WARN_IF(EXP)               \
@@ -692,11 +692,11 @@
         }while(0)
   WARN_IF(int devide = 0;);
   /* 会打印：Waring:int devide = 0; */
-  
+
   /* 例3： */
   #define paster( n ) printf( "token" #n " = %d", token##n )
   paster( 9 )   /* 即 printf( "token" "9" " = %d", token9 ); */
-  
+
   /* 字符串连接，多个双引号的字符串放在一块就是了 */
   printf( "token" "9" " = %d", token9 );
    fd = open( PATH "/file",flags );
@@ -708,12 +708,12 @@
   /* 参考 https://blog.csdn.net/ericbar/article/details/79558827 */
   #include <stdarg.h>    /* 用于支持变长参数函数 */
   #include <stdio.h>
-  
+
   /* 定义的函数必须至少有一个固定参数。这个函数包含了两个固定参数，和指示变长参数开始的省略号 */
   void variable_argument(int fix_argument1, int fix_argument2, ...)
   {
       /* 先定义一个 va_list 类型的变量，比如 ptr，它指向参数列表的首地址； */
-      va_list va_ptr; 
+      va_list va_ptr;
       /* 用 va_start() 宏初始化ptr，va_start()的第二个参数是variable_argument()的第一个可变参数的前一个参数，其实就是最后一个固定参数； */
       va_start(va_ptr, fix_argument2);
       /* 用 va_arg() 依次地 返回可变的参数，它的第二个参数是指定要获取的变参类型； */
@@ -724,22 +724,22 @@
       float five = va_arg(va_ptr, double); /* 对于浮点数类型这里必须是 double 类型，否则编译器警告 */
       /* 最后用 va_end() 宏结束可变参数的获取，便可以在下面使用获取到的各个参数； */
       va_end(va_ptr);
-  
+
       printf("first is %d, second is %d, third is %d, four is %s, five is %f\n", first, second, third, four, five);
       return;
   }
-  
+
   int main(int argc, char** argv[])
   {
       variable_argument(1, 2, 5, 2, -5, "Hello", 3.14159);
       return 0;
   }
   /* 会打印：first is 5, second is 2, third is -5, four is Hello, five is 3.141590 */
-  
+
   /* C99 以及之后可以在宏定义中使用变长参数 */
   #define debug(...) printf(__VA_ARGS__)
-  #define debug(format, ...) fprintf(stdout, format, __VA_ARGS__)  
-  #define debug(format, args...) fprintf(stdout, format, args) 
+  #define debug(format, ...) fprintf(stdout, format, __VA_ARGS__)
+  #define debug(format, args...) fprintf(stdout, format, args)
   ```
 
 -   若要修改函数的形参的值那么请用一级指针，若要修改形参一级指针的值那么用二级指针，以此类推。
@@ -766,7 +766,7 @@
         p = NULL;
         return 0;
     }
-    
+
     /* 错误的 */
     #define SIZE 10
     void EncryptUpdata(int *ctx)
@@ -774,7 +774,7 @@
     	ctx = (int *)malloc(sizeof(int) * SIZE);
     	return;
     }
-    
+
     int main() {
     	int *ctx = NULL;
     	EncryptUpdata(ctx);
@@ -798,16 +798,16 @@
     return 0;
   }
   /* 会打印出：9 8 7 6 5 4 3 2 1 0 */
-  
+
   /* while (x --> 0) 可以理解为 while (x-- > 0) */
-  
+
   /* 或者这样写更快速递减，两个自减符号 "--"，即每次减 2，下面语句会打印出：8 6 4 2 */
   int x = 10;
   while( 0 <---- x )
   {
      printf("%d ", x);
   }
-  
+
   /* stackoverflow 上面对这个操作符的讨论：
   https://stackoverflow.com/questions/1642028/what-is-the-operator-in-c-c/1642035#1642035 */
   ```
@@ -833,7 +833,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
   /* 引自 https://blog.csdn.net/c243311364/article/details/110129208 ，其中有详解 */
   /* 示例程序 */
   #include <stdio.h>
-  
+
   /* offsetof，获取结构体元素 MEMBER 在 结构体 TYPE 中的偏移量，字节为单位 */
   #define offsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER)
   /**
@@ -846,7 +846,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
   #define container_of(ptr, type, member) ({                      \
           const typeof( ((type *)0)->member ) *__mptr = (ptr);    \
           (type *)( (char *)__mptr - offsetof(type,member) );})
-  
+
   struct test_struct {
       int num;
       char ch;
@@ -863,7 +863,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
       printf("test_struct->ch =%f\n",test_struct->f1);
       return 0;
   }
-  
+
   执行结果：
   test_struct->num =12
   test_struct->ch =a
@@ -876,12 +876,12 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
     /* 源文：https://github.com/geekan/cowry/blob/master/code/c/darkmagic/x_macro_simple.c */
     /* 它定义了一个字段 OFPACT(...)，然后再通过宏 OFPACTS 来批量生成此字段，替换其中每个输入，狂拽酷炫！ */
     /* 引用网友一句：学名叫做x macro，是节省冗余代码利器，好处是非常好用，跟机关枪一样；坏处是懂的人不多，大家看到一个没有被索引的ofpact_get_GROUP很容易就进入痴呆状态。 */
-    
+
     #define OFPACTS                                                         \
         /* Output. */                                                       \
         OFPACT(OUTPUT,          ofpact_output,      ofpact, "output")       \
         OFPACT(GROUP,           ofpact_group,       ofpact, "group")
-    
+
     #define OFPACT(ENUM, STRUCT, MEMBER, NAME)                              \
         BUILD_ASSERT_DECL(offsetof(struct STRUCT, ofpact) == 0);            \
                                                                             \
@@ -903,10 +903,10 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
 - 达夫设备（Duff's Device）。
 
   ```c
-  /*这个回答 https://www.zhihu.com/question/27417946/answer/36572141 
+  /*这个回答 https://www.zhihu.com/question/27417946/answer/36572141
     如是说到：
     看以为不能通过编译，后来以为是滥用编译器，但其实是完全符合C标准的，而且真实项目里有用。Google 上搜“duff's device filetype:c”和“duff's device filetype:h”都能找到很多。LLVM 还专门有个用例测试对 Duff's device 的支持：SingleSource/Regression/C/DuffsDevice.c，还很开心哒地说“Guess what, it does.  :)”
-    
+
     另有：https://blog.csdn.net/kingmax26/article/details/5252657 达夫设备（Duff's Device）的详细说明
     这篇文章内说，达夫设备的拷贝数据运行效率的编译体积虽大，但是比循环拷贝写法效率高的多（至少 8 倍）。
     */
@@ -941,7 +941,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
   ```c
   /* 引自 https://www.zhihu.com/question/27417946/answer/37339776 */
   #include <stdio.h>
-  static const unsigned char a[] = 
+  static const unsigned char a[] =
   {
       #include "values.txt"
   };
@@ -965,7 +965,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
   #define LOG2(x) (((x & 0xaaaaaaaa) ? 1 : 0) + ((x & 0xcccccccc) ? 2 : 0) + \
                   ((x & 0xf0f0f0f0) ?  4 : 0) + ((x & 0xff00ff00) ? 8 : 0) + \
                   ((x & 0xffff0000) ? 16 : 0))
-  
+
   /* 实现取 10 为底的对数，计算以 10 为底，x 的对数，即 10 ^ Log_10(x) = x */
   int log10(int n) {
       int result = 0;
@@ -976,9 +976,9 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
       if(n&0x00000002) {result += 1; n >>= 1; }
       return result;
   }
-  
+
   /* 求 log_2(x) 也相当于求 log_10(x)/log_10(2) */
-  
+
   /* 判断是否 2 的幂，来自 Linux kernel */
   #define is_power_of_2(n) ((n) != 0 && ((n) & ((n) - 1)) == 0)
   ```
@@ -991,7 +991,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
       long i;
       float x2, y;
       const float threehalfs = 1.5F;
-  
+
       x2 = number * 0.5F;
       y  = number;
       i  = * ( long * ) &y;                       // evil floating point bit level hacking
@@ -999,7 +999,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
       y  = * ( float * ) &i;
       y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
       //      y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
-   
+
       return y;
   }
   ```
@@ -1017,7 +1017,7 @@ OS Kernel，游戏引擎，编译器之类的，会用到不少 C 语言的黑�
   }
   ```
 
-- 
+-
 
 更多奇技淫巧，没有写明 “实用” 的大概率仅为图个新鲜：
 
@@ -1070,7 +1070,7 @@ PRINT_DIGIT_ARR(arr);
 
 /* 定义变量。__typeof__(x) 用于获取变量 x 的类型 */
 #define var(left, right) __typeof__(right) left = (right)
-var(s, 1LL); /* 用法举例，这里相当于 long long s = 1LL; */ 
+var(s, 1LL); /* 用法举例，这里相当于 long long s = 1LL; */
 
 /* 获取大于 a 的最近的 2^n 倍的且是 size 的整数倍的值，可计算申请内存时要对齐的某字节数 */
 #define ROUNDUP(a, size) (((a) & ((size)-1)) ? (1+((a) | ((size)-1))) : (a))
@@ -1206,7 +1206,7 @@ __STDC__		如果实现是标准的，则是十进制常量1，否则为其他
 *p.s 资源不紧张推荐全部使用标准库（除了 malloc 和 free）*
 
 - 最常用的：
-  
+
   ```
   #include <stdio.h>
   #include <stdlib.h>
@@ -1214,24 +1214,24 @@ __STDC__		如果实现是标准的，则是十进制常量1，否则为其他
   #include <string.h>
   #include <math.h>
   ```
-  
+
   参考这几个地方齐活了：
-  
+
   - [C标准库函数新编手册: C语言标准库函数API使用手册中文版 (gitee.com)](https://gitee.com/zhaixuebuluo/glibc_man_cn)。
-  
+
     上面的 gitee 仓库很优秀，已经离线到了本地`./额外文档/zhaixuebuluo-glibc_man_cn-master.zip`中。
-  
+
   - [C语言常用标准库解读_张巧龙的博客-CSDN博客](https://blog.csdn.net/best_xiaolong/article/details/108957688)。
-  
+
   - [C 标准库 – 参考手册 | 菜鸟教程 (runoob.com)](https://www.runoob.com/cprogramming/c-standard-library.html)。
-  
+
 - 可能会用到的：
-  
+
         #include <time.h>      // 提供储存时间的结构体和计算时间差等函数；
-        
+
         #include <limits.h>    // 这两个库包含了各种变量类型的最大、最小值等信息；
-        #include <float.h> 
-    
+        #include <float.h>
+
 - 不常用的：
   ```
   #include <stdarg.h>    // 用于函数定义变长形参；
@@ -1242,8 +1242,8 @@ __STDC__		如果实现是标准的，则是十进制常量1，否则为其他
   #include <signal.h>
   #include <stddef.h>
   ```
-  
-  
+
+
 
 ------
 
@@ -1353,8 +1353,8 @@ extern "C" {
   *
   ******************************************************************************
   */
-	
-——————————————————————————中间部分，挑重点——————————————————————————	
+
+——————————————————————————中间部分，挑重点——————————————————————————
 /* Includes ------------------------------------------------------------------*/
 
 这里所有 @addtogroup 的部分省略，这是添加分组，为了 Doxygen 组织文档层级结构
@@ -1378,8 +1378,8 @@ extern "C" {
 
 #endif /* HAL_SPI_MODULE_ENABLED */
 
-——————————————————————————结尾——————————————————————————	
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/	
+——————————————————————————结尾——————————————————————————
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 最后加一个 COPYRIGHT
 ```
 
@@ -1433,7 +1433,7 @@ extern "C" {
 
 [佛祖保佑永无BUG 神兽护体 代码注释(各种版本)](https://blog.csdn.net/vbirdbest/article/details/78995793)
 
-[厉害了word程序猿，进寺庙给服务器开光保永不宕机](https://www.sohu.com/a/116621959_430930) 
+[厉害了word程序猿，进寺庙给服务器开光保永不宕机](https://www.sohu.com/a/116621959_430930)
 
 以下是效果图。
 
@@ -1443,11 +1443,11 @@ extern "C" {
 
 ## 署名
 
-- 编辑整理：[Github 页](https://github.com/Staok)，[知乎页](https://www.zhihu.com/people/xuhaoyang)
+- 编辑整理：[Github 页](https://github.com/Qitas)，[知乎页](https://www.zhihu.com/people/xuhaoyang)
 - 发表时间：始于 2021.2 且无终稿
-- 首发平台：https://zhuanlan.zhihu.com/p/350839857 and https://github.com/Staok/coding-style-and-more
+- 首发平台：https://zhuanlan.zhihu.com/p/350839857 and https://github.com/Qitas/coding-style-and-more
 - 遵循协议：[CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
 - 其他说明：
-  1. 本文件是“瞰百易”计划的一部分，尽量遵循 [“二项玻”定则](https://github.com/Staok/Please-stay-in-the-future)，致力于与网络上碎片化严重的现象泾渭分明（这中二魂...）！
+  1. 本文件是“折耳根”计划的一部分，尽量遵循 [“二项玻”定则](https://github.com/Qitas/Please-stay-in-the-future)，致力于与网络上碎片化严重的现象泾渭分明（这中二魂...）！
   2. 本文系广泛撷取、借鉴和整理，侵删。本文适合刚入门的人阅读和遵守，也适合已经有较多编程经验的人参看。如有错误恭谢指出！
   3. 转载请注明作者及出处。整理不易，请多支持。

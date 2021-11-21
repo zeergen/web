@@ -8,17 +8,17 @@
         <title>【主线剧情02】ARM Linux 基础学习记录 - 折耳根</title><meta name="Description" content="介绍 Linux 基本使用和对 ARM SoC 的基本编译流程"><meta property="og:title" content="【主线剧情02】ARM Linux 基础学习记录" />
 <meta property="og:description" content="介绍 Linux 基本使用和对 ARM SoC 的基本编译流程" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-05T12:20:44+08:00" />
 <meta property="article:modified_time" content="2021-04-05T12:20:44+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="【主线剧情02】ARM Linux 基础学习记录"/>
 <meta name="twitter:description" content="介绍 Linux 基本使用和对 ARM SoC 的基本编译流程"/>
-<meta name="application-name" content="Staok - 瞰百易">
-<meta name="apple-mobile-web-app-title" content="Staok - 瞰百易"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="application-name" content="Qitas - 折耳根">
+<meta name="apple-mobile-web-app-title" content="Qitas - 折耳根"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><link rel="prev" href="http://Staok.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/" /><link rel="next" href="http://Staok.github.io/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><link rel="prev" href="http://Qitas.github.io/%E8%BD%AF%E4%BB%B6%E8%A7%84%E8%8C%83/" /><link rel="next" href="http://Qitas.github.io/%E8%AF%B7%E7%95%99%E5%9C%A8%E6%9C%AA%E6%9D%A5/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -26,23 +26,23 @@
         "inLanguage": "",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/Staok.github.io\/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/"
+            "@id": "http:\/\/Qitas.github.io\/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "http:\/\/Staok.github.io\/images\/Apple-Devices-Preview.png",
+                            "url": "http:\/\/Qitas.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048
                         }],"genre": "posts","keywords": "ARM, Linux","wordcount":  16064 ,
-        "url": "http:\/\/Staok.github.io\/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/","datePublished": "2021-04-05T12:20:44+08:00","dateModified": "2021-04-05T12:20:44+08:00","publisher": {
+        "url": "http:\/\/Qitas.github.io\/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/","datePublished": "2021-04-05T12:20:44+08:00","dateModified": "2021-04-05T12:20:44+08:00","publisher": {
             "@type": "Organization",
-            "name": "Staok","logo": {
+            "name": "Qitas","logo": {
                     "@type": "ImageObject",
-                    "url": "http:\/\/Staok.github.io\/images\/avatar.png",
+                    "url": "http:\/\/Qitas.github.io\/images\/avatar.png",
                     "width":  404 ,
                     "height":  392
                 }},"author": {
                 "@type": "Person",
-                "name": "Staok"
+                "name": "Qitas"
             },"description": "介绍 Linux 基本使用和对 ARM SoC 的基本编译流程"
     }
     </script></head>
@@ -51,7 +51,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+            <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>主页</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -75,7 +75,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+                <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>主页</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -113,7 +113,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">【主线剧情02】ARM Linux 基础学习记录</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Staok" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Staok</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85/"><i class="far fa-folder fa-fw"></i>主线剧情</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Qitas" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Qitas</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85/"><i class="far fa-folder fa-fw"></i>主线剧情</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-05">2021-04-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 16064 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 33 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -241,7 +241,7 @@
         alt="assets/悦己之作，方能悦人.png"
         title="悦己之作，方能悦人" /></p>
 <h1 id="arm--linux-基础学习记录">ARM &amp; Linux 基础学习记录</h1>
-<p>编辑整理 by <a href="https://github.com/Staok" target="_blank" rel="noopener noreffer">Staok</a></p>
+<p>编辑整理 by <a href="https://github.com/Qitas" target="_blank" rel="noopener noreffer">Qitas</a></p>
 <p>本文部分内容摘自“100ask imx6ull”开发板的配套资料（如《嵌入式Linux应用开发完全手册_韦东山全系列视频文档全集》），还有参考（非复制）菜鸟教程、红联的文章等等等等，比较广泛，侵删。进行了精髓提取，方便日后查阅。过于基础的内容不会在此提及。如有错误恭谢指出！</p>
 <hr>
 <h2 id="目录">目录</h2>
@@ -665,7 +665,7 @@ cat /tem/ps.output
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 将一个字符串输入到一个文件</span>
-<span class="nb">echo</span> <span class="s2">&#34;难凉热血瞰百易&#34;</span> &gt; users
+<span class="nb">echo</span> <span class="s2">&#34;难凉热血折耳根&#34;</span> &gt; users
 
 <span class="c1"># 把 textfile1 的文档内容加上行号后覆盖输入 textfile2 这个文档里</span>
 cat -n textfile1 &gt; textfile2
@@ -1731,7 +1731,7 @@ make all
                             <a class="link-to-markdown" href="/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-title="【主线剧情02】ARM Linux 基础学习记录" data-hashtags="ARM,Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-hashtag="ARM"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-title="【主线剧情02】ARM Linux 基础学习记录" data-ralateuid="u/3585238893"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-title="【主线剧情02】ARM Linux 基础学习记录" data-hashtags="ARM,Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-hashtag="ARM"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-title="【主线剧情02】ARM Linux 基础学习记录" data-ralateuid="u/3585238893"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>

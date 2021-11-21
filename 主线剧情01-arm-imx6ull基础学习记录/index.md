@@ -3,7 +3,7 @@
 
 # ARM & i.MX6ULL 基础学习记录
 
-编辑整理 by [Staok](https://github.com/Staok)
+编辑整理 by [Qitas](https://github.com/Qitas)
 
 本文大部分内容摘自“100ask imx6ull”开发板的配套资料（如《IMX6ULL裸机开发完全手册》等等），侵删。进行了精髓提取，方便日后查阅。过于基础的内容不会在此提及。如有错误恭谢指出！
 
@@ -439,7 +439,7 @@ SECTIONS {
 ```assembly
 .text
 .global  _start
-_start: 				
+_start:
     /* 设置栈地址 */
 	ldr  sp,=0x80200000
 	bl main
@@ -462,13 +462,13 @@ OBJDUMP=$(PREFIX)objdump
 
 led.img : start.S  led.c main.c
 	$(CC) -nostdlib -g -c -o start.o start.S                 # 把启动文件 .s 和各个 .c 文件都汇编为机器码文件 .o
-	$(CC) -nostdlib -g -c -o led.o led.c	
-	$(CC) -nostdlib -g -c -o main.o main.c	
-	
+	$(CC) -nostdlib -g -c -o led.o led.c
+	$(CC) -nostdlib -g -c -o main.o main.c
+
 	$(LD) -T imx6ull.lds -g start.o led.o main.o -o led.elf  # 链接，按照 imx6ull.lds 定义的格式，各段数据重排序，把各个 .o 文件组成 .elf 文件
-	
+
 	$(OBJCOPY) -O binary -S led.elf  led.bin                 # .elf 转为 .bin 二进制文件，应用二进制文件
-	$(OBJDUMP) -D -m arm  led.elf  > led.dis	
+	$(OBJDUMP) -D -m arm  led.elf  > led.dis
 	mkimage -n ./tools/imximage.cfg.cfgtmp -T imximage -e 0x80100000 -d led.bin led.imx
 	                                                         # 使用 mkimage 生成 头部数据，并与 .bin 组合，产生 .imx 文件
 	dd if=/dev/zero of=1k.bin bs=1024 count=1                # 创建一个 1KB 的空文件 1k.bin
@@ -497,7 +497,7 @@ clean:
     add r1, r1, #1          @ 将r1内存储的地址+1
     cmp r1, r2              @ 相等：清零操作结束；否则继续执行clean函数清零bss段
     bne clean
-    
+
     mov pc, lr
 ```
 
@@ -512,8 +512,8 @@ clean:
 第一步：把链接脚本 imx6ull.lds 中的 `.data : { *(.data) }`换成下面的：
 
 ```
-     data_load_addr = .;					
-     .data 0x900000 : AT(data_load_addr) 
+     data_load_addr = .;
+     .data 0x900000 : AT(data_load_addr)
      {
        data_start = . ;                  //addr = 0x900000
        *(.data)
@@ -640,9 +640,9 @@ GIC分发器 拥有许多寄存器，可以通过它们配置各个中断的属�
 	@ 不同ARM内核的中断向量表不同，具体看手册
 	@ 现在的微处理器寄存器结构非常复杂，不建议硬刚芯片手册手写配置代码，直接参考厂家和网络高手的例子特别省事
 	@ 一些基础的、不变的、规律性的则必须要会
-	
+
 	@ 中断的保存、恢复现场，以及分辨中断号和调用相应中断函数，Cortex M3/M4 是硬件完成的， Cortex A7 是软件实现的
-	
+
 	.text					@ 代码段(.text)，表示代码段
 							@ 其他段介绍：
 							@ 只读数据段(.rodata)：存放有初始值并且const修饰的全局类变量（全局变量或static修饰的局部变量）
@@ -651,9 +651,9 @@ GIC分发器 拥有许多寄存器，可以通过它们配置各个中断的属�
 							@ 零初始化段(.bss)：存放没有初始值或初始值为0的全局类变量
 							@ 注：bss段和注释段不保存在bin/elf文件中，
 							@ 所以如果bss段的数据没有清0的话，没有初始值的变量在初始化时会是随机的，但个人觉得清不清0不是特别重要。
-	
+
 	.global start			@ .global 表示 start 是一个全局符号
-	
+
 start:						@ 程序入口
 	@异常向量表
 	b	reset				@ 0x00 reset
@@ -664,7 +664,7 @@ start:						@ 程序入口
 	nop						@ 0x14 reserved
 	ldr pc,=_irq			@ 0x18 irq
 	ldr pc,=_fiq			@ 0x1c fiq
-	
+
 _undef:			.word		_undef
 _swi_handler:	.word		_swi_handler
 _pre_fetch:		.word		_pre_fetch
@@ -683,53 +683,53 @@ _swi_handler:
 							@ 并从 spsr（cpsr的影子寄存器）恢复到 cpsr，即恢复现场
 swi_user_handle:
 	@... 软中断的用户应用程序，可以调用 c 函数
-	
+
 	cmp r0,#2				@ 判断软中断号是否为2，是则执行后面尾缀带eq的指令
 	moveq r7,#2
-	
+
 	cmp r0,#5				@ 判断软中断号是否为5，是则执行后面尾缀带eq的指令
 	moveq r7,#5
-	
+
 	cmp r0,#7				@ 判断软中断号是否为7，是则执行后面尾缀带eq的指令
 	moveq r7,#7
-	
+
 	ldr pc,lr				@ 跳回
-	
+
 _irq:
 	sub lr,lr,#4
 	stmfd sp!,{r0-r12,lr}
 	bl irq_user_handle
 	ldmfd sp!,{r0-r12,pc}^
-	
+
 irq_user_handle:
 	@... 外中断的用户应用程序，可以调用 c 函数
 	@并在用户程序中，从中断控制器的寄存器中读出当前的中断号，做相应的相应，然后清中断标志位
 	@现在的微处理器寄存器结构非常复杂，不建议硬刚芯片手册手写配置代码，直接参考厂家和网络高手的例子特别省事
-	
+
 	ldr pc,lr
 
 reset:
 	ldr sp,=stack_base		@ 分配栈地址到 sp 寄存器
 	msr cpsr,#0x10			@ 切换到 user 模式
-	
+
 	@... 用户应用程序，可以调用 c 函数
-	
+
 	swi 2					@ 触发软中断，自动跳转到软中断程序入口
 							@ 并自动把返回地址（下一个指令的地址）保存到 LR 寄存器
 							@ 并自动切换到 SVC（超级用户） 模式
 	nop
 	nop
-	
-	
+
+
 	swi 5
 	nop
 	nop
-	
-	
+
+
 	swi 7
 	nop
 	nop
-	
+
 	/*
 		@ 这一段是调用 c 程序里面的 void print_test_string(unsigned int cpsr, char *str) 函数
 		@ 给它传入的两个实参为 r0 和 r1
@@ -738,54 +738,54 @@ reset:
 		ldr r1, =test_string
 		bl print_test_string
 	*/
-	
+
 	b reset					@ 返回 reset 地址，大循环
 
 /*
 		test_string:
-			.string "test_string"	
+			.string "test_string"
 */
-	
+
 	@ 定义栈空间和地址，buf 为栈的开头地址，stack_base 为栈的尾地址，中间有 32 个 word 空间
 	@ 我们使用进出栈的指令是 stmfd 和 ldmfd
 	@ 这两个指令，为从 stack_base 开始向上递进存，向下递进取的顺序，与这里定义的顺序一致
-	
+
 	/*
 		ldr sp,=0x80200000
 		stmfd sp!, {r0-r2} @ 入栈
 		ldmfd sp!, {r0-r2} @ 出栈
-		
+
 		结果：
 				0x00000000
 				...
 				0x801FFFF4	-> 	R0
 							   R1
 				0x80200000	-> 	R2	sp指针的移动方向：存向上，取向下
-		
+
 		也可以用下面指令，效果一样
 		push {r0-r2} @ 入栈
 		pop {r0-r2}  @ 出栈
 
 	*/
-	
+
 	/*
 		栈的存取方式
 		栈的存取方式，为后进先出（LIFO），是由于进出栈指令的作用方式决定的，数据在栈指针处入栈时，
 		如 stmfd sp!,{r0-r12,lr}，根据这个指令的含义，栈指针sp会根据数据存放的方向自增或自减，出栈的时候过程相反，
 		在外界看来，这种方式就是只能在头部进出数据的线性表，从算法上来说是一种特殊的线性表，这种
 		方式是由汇编指令和硬件的易实现性所决定的。
-		
+
 		堆是一块空闲空间，使用 malloc 函数来管理它，malloc 函数可以自己写
-		
+
 		"stack_base:" 这种带冒号的标签表示地址位置，通过其得到指令/数据地址
 	*/
-	.data					
+	.data
 buf:
 	.space 32
 stack_base:
-	
-	
-	
+
+
+
 	.end
 
 ```

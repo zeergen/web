@@ -1,11 +1,11 @@
 # 【开源电源】巧克力板
 
 
-一个实现大功率可调的开关电源，附带多路多种输出和实用功能；本项目是“瞰百易”计划的一部分。
+一个实现大功率可调的开关电源，附带多路多种输出和实用功能；本项目是“折耳根”计划的一部分。
 
 ## 本项目的 GitHub仓库
 
-[Staok/PowerBar: 一个实现大功率可调的开关电源，附带多路多种输出和实用功能 (github.com)](https://github.com/Staok/PowerBar).
+[Qitas/PowerBar: 一个实现大功率可调的开关电源，附带多路多种输出和实用功能 (github.com)](https://github.com/Qitas/PowerBar).
 
 该项目早在2020.7开始在github上更新了，中间停隔了半年多，又于近日开始完成了 V2 版。
 
@@ -45,7 +45,7 @@
 ## 其他要求
 
 - 原理图和PCB尽量遵循 [SCH & PCB 设计规范](https://zhuanlan.zhihu.com/p/356679916) ；
-- 滤波、地划分隔离、保护措施等尽量遵循 [Staok/protection-circuits](https://link.zhihu.com/?target=https%3A//github.com/Staok/protection-circuits)；
+- 滤波、地划分隔离、保护措施等尽量遵循 [Qitas/protection-circuits](https://link.zhihu.com/?target=https%3A//github.com/Qitas/protection-circuits)；
 - 输出接口丰富多样；
 - 等等。
 

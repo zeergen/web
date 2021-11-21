@@ -3,11 +3,11 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文的源地址 Github：[Staok/thoughs-about-hardware-design: 介绍和罗列关于硬件设计所需要考虑的各个方面。纯个人经验总结，非科班念经。永远地不定期更新。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Staok/thoughs-about-hardware-design)。今后只在上面的链接里，这里不会跟进。
+本文的源地址 Github：[Qitas/thoughs-about-hardware-design: 介绍和罗列关于硬件设计所需要考虑的各个方面。纯个人经验总结，非科班念经。永远地不定期更新。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/thoughs-about-hardware-design)。今后只在上面的链接里，这里不会跟进。
 
-编辑整理 by [Staok](https://github.com/Staok)，始于 2020.7 且无终稿。转载请注明作者及出处。
+编辑整理 by [Qitas](https://github.com/Qitas)，始于 2020.7 且无终稿。转载请注明作者及出处。
 
-本文件是“瞰百易”计划的一部分，尽量遵循[“二项玻”定则](https://github.com/Staok/Please-stay-in-the-future)，致力于与网络上碎片化严重的现象泾渭分明（这中二魂...）！
+本文件是“折耳根”计划的一部分，尽量遵循[“二项玻”定则](https://github.com/Qitas/Please-stay-in-the-future)，致力于与网络上碎片化严重的现象泾渭分明（这中二魂...）！
 
 本文系广泛撷取、借鉴和整理，参考的公开文档、书籍和网页**不可数**、太多了。
 
@@ -37,7 +37,7 @@
 
   - 《PCB小知识》系列文章，路径：【3 硬件、电路】\【PCB设计规范】\ PCB小知识。
   - 有关高速PCB的独立文章，路径：【3 硬件、电路】\【PCB设计规范】\ 高速PCB。
-  - 
+  -
 
 - ADI 智库文章：《PCB设计秘籍》、《高速电路设计指南》（这个主要针对高速数模转换器件的PCB技巧）、《非隔离式开关电源的PCB布局考虑》、《Power技术问题解答》（这个针对常用 LDO 和 DCDC 的常见问题做梳理）、《电源设计基础知识精选》（对电源方方面面的内容做大梳理）等，具体文章免费在下面链接下载：[ADI电子书-您绝对值得拥有的电子书 | 教育 | 亚德诺半导体 (analog.com)](https://www.analog.com/cn/education/landing-pages/002/chinese-ebook.html)，或者在 微信里添加 “ADI智库” 小程序，在小程序里面搜索这些文章的名称，即可下载。
 
@@ -92,7 +92,7 @@ AD 的更多丰富技巧和高速布线：
 -   共模、差模干扰抑制。
 -   共阻抗地干扰抑制（高频）。
 
-更多请参考 [Staok/protection-circuits: 对保护电路中的过流、过压、软起动、防反接、通讯和信号隔离、电平转换、防共地干扰、TVS瞬态抑制、共模抑制和电磁兼容做一个大总结 (github.com)](https://github.com/Staok/protection-circuits)。
+更多请参考 [Qitas/protection-circuits: 对保护电路中的过流、过压、软起动、防反接、通讯和信号隔离、电平转换、防共地干扰、TVS瞬态抑制、共模抑制和电磁兼容做一个大总结 (github.com)](https://github.com/Qitas/protection-circuits)。
 
 关于隔离：
 
@@ -210,7 +210,7 @@ AD 的更多丰富技巧和高速布线：
 
 ### MCU / MPU
 
-[ARM & SOC 系列快速鸟瞰——ARM 内核各系列介绍和各大厂的选型总结](https://github.com/Staok/ARM-Linux-Study/blob/main/ARM%20%26%20Linux%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E3%80%90%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85%20%E7%95%AA%E5%A4%9601%E3%80%91ARM%20%E7%B3%BB%E5%88%97%E5%BF%AB%E9%80%9F%E9%B8%9F%E7%9E%B0.md)。
+[ARM & SOC 系列快速鸟瞰——ARM 内核各系列介绍和各大厂的选型总结](https://github.com/Qitas/ARM-Linux-Study/blob/main/ARM%20%26%20Linux%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E3%80%90%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85%20%E7%95%AA%E5%A4%9601%E3%80%91ARM%20%E7%B3%BB%E5%88%97%E5%BF%AB%E9%80%9F%E9%B8%9F%E7%9E%B0.md)。
 
 -   内核架构，RAM，ROM，I/O数量，通讯接口（UART，SPI，I2C，CAN，USB，SDIO等），其他特色外设，抗扰能力。
 -   官方手册、工具链是否齐全，官方是否提供 EVK 开发板及其 BSP 底层支持包。
@@ -398,7 +398,7 @@ AD 的更多丰富技巧和高速布线：
         6.  典型四层板板层分布为（由上到下）：
             -   信号层 - 内电层（GND层） - 电源层 - 信号层（把信号层露在外面是为了好实物修改，也可不这样）；
             -   信号层 - 内电层（GND+VCC层）- 信号层 - 信号层。
-    
+
 7. 元器件布局。
 
    -   布局的好，走线容易，布局不好，走线困难。
@@ -482,7 +482,7 @@ AD 的更多丰富技巧和高速布线：
 
 - 自定菜单项的快捷键：按住 Ctrl 键点击所选功能项，打开 Edit Command 窗口，并设置快捷键，注意不要与已有快捷键的提示（Currently in use by）冲突；取消快捷键：在快捷键选项框中下拉选择 None 即可。
 
-- 
+-
 
 
 ### AD 20 快捷键 & 绘制技巧
@@ -493,8 +493,8 @@ AD 的更多丰富技巧和高速布线：
 - 拖动元件，按住 "Ctrl" 的时候器件不会吸附网格而自由移动。
 - 修改器件移动时的网格，SCH 为修改 "Snap Grid" 参数，PCB 为 ctrl+g 或者在属性中双击 "Grid Manager" 调出 Grid Edtior，修改 Steps 参数；PCB中修改 Steps 可以以准确、固定的间距放置多个器件。
 - 跨图连接器 Off Sheet Connector，尽量不要用，这就像 C 中的 goto 一样容易混乱，要么设计成 层次原理图设计，要么设置网络标号为全局使用（选择 project->project options->options，在 Net ... Scope 中选 "Global ..." 即可）。
-- 
-- 
+-
+-
 - ...
 - SCH 中的：
   - 多个相似器件的批量修改，如所有电容的 Designator 修改为 "C?"，或者统一修改封装等等：右击一个器件，点 "Find Similar"，把 Symbol Refrence 选为 same，或者其他选为 same，然后点 Apply，会高亮出所有相似器件，然后鼠标在空白处按住左键拖动框选所有相似器件，便可以在属性栏中批量修改属性，调出属性栏可以按 F11。或者手动单独多选要批量修改的多个器件，然后在属性栏中可以批量修改。PCB 中同理，可用于批量修改封装、修改焊盘/过孔等等，只是在 "Find Similar" 步骤中点 Apply 后相似器件会自动都被选中，直接在属性栏批量修改即可。
@@ -511,7 +511,7 @@ AD 的更多丰富技巧和高速布线：
   - 调节 PCB 线高亮时候与背景对比的程度：点右下角 Panels，点进 View Configuration，在 View Options 栏中下面调节 Mask and dim，还可以调节 Object Visibility，可以把 覆铜 Polygons 的亮度调低，以区分覆铜和走线、焊盘。
   - 板子镂空：先围绕要镂空的区域画 Keep-out-layer 闭合曲线，然后工具栏选择 Designer，Board Shape，Define Board Cutout，然后围绕刚才画的镂空区域的 Keep-out-layer 闭合曲线 画一圈。
   - ..
-  
+
 - 器件原理图库绘制的技巧：
   - 引脚名字上要加横线表示低有效：绘制器件原理图库，在名字的每一个字符中间加 " \ " 字符即可。
   - 快速添加各个引脚名：在一个器件原理图库的界面，其属性的 "Pin" 标签中，下面有笔形状的 "编辑" 按钮，点进去可以以表格形式编辑当前器件各个引脚属性。
@@ -522,11 +522,11 @@ AD 的更多丰富技巧和高速布线：
 ### 通用 AD 规范-今后尽量适用
 
 - 导入 AD20 软件配置文件，参考 "7 AD 导入导出配置文件" 章节。
-- 统一的标题栏：每一页原理图都使用 A4 大小，标题栏使用模板文件`./PCB LOGO-画法集合-PCB工具-规则文件/标题栏模板/A4 - 瞰百易.SchDot`，将其复制到 AD20 安装目录下的 `/Altium/AD20/Documents/Templates`，然后在 SCH 界面的属性栏的 Page Options 的 Formatting And Size 中选 Template，下拉选择 "A4 - 瞰百易" 选项，在属性栏的 参数页面加上 标题、作者、版本号等等信息。
+- 统一的标题栏：每一页原理图都使用 A4 大小，标题栏使用模板文件`./PCB LOGO-画法集合-PCB工具-规则文件/标题栏模板/A4 - 折耳根.SchDot`，将其复制到 AD20 安装目录下的 `/Altium/AD20/Documents/Templates`，然后在 SCH 界面的属性栏的 Page Options 的 Formatting And Size 中选 Template，下拉选择 "A4 - 折耳根" 选项，在属性栏的 参数页面加上 标题、作者、版本号等等信息。
 - 统一的设计模式：原理图都使用 "层次原理图设计" 的模式。
 - 导入 AD20 的 PCB Rules 规则配置文件，参考 "7 AD 导入导出配置文件" 章节。针对线宽的规则可以做依不同 Class 设置不同线宽规则，并在 Rules 界面的左下角设置优先级（手动布线时低优先级不起作用）；针对高速线的规则要依 Class 单独设置规则，详见下面的 "等长线/蛇形线设计" 小节。
-- 
-- 
+-
+-
 - 准备焊接实物 PCB 的准备：AD20 中 PCB 界面右下角 Panels 里面打开 PCB List 栏，选 View All Objects，再选 Components，即列出所有器件并按照 Comment 排列，可以选中所有一个值的阻/容器件然后器件会高亮显示，并且 PCB List 栏的下面会显示被选中元件的数量，接着焊接这一值的阻/容器件，然后换下一波相同值的器件，以此类推。使用钢网和加热台快速手工贴片：[如何快速高质量手工PCB贴片](https://www.bilibili.com/video/BV1V5411b7Wa)。
 - ..
 

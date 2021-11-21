@@ -19,7 +19,7 @@
 
 先说思想，bootloader 是很有用、很方便的一种发明，作为一个 bootloader，本质是一个在 MCU 或者 MPU 首先运行的裸机程序，通过通讯接口（UART、EtherNet、CAN、USB、SD 卡 等等）把编译好的 APP 程序的二进制文件或者镜像首先下载到内存中，或者是从 FLASH 中读取 APP 程序数据放到内存中，并跳转到 APP 程序处开始执行，在内存中跑的程序对于取指等 CPU 操作等待的时间比在 FLASH 中跑的程序快得多；或者通过把从一个接口接收的 APP 程序数据存储到 自己的 FLASH 中，实现自己给自己烧录（自举， IAP），比如把 SD 卡里面的 程序数据读出然后烧入 自己的 FLASH 里面，或者从 USB 接收程序，这些方法方便板子的批量烧录；还可以预先在自己的 FLASH 中存入多个 APP 程序，根据外部指令选择运行哪一个，不用反复烧写便可实现更换程序；说到这里，给 MCU/MPU 加一个 bootloader 后，其灵活性、可操作性就提升了维度。bootloader 要实现这些功能，就当然需要先初始化这些通讯接口和储存设备（DDR / FLASH），还要提供一个人机交互界面（一般为命令行）并实现一些命令，搬运应用程序到内存，准备要跳入操作系统内核的环境并跳转启动该内核，这些即是一个 bootloader 的最小实现。
 
-关于 MCU 的 IAP 更多内容可见我的另一个开源项目 [Staok/u-iap: 一个志在实现适用于 MCU 的通用 IAP 程序框架，可以从串口、外部 SPI FLASH、外部 SDIO SD 卡、USB Device MSC 或者 USB HOST MSC等等途径更新 MCU 固件。 (github.com)](https://github.com/Staok/u-iap)。
+关于 MCU 的 IAP 更多内容可见我的另一个开源项目 [Qitas/u-iap: 一个志在实现适用于 MCU 的通用 IAP 程序框架，可以从串口、外部 SPI FLASH、外部 SDIO SD 卡、USB Device MSC 或者 USB HOST MSC等等途径更新 MCU 固件。 (github.com)](https://github.com/Qitas/u-iap)。
 
 以上说的都是最最基本的，更多 bootloader 的更专业（更官话）的介绍文章如下：
 
@@ -158,7 +158,7 @@
       ```
 
    5. 上一个步骤执行成功结束后，会得到 imx-yocto-bsp/sources 文件夹和其他文件，You can perform repo synchronization, with the command `repo sync`, periodically to update to the latest code。源文说明：The "sources" directory which contains the recipes used to build one or more
-      build directories, and a set of scripts used to set up the environment.The recipes used to build the project come from both the community and i.MX. The Yocto Project layers are downloaded to thesources directory. This sets up the recipes that are used to build the project.  
+      build directories, and a set of scripts used to set up the environment.The recipes used to build the project come from both the community and i.MX. The Yocto Project layers are downloaded to thesources directory. This sets up the recipes that are used to build the project.
 
    6. 构建针对 i.mx8mm 的配置，i.MX provides a script, `imx-setup-release.sh`, that simplifies the setup for i.MX machines.  The script sets up a directory andthe configuration files for the specified machine and backend。在`imx-yocto-bsp`目录需要执行的命令模板：
 
@@ -223,53 +223,53 @@
    # 第一步 找一个地方，下载 u-boot-imx 源码，并进入 u-boot-imx 目录
    git clone https://source.codeaurora.org/external/imx/uboot-imx
    cd uboot-imx
-   
+
    # 第二步 查看所有 git 分支，切换到与 imx-5.4.70-2.3.0 版本对应的分支上
    # git branch -v #列出本地所有的分支, + hash 信息
    # git branch -vv #列出本地所有的分支, + hash 信息 + 与远程的关联信息
    git branch -a #列出所有的分支(远程和本地)
-   
+
    # 第2.33步 切换分支
    git checkout imx_v2020.04_5.4.70_2.3.0
-   
+
    # 第2.66步 同步当前仓库
    git pull origin
-   
+
    # 第三步 尝试编译（举例）
    make distclean
    make imx8mm_ddr4_evk_defconfig
    make -j16
    ```
-   
+
    成功后会产生所需的文件：
-   
+
    - u-boot-nodtb.bin；
    - spl / u-boot-spl.bin；
    - arch / arm / dts/ imx8mm-ddr4-evk.dtb。
-   
+
 4. 下载 imx-mkimage、imx-atf 和 firmware-imx；
 
    ```bash
    # 下载 imx-mkimage，并进入目录
    git clone https://source.codeaurora.org/external/imx/imx-mkimage/ && cd imx-mkimage
-   
+
    # 查看远程分支
    git branch -v
-   
+
    # 切换到与 imx-5.4.70-2.3.0 版本对应的分支上
    git checkout imx_5.4.70_2.3.0
    git pull origin
-   
+
    # 退回上一级目录，下载 imx-atf，并同样切换分支
    cd ..
    git clone https://source.codeaurora.org/external/imx/imx-atf/ && cd imx-atf
    git checkout imx_5.4.70_2.3.0
    git pull origin
-   
+
    # 返回上一级目录，取得 firmware-imx，在上文提到的 ./imx8mmddr4evk_sh 目录中取得
    cd .. && mkdir firmware-imx-8.10
    cp -ri /.../imx8mmddr4evk_sh/tmp/work/aarch64-mx8mm-poky-linux/firmware-imx-8m/8.10-r0/firmware-imx-8.10/* ./firmware-imx-8.10/
-   
+
    # 取得 firmware-imx 的另一个途径 8.1 版本
    wget http://www.freescale.com/lgfiles/NMG/MAD/YOCTO/firmware-imx-8.1.bin
        # 解压
@@ -295,16 +295,16 @@
    cp uboot-imx/arch/arm/dts/imx8mm-ddr4-evk.dtb                  ./imx-mkimage/iMX8M/imx8mm-ddr4-evk.dtb
    cp uboot-imx/spl/u-boot-spl.bin                                ./imx-mkimage/iMX8M/
    cp uboot-imx/u-boot-nodtb.bin                                  ./imx-mkimage/iMX8M/
-   
+
        # firmware-imx  在这里区分使用 LPDDR4 还是 DDR4，详见 "分析 imx-mkimage" 小节
    cp firmware-imx-8.10/firmware/ddr/synopsys/ddr4_dmem_1d.bin    ./imx-mkimage/iMX8M/
    cp firmware-imx-8.10/firmware/ddr/synopsys/ddr4_dmem_2d.bin    ./imx-mkimage/iMX8M/
    cp firmware-imx-8.10/firmware/ddr/synopsys/ddr4_imem_1d.bin    ./imx-mkimage/iMX8M/
    cp firmware-imx-8.10/firmware/ddr/synopsys/ddr4_imem_2d.bin    ./imx-mkimage/iMX8M/
-   
+
        # imx-atf
    cp imx-atf/build/imx8mm/release/bl31.bin                       ./imx-mkimage/iMX8M/
-   
+
    # imx-mkimage  在这里区分使用 LPDDR4 还是 DDR4，详见 "分析 imx-mkimage" 小节
    cd imx-mkimage
    make SOC=iMX8MM clean
@@ -352,7 +352,7 @@
   # - core-image-base：A console-only image that fully supports the target device hardware。Provided by layer：Poky；
   # - imx-image-multimedia：This image contains all the packages except QT5/OpenCV/Machine Learning packages。Provided by layer：meta-imx/meta-sdk；
   # - imx-image-full：This is the big image which includes imx-image-multimedia + OpenCV + QT5 + Machine Learning packages。Provided by layer：meta-imx/meta-sdk；
-  
+
   # 实际执行（在 imx-yocto-bsp 目录里面）
   DISTRO=fsl-imx-xwayland MACHINE=imx8mmddr4evk bitbake imx-image-full -c populate_sdk
   ```
@@ -450,19 +450,19 @@ LPDDR4 的情况：
          bool "imx8mm LPDDR4 EVK board"
          select IMX8MM
          select IMX8M_LPDDR4
-     
+
      config TARGET_IMX8MM_DDR4_EVK
          bool "imx8mm DDR4 EVK board"
          select IMX8MM
          select IMX8M_DDR4
      ...
-     
+
      以上是原有内容，照葫芦画瓢加下面的内容：
      config TARGET_<新板子名（全大写）>            在下一个步骤会用到
-         bool "<新板子名的全名描述 + board>"       板子上电，uboot 打印信息 
+         bool "<新板子名的全名描述 + board>"       板子上电，uboot 打印信息
          select IMX8MM
          select IMX8M_DDR4                       在这里区分使用 LPDDR4 还是 DDR4
-     
+
      endchoice
      ................
      source "board/<新公司名>/<新板子名>/Kconfig"  在下一个步骤会修改的文件的索引
@@ -478,7 +478,7 @@ LPDDR4 的情况：
          default "<新公司名>"      代表 board/ 下的新公司名文件夹
      config SYS_CONFIG_NAME
          default "<新板子名>"      代表 nclude/configs/ 目录下的新板子名的头文件
-     
+
      source "board/<新公司名>/common/Kconfig"
      endif
      ```
@@ -519,15 +519,15 @@ LPDDR4 的情况：
      ```makefile
      CONFIG_TARGET_<新板子名（全大写）>=y   与上面的 <新板子名（全大写）> 一致
      #CONFIG_TARGET_..._IMX8MM=y    原来板子的配置选项注释/删掉
-     
+
      CONFIG_DEFAULT_DEVICE_TREE="xxx-imx8mm"        在上一步的 arch/arm/dts/ 里面的新增加的设备树文件名字
                                                     To set the filename of the device tree source
                                                     编译最后会生成 arch/arm/dts/xxx-imx8mm-base.dtb 设备树文件
      CONFIG_DEFAULT_FDT_FILE="xxx-imx8mm-ddr4.dtb"  生成扁平设备树文件名字，与上面的名字相同，加上尾缀 .dtb 即可
-     
+
      其他的配置选项适当修改，加注释失能，加尾缀"=y"使能
      ```
-     
+
    - 为了支持 uuu 工具（imx 系列 SoC USB 下载工具），查看其的手册 UUU.pdf（18 页），需要配置文件必须含有以下：
 
      ```makefile
@@ -548,7 +548,7 @@ LPDDR4 的情况：
      CONFIG_FASTBOOT_FLASH_MMC_DEV=2
      CONFIG_EFI_PARTITION=y
      CONFIG_ANDROID_BOOT_IMAGE=y
-     
+
      # If use SPL, SDP need be enabled.
      CONFIG_SPL_USB_HOST_SUPPORT=y
      CONFIG_SPL_USB_GADGET_SUPPORT=y
@@ -613,13 +613,13 @@ LPDDR4 的情况：
   - u-boot logo：打开 `uboot-imx/tools/Makefile`，执行`:/LOGO_BMP`搜索 “LOGO_BMP”，分析 Makefile 可知 默认使用`$(srctree)/$(src)/logos/denx.bmp`的图片，如果存在 `logos/$(BOARD).bmp` 或者 `logos/$(VENDOR).bmp` 就使用，可以直接在此按需替换。具体的显示 logo 的函数在`uboot /board/esd/common/`目录下的 `lcd.c` 文件中，大约在 81 行左右。屏幕的初始化配置在官方源码的`<board name>.c`文件里面。因为 uboot 启动的时间很短，一般都使用 Linux 的 logo，所以 uboot 中可以将 logo 图片删掉，或者在`<board name>.c`里面将显示有关的代码屏蔽掉。
   - 增加 uboot 额外的版本信息，在 uboot 目录里面先执行`make <板名>_defconfig`，再执行`make menuconfig`，在 `Console` 里面的 `Board specific string ... version string`里面填入板子名和版本字符串。
   - 对于 imx8mm：
-    - 在 `arch/arm/dts/imx8mm-ddr4-evk.dts` 里面的 model 改板名，板子上电后 uboot 的 `Model:` 会显示这里的信息；`board/board-info.c` 里面的`show_board_info()`会调用读取这个 `model`； 
+    - 在 `arch/arm/dts/imx8mm-ddr4-evk.dts` 里面的 model 改板名，板子上电后 uboot 的 `Model:` 会显示这里的信息；`board/board-info.c` 里面的`show_board_info()`会调用读取这个 `model`；
     - 在 `<板名>.`c 里的 `board_late_init()`，有一个设置 uboot 的 `board_name` 环境变量；
   - 对于其他 imx8 系列：
     1. 在 `<板子名>.c` 中，`board_early_init_f()`的`init_sequence_f[]`里面有一个`checkboard()`函数；
     2. 直接一点的方法：delete `identify_board_id()` inside `checkboard()` and replace `printf("Board: ");` with `printf("Board: i.MX on <custom board>\n");`；
     3. 间接方法，The identification can be detected and printed by implementing the __print_board_info() function according to the identification method on the custom board，查看一下`identify_board_id()`和 `__print_board_info()`这两个函数的内容，进行修改。
-  
+
 - 调试：在串口初始化之后的程序中可以添加`printf()`函数打印调试信息，初始化串口函数默认在`board_early_init_f()`里面。
 
 ### 添加自定义命令
@@ -637,11 +637,11 @@ LPDDR4 的情况：
 
 这里还是针对 nxp i.mx8mm 而言，armv8 的 SoC 应该都大同小异。
 
-看 i.MX_Linux_Users_Guide.pdf 手册的 4.1.1 Bootloader 章节：On i.MX 8M SoC, the second program loader (SPL) is enabled in U-Boot. SPL is implemented as the first-level bootloader running on TCML (For i.MX 8M Nano and i.MX 8M Plus, the first-level bootloader runs in OCRAM). It is used to initialize DDR and load U-Boot, U-Boot DTB, Arm trusted firmware, and TEE OS (optional) from the boot device into the memory. After SPL completes loading the images, it jumps to the Arm trusted firmware BL31 directly. The BL31 starts the optional BL32 (TEE OS) and BL33 (U-Boot) for continue booting kernel.  
+看 i.MX_Linux_Users_Guide.pdf 手册的 4.1.1 Bootloader 章节：On i.MX 8M SoC, the second program loader (SPL) is enabled in U-Boot. SPL is implemented as the first-level bootloader running on TCML (For i.MX 8M Nano and i.MX 8M Plus, the first-level bootloader runs in OCRAM). It is used to initialize DDR and load U-Boot, U-Boot DTB, Arm trusted firmware, and TEE OS (optional) from the boot device into the memory. After SPL completes loading the images, it jumps to the Arm trusted firmware BL31 directly. The BL31 starts the optional BL32 (TEE OS) and BL33 (U-Boot) for continue booting kernel.
 
-In imx-boot, the SPL is packed with DDR Firmware together, so that ROM can load them into Arm Cortex-M4 TCML or OCRAM (only for i.MX 8M Nano and i.MX 8M Plus). The U-Boot, U-Boot DTB, Arm Trusted firmware, and TEE OS (optional) are packed into a FIT image, which is finally built into imx-boot.  
+In imx-boot, the SPL is packed with DDR Firmware together, so that ROM can load them into Arm Cortex-M4 TCML or OCRAM (only for i.MX 8M Nano and i.MX 8M Plus). The U-Boot, U-Boot DTB, Arm Trusted firmware, and TEE OS (optional) are packed into a FIT image, which is finally built into imx-boot.
 
-看 i.MX_Porting_Guide.pdf 手册 5.3 OP-TEE booting flow 章节：On Arm V8, Arm has a specified preferred way to boot Secure Component with the Arm Trusted Firmware (ATF). The ATF first loads the OP-TEE OS. The OP-TEE OS initializes the secure world. Then, the ATF loads U-Boot that modifies the DTB on the fly to add a specific node to load Linux TEE drivers. Then, the Linux OS is booted.  
+看 i.MX_Porting_Guide.pdf 手册 5.3 OP-TEE booting flow 章节：On Arm V8, Arm has a specified preferred way to boot Secure Component with the Arm Trusted Firmware (ATF). The ATF first loads the OP-TEE OS. The OP-TEE OS initializes the secure world. Then, the ATF loads U-Boot that modifies the DTB on the fly to add a specific node to load Linux TEE drivers. Then, the Linux OS is booted.
 
 需要的组件：(U-Boot, Arm Trusted Firmware, DDR firmware)
 
@@ -667,7 +667,7 @@ In imx-boot, the SPL is packed with DDR Firmware together, so that ROM can load 
 - 添加初始化代码：
   - 在 `include/configs/<板子名>.h` 里面添加初始化代码相关的宏定义；
   - 在 `board/<公司名>/<板子名>/<板子名>.c` 里，在 `board_xxx_init()` 函数里面添加对应的初始化函数，比如 `board_eth_init()` 里面添加 `dm9000_initialize()` 初始化函数。
-  
+
 - 增加个串口输出特定内容：
 
   在 `/common/board_f.c` 中加：`\#include <debug_uart.h>`；
@@ -694,12 +694,12 @@ In imx-boot, the SPL is packed with DDR Firmware together, so that ROM can load 
 
 ### 署名
 
-- 编辑整理：[Github 页](https://github.com/Staok)，[知乎页](https://www.zhihu.com/people/xuhaoyang)
+- 编辑整理：[Github 页](https://github.com/Qitas)，[知乎页](https://www.zhihu.com/people/xuhaoyang)
 - 发表时间：始于 2021.5 且无终稿
-- 首发平台：[知乎](https://zhuanlan.zhihu.com/p/373505974) & [Github](https://github.com/Staok/ARM-Linux-Study/blob/main/ARM%20%26%20Linux%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E3%80%90%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8503%E3%80%91NXP%20i.MX%20%E7%B3%BB%E5%88%97%20u-boot%20%E7%A7%BB%E6%A4%8D%E5%9F%BA%E7%A1%80%E8%AF%A6%E8%A7%A3.md)
+- 首发平台：[知乎](https://zhuanlan.zhihu.com/p/373505974) & [Github](https://github.com/Qitas/ARM-Linux-Study/blob/main/ARM%20%26%20Linux%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E3%80%90%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8503%E3%80%91NXP%20i.MX%20%E7%B3%BB%E5%88%97%20u-boot%20%E7%A7%BB%E6%A4%8D%E5%9F%BA%E7%A1%80%E8%AF%A6%E8%A7%A3.md)
 - 遵循协议：[CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
 - 其他说明：
-  1. 本文件是“瞰百易”计划的一部分，尽量遵循 [“二项玻”定则](https://github.com/Staok/Please-stay-in-the-future)，致力于与网络上碎片化严重的现象泾渭分明（这中二魂...）！
+  1. 本文件是“折耳根”计划的一部分，尽量遵循 [“二项玻”定则](https://github.com/Qitas/Please-stay-in-the-future)，致力于与网络上碎片化严重的现象泾渭分明（这中二魂...）！
   2. 本文系广泛撷取、借鉴和整理，适合刚入门的人阅读和遵守，也适合已经有较多编程经验的人参看。如有错误恭谢指出！
   3. 转载请注明作者及出处。整理不易，请多支持。
 

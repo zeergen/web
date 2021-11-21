@@ -3,7 +3,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文源地址[Staok/norm-of-software-and-hardware: 目录贴，个人软硬件规范的索引总贴。以及本科阶段触及的大部分领域及其顺延的小总结。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Staok/norm-of-software-and-hardware)。今后的更新只在上面的连接里，这里不会跟进。
+本文源地址[Qitas/norm-of-software-and-hardware: 目录贴，个人软硬件规范的索引总贴。以及本科阶段触及的大部分领域及其顺延的小总结。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/norm-of-software-and-hardware)。今后的更新只在上面的连接里，这里不会跟进。
 
 ## 意义
 
@@ -22,7 +22,7 @@
 - 易于问题定位；
 - 快速提高项目组水平。
 
-在网上规范文章随处有的情况下，我为什么还要自己总结规范？因为每一个文章都不会是全的，就这么简单，我吸收、整理和合并它们，成为更全的，并在我以后自己的项目中遵守这些规范，实现更好的阅读性、操作性、解耦性、分层次性、模块化等，集百家之长，此乃瞰百易之精髓之一。
+在网上规范文章随处有的情况下，我为什么还要自己总结规范？因为每一个文章都不会是全的，就这么简单，我吸收、整理和合并它们，成为更全的，并在我以后自己的项目中遵守这些规范，实现更好的阅读性、操作性、解耦性、分层次性、模块化等，集百家之长，此乃折耳根之精髓之一。
 
 还有一件事，根据脑科学的一些研究结果，大脑中的记忆，尤其是以前发生的事情的细节，是会发生改动的，而细节的偏差会影响大局的择决；就从日常生活经验也能感觉出，这个结论有一定真实性，所以，把几乎所有的细节都放到大脑里是非常不靠谱的事。
 
@@ -39,20 +39,20 @@
 以下链接中，括号内的为知乎文章地址，其他链接为 GitHub 仓库地址。
 
 -   软件框架，规范化。
-    1.  [关于 C & MCU 的规范](https://github.com/Staok/coding-style-and-more)（[C & MCU编写规范和其他](https://zhuanlan.zhihu.com/p/350839857)）（"低耦合，可重用，参数化，注释全"）
-    2.  [关于 HDL & FPGA 的学习和规范](https://github.com/Staok/HDL-FPGA-study-and-norms)（[FPGA & HDL 学习和规范](https://zhuanlan.zhihu.com/p/356856108)）
-    3.  [MCU Framework 项目](https://github.com/Staok/stm32_framework)
-    4.  [IMU 选型和算法](https://github.com/Staok/IMU-study)
-    5.  [Awesome-K210](https://github.com/Staok/Awesome-K210)
-    6.  [开源协议汇总和选择](https://github.com/Staok/Public-License-List)
-    7.  [Awesome-Embeded-AI](https://github.com/Staok/Awesome-Embeded-AI)
-    8.  [ARM-Linux-Study](https://github.com/Staok/ARM-Linux-Study)
+    1.  [关于 C & MCU 的规范](https://github.com/Qitas/coding-style-and-more)（[C & MCU编写规范和其他](https://zhuanlan.zhihu.com/p/350839857)）（"低耦合，可重用，参数化，注释全"）
+    2.  [关于 HDL & FPGA 的学习和规范](https://github.com/Qitas/HDL-FPGA-study-and-norms)（[FPGA & HDL 学习和规范](https://zhuanlan.zhihu.com/p/356856108)）
+    3.  [MCU Framework 项目](https://github.com/Qitas/stm32_framework)
+    4.  [IMU 选型和算法](https://github.com/Qitas/IMU-study)
+    5.  [Awesome-K210](https://github.com/Qitas/Awesome-K210)
+    6.  [开源协议汇总和选择](https://github.com/Qitas/Public-License-List)
+    7.  [Awesome-Embeded-AI](https://github.com/Qitas/Awesome-Embeded-AI)
+    8.  [ARM-Linux-Study](https://github.com/Qitas/ARM-Linux-Study)
 -   硬件模块，规范化。
-    1.  [硬件规范](https://github.com/Staok/thoughs-about-hardware-design)（[SCH & PCB 设计规范和 AD 的使用](https://zhuanlan.zhihu.com/p/356679916)）
-    2.  [开源开关电源项目](https://github.com/Staok/PowerBar) （[【开源电源】巧克力板](https://zhuanlan.zhihu.com/p/357497672)）
-    3.  [开源 BLDC FOC 项目](https://github.com/Staok/iBLDC)（更新会超级慢）
-    4.  [硬件保护项和措施](https://github.com/Staok/protection-circuits)
--   硬件测试的指标条目、每个项目的测试步骤和测试报告，规范化。[请戳这里](https://github.com/Staok/thoughs-about-hardware-design/blob/master/SCH%20%26%20PCB%20%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%92%8C%20AD%20%E7%9A%84%E4%BD%BF%E7%94%A8.md#15-%E7%A1%AC%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%A7%84%E8%8C%83%E5%8C%96)（暂无）。
+    1.  [硬件规范](https://github.com/Qitas/thoughs-about-hardware-design)（[SCH & PCB 设计规范和 AD 的使用](https://zhuanlan.zhihu.com/p/356679916)）
+    2.  [开源开关电源项目](https://github.com/Qitas/PowerBar) （[【开源电源】巧克力板](https://zhuanlan.zhihu.com/p/357497672)）
+    3.  [开源 BLDC FOC 项目](https://github.com/Qitas/iBLDC)（更新会超级慢）
+    4.  [硬件保护项和措施](https://github.com/Qitas/protection-circuits)
+-   硬件测试的指标条目、每个项目的测试步骤和测试报告，规范化。[请戳这里](https://github.com/Qitas/thoughs-about-hardware-design/blob/master/SCH%20%26%20PCB%20%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%92%8C%20AD%20%E7%9A%84%E4%BD%BF%E7%94%A8.md#15-%E7%A1%AC%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%A7%84%E8%8C%83%E5%8C%96)（暂无）。
 
 这些是我本科阶段触及的一部分（不是所有，本科玩的东西真多...字面意义的玩，不深入）领域及其顺延的小总结。下一篇就是硕士阶段的触及领域及其顺延的大总结了，内容定将极其多。
 
@@ -68,7 +68,7 @@
 -   开始一个全新的项目时，应首先 全！网！ 收集相关资料、文献和参考设计；例如笔者在筹备 BLDC 原理图时，就全网收集了数十张原理图方案；经过交叉横向对比后，快速形成考虑比较多的、功能齐全的和子系统优选的更新进的方案出来。
 -   许多问题应在设计时避免，除了吃头各种官方文档，还要多找一些相同任务的设计进行横向对比，找它们的不同之处并搞清原因；还要考虑增加安全性的设计（防错、纠错和相应的处理，对用户的 傻瓜化操作设计 和 防傻防呆设计（防止乱用错用））、冗余性设计（多路冗余）和可调试性设计（留有可以调试和改动的余地）。
 -   关于软、硬件的模块化，在上面《规范》文章中说到了一些，除了 “增加通用性” 并且使方案可模块化的 “拆解” 和 “拼装”，在此基础上还应考虑 “故障点隔离”，故障的节点（软件或者硬件）做相应处理，失效的节点做隔离/孤立处理，这个往往需要软硬件协调的设计。
--   
+-
 
 
 

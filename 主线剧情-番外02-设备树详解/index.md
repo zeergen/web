@@ -5,7 +5,7 @@
 
 本文 续接 《【主线剧情03】NXP i.MX 系列 u-boot 移植基础详解》 一文中`移植过程`小节中有关设备树的内容。
 
-编辑整理 By [Staok](https://github.com/Staok)，如有错误恭谢指出，侵删。CC-BY-NC-SA 4.0。
+编辑整理 By [Qitas](https://github.com/Qitas)，如有错误恭谢指出，侵删。CC-BY-NC-SA 4.0。
 
 ------
 
@@ -79,11 +79,11 @@ int device_probe(struct platform_device *pdev)
     rst_gpio = of_get_named_gpio_flags(np, "rst-gpio", 0, &flags);
     if (flags & OF_GPIO_ACTIVE_LOW) {
         struct gpio_desc *desc;
- 
+
         desc = gpio_to_desc(rst_gpio);
         set_bit(FLAG_ACTIVE_LOW, &desc->flags);
     }
- 
+
     irq = of_irq_get(np, 0);
     trigger_type = irq_get_trigger_type(irq);
     request_threaded_irq(irq, NULL, irq_handler, trigger_type, "irq", NULL);
@@ -167,22 +167,22 @@ Device Tree中的节点信息 实例图：
 
 - 根节点，用 / 标识根节点；CPU节点，一般不需要我们设置，在 .dtsi 文件中都定义好了；
 
-- aliases 节点的作用就是为其他节点起一个别名。以 `can0 = &flexcan1;` 为例。“flexcan1”是一个节点的名字，设置别名后我们可以使用“can0”来指代 flexcan1节点，与节点标签类似。  在驱动中如果要查找一个节点，通常情况下我们可以使用“节点路径”一步步找到节点。也可以使用别名“一步到位”找到节点。  
+- aliases 节点的作用就是为其他节点起一个别名。以 `can0 = &flexcan1;` 为例。“flexcan1”是一个节点的名字，设置别名后我们可以使用“can0”来指代 flexcan1节点，与节点标签类似。  在驱动中如果要查找一个节点，通常情况下我们可以使用“节点路径”一步步找到节点。也可以使用别名“一步到位”找到节点。
 
 - memory 节点：芯片厂家不可能事先确定你的板子使用多大的内存，所以 memory 节点需要板厂设置，比如：
 
   ```
-  memory {   
-  	reg = <0x80000000 0x20000000>;   
-  }; 
+  memory {
+  	reg = <0x80000000 0x20000000>;
+  };
   ```
 
 - chosen 节点：我们可以通过设备树文件给内核传入一些参数，例如下面在chosen节点中设置bootargs属性：
 
   ```
-  chosen {   
-      bootargs = "noinitrd root=/dev/mtdblock4 rw init=/linuxrc console=ttySAC0,115200";   
-  };   
+  chosen {
+      bootargs = "noinitrd root=/dev/mtdblock4 rw init=/linuxrc console=ttySAC0,115200";
+  };
   ```
 
   这个节点用作 uboot 向 linux 内核传递配置参数的“通道”，我们在 Uboot 中设置的参数就是通过这个节点传递到内核的。
@@ -197,7 +197,7 @@ Device Tree中的节点信息 实例图：
 
 > 标准属性。在设备树中，有一些特定的属性。Linux 设备树语法中定义了一些具有规范意义的属性，包括：compatible, address, interrupt 等，这些信息能够在内核初始化找到节点的时候，自动解析生成相应的设备信息。此外，还有一些Linux内核定义好的，一类设备通用的有默认意义的属性，这些属性一般不能被内核自动解析生成相应的设备信息，但是内核已经编写的相应的解析提取函数，常见的有 "mac_addr"，"gpio"，"clock"，"power"。"regulator" 等等。
 >
-> - compatible：Linux 驱动中可以通过设备节点中的 "compatible" 这个属性查找设备节点，即根据这个属性的字符串描述的芯片的公司和驱动文件的字符串索引到驱动文件。例如系统初始化时会初始化 platform 总线上的设备时，根据设备节点”compatible”属性和驱动中 of_match_table 对应的值，匹配了就加载对应的驱动。  
+> - compatible：Linux 驱动中可以通过设备节点中的 "compatible" 这个属性查找设备节点，即根据这个属性的字符串描述的芯片的公司和驱动文件的字符串索引到驱动文件。例如系统初始化时会初始化 platform 总线上的设备时，根据设备节点”compatible”属性和驱动中 of_match_table 对应的值，匹配了就加载对应的驱动。
 >
 > - address：
 >
@@ -211,16 +211,16 @@ Device Tree中的节点信息 实例图：
 >   ```
 >   soc {
 >       #address-cel1s = <2>;
->       #size-cells = <1>; 
->       controller = <&mbusc>; 
->   
+>       #size-cells = <1>;
+>       controller = <&mbusc>;
+>
 >       devbus_bootcs:devbus-bootcs {
->           compatible = "marvell,orion-devbus"; 
->           reg = <MBUS_ID(OxfO,0x01) 0X1046C 0x4>; 
+>           compatible = "marvell,orion-devbus";
+>           reg = <MBUS_ID(OxfO,0x01) 0X1046C 0x4>;
 >           ranges = <0 MBUS_ID(0x01,0x0f) 0 Oxffffffff>;
 >           #address-cells = <1>;
->           #size-cells = <1>; 
->           clocks = <&core_clk 0>; 
+>           #size-cells = <1>;
+>           clocks = <&core_clk 0>;
 >           status = "disabled";
 >       };
 >       ...

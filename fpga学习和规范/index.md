@@ -3,11 +3,11 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-本文源文在[Staok/HDL-FPGA-study-and-norms: HDL & FPGA 学习和规范。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Staok/HDL-FPGA-study-and-norms)。今后只在上面的链接里，这里不会跟进。
+本文源文在[Qitas/HDL-FPGA-study-and-norms: HDL & FPGA 学习和规范。CC-BY-NC-SA 4.0。 (github.com)](https://github.com/Qitas/HDL-FPGA-study-and-norms)。今后只在上面的链接里，这里不会跟进。
 
-编辑整理 by [Staok](https://github.com/Staok)，始于 2021.2 且无终稿。转载请注明作者及出处。
+编辑整理 by [Qitas](https://github.com/Qitas)，始于 2021.2 且无终稿。转载请注明作者及出处。
 
-本文件是“瞰百易”计划的一部分，尽量遵循[“二项玻”定则](https://github.com/Staok/Please-stay-in-the-future)，~~致力于与网络上碎片化严重的现象泾渭分明！~~
+本文件是“折耳根”计划的一部分，尽量遵循[“二项玻”定则](https://github.com/Qitas/Please-stay-in-the-future)，~~致力于与网络上碎片化严重的现象泾渭分明！~~
 
 本文系广泛撷取、借鉴和整理，适合刚入门的人阅读和遵守，已经有较多经验的人看一看图个乐，如有错误恭谢指出！
 
@@ -63,7 +63,7 @@
 
         等其他。
 
--   板级PCB走线遵循“[PCB走线规范](https://github.com/Staok/thoughs-about-hardware-design)”。
+-   板级PCB走线遵循“[PCB走线规范](https://github.com/Qitas/thoughs-about-hardware-design)”。
 
 -   开发流程：
 
@@ -128,12 +128,12 @@
       /*输入信号*/
       input clk_in,             /*时钟输入*/
       input rst_n_in,           /*复位（低有效）信号输入*/
-  
+
       /*输出信号*/
       output reg [7:0]q_out,    /*q 左移位输出*/
       output reg [7:0]p_out     /*p 右移位输出*/
   );
-      
+
       /*对 q 左移位输出*/
       always @(posedge clk_in or negedge rst_n_in)
           begin
@@ -146,7 +146,7 @@
                       q_out <= { q_out[6:0] , q_out[7] };
                   end
           end
-      
+
       /*对 p 右移位输出*/
       always @(posedge clk_in or negedge rst_n_in)
           begin
@@ -159,7 +159,7 @@
                       p_out <= { p_out[0] , p_out[7:1] };
                   end
           end
-  	
+
   endmodule
   ```
 
@@ -169,7 +169,7 @@
 
 -   自动补全代码的功能 ，在[Tools] -> [Options] -> [Text Editor] -> Autocomplete Text  里面选择启用。
 
--   工程文件夹划分规范：prj 为工程文件存放目录； rtl 为 verilog 可综合代码存放目录； testbench 为测试文件存放目录； img 为设计相关图片存放目录； doc 为设计相关文档存放目录； prj 文件夹下还建立了子文件夹 ip，用于存放 Quartus Prime 中生成的 IP 核文件。  
+-   工程文件夹划分规范：prj 为工程文件存放目录； rtl 为 verilog 可综合代码存放目录； testbench 为测试文件存放目录； img 为设计相关图片存放目录； doc 为设计相关文档存放目录； prj 文件夹下还建立了子文件夹 ip，用于存放 Quartus Prime 中生成的 IP 核文件。
 
 -   仿真文件 testbench 均由IDE软件产生（当引脚很多时节省手写时间）。先做一次全编译，然后 Quartus II 软件里面 Processing->Start->Start Test Bench Template Writer，生成 .vt 格式的 testbench 文件后，修改这个文件名与里面顶层模块名一致。
 
@@ -179,7 +179,7 @@
 
     ```verilog
     `define clock_period 20 	//周期20ns，50Mhz
-    
+
     always #(`clock_period/2) CLK_in = ~CLK_in;	//周期20ns，50Mhz
     ```
 
@@ -334,7 +334,7 @@ A 沿为主端口发起 写传输，E 沿为主端口准备好要写的数据，
 
 读传输：等待周期允许从端口使用一个或多个时钟周期来捕获地址和/或返回有效readdata，等待周期会影响从端口的吞吐量。
 
-写传输：等待周期允许从端口使用一个或多个时钟周期来捕获地址和writedata，等待周期会影响从端口的吞吐量。 
+写传输：等待周期允许从端口使用一个或多个时钟周期来捕获地址和writedata，等待周期会影响从端口的吞吐量。
 
 用于同步外设访问，读传输等待周期是必须的，写传输非必须。
 
@@ -433,7 +433,7 @@ OLED 定制外设 IP 的部分源码，从端口的写传输实现，VHDL。
 
 - 按键消抖
 
-  思想：~~当“按键可以检测标志位”有效时，按下的边沿触发启动一计数器，同时标记“按键可以检测标志位”失效，当计数器计数到一定值后，再检测按键是否处于按下状态，如果是则标记“按键有效”标志位做输出，如果不是则停止计数，同时标记“按键可以检测标志位”有效，同时清空计数值。~~ 
+  思想：~~当“按键可以检测标志位”有效时，按下的边沿触发启动一计数器，同时标记“按键可以检测标志位”失效，当计数器计数到一定值后，再检测按键是否处于按下状态，如果是则标记“按键有效”标志位做输出，如果不是则停止计数，同时标记“按键可以检测标志位”有效，同时清空计数值。~~
 
   sopc 读取外部按键设计思路，硬件上先实现一个去抖，然后把无毛刺的稳定的信号传给 nios ii 输入脚，然后 nios ii 里面实现一个外部引脚沿中断。
 
@@ -455,15 +455,15 @@ OLED 定制外设 IP 的部分源码，从端口的写传输实现，VHDL。
 
 -   SPI模块
 
-    
+
 
 -   UART模块
     看《FPGA设计-实战演练（逻辑篇）》 吴厚航 的随书源码。（@TODO 不过这个程序的最外层还不够明朗，需要再整理简化使用）
-    
+
 -   状态机
 
     注意点：
-    
+
     -   关键是画好状态图；
     -   状态完备；
     -   组合逻辑条件完备；
@@ -471,19 +471,19 @@ OLED 定制外设 IP 的部分源码，从端口的写传输实现，VHDL。
     -   不能进入非预知状态。
     -   需要穷举所有状态对应的输出动作，或者使用 default 来定义未定义状态动作。
     -   推荐都使用三段式状态机。
-    
+
     参考：
-    
+
     -   文件位置：./FPGA学习和规范 的参考源码/fsm/
     -   三种状态机 [基于FPGA的有限状态机浅析](https://www.cnblogs.com/ninghechuan/p/7898297.html)
     -   三段式状态机 [万物基于状态机——状态机大法好](https://zhuanlan.zhihu.com/p/137890103)
     -   三段式状态机 [【BUG记录】三段式状态机编写问题及三段式状态机各部分功能分析](https://zhuanlan.zhihu.com/p/337903913)
-    
--   
+
+-
 
 -   ...
 
-    
+
 
 ------
 
@@ -514,7 +514,7 @@ OLED 定制外设 IP 的部分源码，从端口的写传输实现，VHDL。
 -   [Nios II入门实验](https://www.cnblogs.com/yuphone/category/276816.html)
 -   [小梅哥 FPGA资料专区](http://www.corecourse.cn/forum.php?mod=forumdisplay&fid=41)
 -   [小梅哥 - 博客园](https://www.baidu.com/link?url=CYD8ZBPmHJP4lnc7VKOm_uIU55a5sTGQWKyKYCixBTbitt-DLiyDpbSK0VhrnSSJ&wd=&eqid=9dea342a00000a8400000006603cb8f7)
--   [HDL & FPGA 学习和规范（HDL-&-FPGA- study）](https://github.com/Staok/HDL-FPGA-study-and-norms)
+-   [HDL & FPGA 学习和规范（HDL-&-FPGA- study）](https://github.com/Qitas/HDL-FPGA-study-and-norms)
 
 FPGA的时序分析和时序约束的资料参考：
 
