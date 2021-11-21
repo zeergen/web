@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>【主线剧情02】ARM Linux 基础学习记录 - 欢迎来到 Staok - 瞰百易</title><meta name="Description" content="介绍 Linux 基本使用和对 ARM SoC 的基本编译流程"><meta property="og:title" content="【主线剧情02】ARM Linux 基础学习记录" />
+        <title>【主线剧情02】ARM Linux 基础学习记录 - 折耳根</title><meta name="Description" content="介绍 Linux 基本使用和对 ARM SoC 的基本编译流程"><meta property="og:title" content="【主线剧情02】ARM Linux 基础学习记录" />
 <meta property="og:description" content="介绍 Linux 基本使用和对 ARM SoC 的基本编译流程" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
@@ -31,7 +31,7 @@
                             "@type": "ImageObject",
                             "url": "http:\/\/Staok.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
-                            "height":  2048 
+                            "height":  2048
                         }],"genre": "posts","keywords": "ARM, Linux","wordcount":  16064 ,
         "url": "http:\/\/Staok.github.io\/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8502-arm-linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/","datePublished": "2021-04-05T12:20:44+08:00","dateModified": "2021-04-05T12:20:44+08:00","publisher": {
             "@type": "Organization",
@@ -39,7 +39,7 @@
                     "@type": "ImageObject",
                     "url": "http:\/\/Staok.github.io\/images\/avatar.png",
                     "width":  404 ,
-                    "height":  392 
+                    "height":  392
                 }},"author": {
                 "@type": "Person",
                 "name": "Staok"
@@ -51,7 +51,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+            <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -75,7 +75,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+                <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -943,8 +943,8 @@ readelf -a &lt;elf 文件&gt; 解析并显示 elf 的 arm 可执行文件的详�
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">$ df
-Filesystem     1K-blocks    Used      Available Use% Mounted on 
-/dev/sda6       <span class="m">29640780</span>    <span class="m">4320600</span>   <span class="m">23814492</span>  16%       / 
+Filesystem     1K-blocks    Used      Available Use% Mounted on
+/dev/sda6       <span class="m">29640780</span>    <span class="m">4320600</span>   <span class="m">23814492</span>  16%       /
 ...
 </code></pre></td></tr></table>
 </div>
@@ -1464,7 +1464,7 @@ sudo apt upgrade
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">ARCH</span><span class="o">=</span>arm
 <span class="nb">export</span> <span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihfexport-
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/home/&lt;用户目录&gt;/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin  
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/home/&lt;用户目录&gt;/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin
 </code></pre></td></tr></table>
 </div>
 </div><p>并在终端键入 <code>source ~/.bashrc</code> 使其生效。</p>
@@ -1553,8 +1553,8 @@ sudo make <span class="nv">ARCH</span><span class="o">=</span>arm <span class="n
 </span><span class="c"></span><span class="nv">KERN_DIR</span> <span class="o">=</span> /home/book/100ask_roc-rk3399-pc/linux-4.4
 
 <span class="nf">all</span><span class="o">:</span>
-	make -C <span class="k">$(</span>KERN_DIR<span class="k">)</span> <span class="nv">M</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span> modules 
-	<span class="k">$(</span>CROSS_COMPILE<span class="k">)</span>gcc -o hello_drv_test hello_drv_test.c 
+	make -C <span class="k">$(</span>KERN_DIR<span class="k">)</span> <span class="nv">M</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span> modules
+	<span class="k">$(</span>CROSS_COMPILE<span class="k">)</span>gcc -o hello_drv_test hello_drv_test.c
 
 <span class="nf">clean</span><span class="o">:</span>
 	make -C <span class="k">$(</span>KERN_DIR<span class="k">)</span> <span class="nv">M</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span> modules clean

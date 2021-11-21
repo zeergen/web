@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>【主线剧情01】ARM IMX6ULL 基础学习记录 - 欢迎来到 Staok - 瞰百易</title><meta name="Description" content="介绍 ARM 和 i.MX6ULL SoC 的基本内容，以及GCC、Makefile等"><meta property="og:title" content="【主线剧情01】ARM IMX6ULL 基础学习记录" />
+        <title>【主线剧情01】ARM IMX6ULL 基础学习记录 - 折耳根</title><meta name="Description" content="介绍 ARM 和 i.MX6ULL SoC 的基本内容，以及GCC、Makefile等"><meta property="og:title" content="【主线剧情01】ARM IMX6ULL 基础学习记录" />
 <meta property="og:description" content="介绍 ARM 和 i.MX6ULL SoC 的基本内容，以及GCC、Makefile等" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8501-arm-imx6ull%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="posts" />
@@ -31,7 +31,7 @@
                             "@type": "ImageObject",
                             "url": "http:\/\/Staok.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
-                            "height":  2048 
+                            "height":  2048
                         }],"genre": "posts","keywords": "ARM","wordcount":  13566 ,
         "url": "http:\/\/Staok.github.io\/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8501-arm-imx6ull%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95\/","datePublished": "2021-04-02T13:26:36+08:00","dateModified": "2021-04-11T15:54:12+08:00","publisher": {
             "@type": "Organization",
@@ -39,7 +39,7 @@
                     "@type": "ImageObject",
                     "url": "http:\/\/Staok.github.io\/images\/avatar.png",
                     "width":  404 ,
-                    "height":  392 
+                    "height":  392
                 }},"author": {
                 "@type": "Person",
                 "name": "Staok"
@@ -51,7 +51,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+            <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -75,7 +75,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+                <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -882,7 +882,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">.text
 .global  _start
-_start: 				
+_start:
     /* 设置栈地址 */
 	ldr  sp,=0x80200000
 	bl main
@@ -930,13 +930,13 @@ halt:
 
 <span class="nf">led.img </span><span class="o">:</span> <span class="n">start</span>.<span class="n">S</span>  <span class="n">led</span>.<span class="n">c</span> <span class="n">main</span>.<span class="n">c</span>
 	<span class="k">$(</span>CC<span class="k">)</span> -nostdlib -g -c -o start.o start.S                 <span class="c1"># 把启动文件 .s 和各个 .c 文件都汇编为机器码文件 .o</span>
-	<span class="k">$(</span>CC<span class="k">)</span> -nostdlib -g -c -o led.o led.c	
-	<span class="k">$(</span>CC<span class="k">)</span> -nostdlib -g -c -o main.o main.c	
-	
+	<span class="k">$(</span>CC<span class="k">)</span> -nostdlib -g -c -o led.o led.c
+	<span class="k">$(</span>CC<span class="k">)</span> -nostdlib -g -c -o main.o main.c
+
 	<span class="k">$(</span>LD<span class="k">)</span> -T imx6ull.lds -g start.o led.o main.o -o led.elf  <span class="c1"># 链接，按照 imx6ull.lds 定义的格式，各段数据重排序，把各个 .o 文件组成 .elf 文件</span>
-	
+
 	<span class="k">$(</span>OBJCOPY<span class="k">)</span> -O binary -S led.elf  led.bin                 <span class="c1"># .elf 转为 .bin 二进制文件，应用二进制文件</span>
-	<span class="k">$(</span>OBJDUMP<span class="k">)</span> -D -m arm  led.elf  &gt; led.dis	
+	<span class="k">$(</span>OBJDUMP<span class="k">)</span> -D -m arm  led.elf  &gt; led.dis
 	mkimage -n ./tools/imximage.cfg.cfgtmp -T imximage -e 0x80100000 -d led.bin led.imx
 	                                                         <span class="c1"># 使用 mkimage 生成 头部数据，并与 .bin 组合，产生 .imx 文件</span>
 	dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>1k.bin <span class="nv">bs</span><span class="o">=</span><span class="m">1024</span> <span class="nv">count</span><span class="o">=</span><span class="m">1</span>                <span class="c1"># 创建一个 1KB 的空文件 1k.bin</span>
@@ -975,7 +975,7 @@ clean:
     add r1, r1, #1          @ 将r1内存储的地址+1
     cmp r1, r2              @ 相等：清零操作结束；否则继续执行clean函数清零bss段
     bne clean
-    
+
     mov pc, lr
 </code></pre></td></tr></table>
 </div>
@@ -995,8 +995,8 @@ clean:
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">     data_load_addr = .;					
-     .data 0x900000 : AT(data_load_addr) 
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">     data_load_addr = .;
+     .data 0x900000 : AT(data_load_addr)
      {
        data_start = . ;                  //addr = 0x900000
        *(.data)
@@ -1309,9 +1309,9 @@ clean:
 	@ 不同ARM内核的中断向量表不同，具体看手册
 	@ 现在的微处理器寄存器结构非常复杂，不建议硬刚芯片手册手写配置代码，直接参考厂家和网络高手的例子特别省事
 	@ 一些基础的、不变的、规律性的则必须要会
-	
+
 	@ 中断的保存、恢复现场，以及分辨中断号和调用相应中断函数，Cortex M3/M4 是硬件完成的， Cortex A7 是软件实现的
-	
+
 	.text					@ 代码段(.text)，表示代码段
 							@ 其他段介绍：
 							@ 只读数据段(.rodata)：存放有初始值并且const修饰的全局类变量（全局变量或static修饰的局部变量）
@@ -1320,9 +1320,9 @@ clean:
 							@ 零初始化段(.bss)：存放没有初始值或初始值为0的全局类变量
 							@ 注：bss段和注释段不保存在bin/elf文件中，
 							@ 所以如果bss段的数据没有清0的话，没有初始值的变量在初始化时会是随机的，但个人觉得清不清0不是特别重要。
-	
+
 	.global start			@ .global 表示 start 是一个全局符号
-	
+
 start:						@ 程序入口
 	@异常向量表
 	b	reset				@ 0x00 reset
@@ -1333,7 +1333,7 @@ start:						@ 程序入口
 	nop						@ 0x14 reserved
 	ldr pc,=_irq			@ 0x18 irq
 	ldr pc,=_fiq			@ 0x1c fiq
-	
+
 _undef:			.word		_undef
 _swi_handler:	.word		_swi_handler
 _pre_fetch:		.word		_pre_fetch
@@ -1352,53 +1352,53 @@ _swi_handler:
 							@ 并从 spsr（cpsr的影子寄存器）恢复到 cpsr，即恢复现场
 swi_user_handle:
 	@... 软中断的用户应用程序，可以调用 c 函数
-	
+
 	cmp r0,#2				@ 判断软中断号是否为2，是则执行后面尾缀带eq的指令
 	moveq r7,#2
-	
+
 	cmp r0,#5				@ 判断软中断号是否为5，是则执行后面尾缀带eq的指令
 	moveq r7,#5
-	
+
 	cmp r0,#7				@ 判断软中断号是否为7，是则执行后面尾缀带eq的指令
 	moveq r7,#7
-	
+
 	ldr pc,lr				@ 跳回
-	
+
 _irq:
 	sub lr,lr,#4
 	stmfd sp!,{r0-r12,lr}
 	bl irq_user_handle
 	ldmfd sp!,{r0-r12,pc}^
-	
+
 irq_user_handle:
 	@... 外中断的用户应用程序，可以调用 c 函数
 	@并在用户程序中，从中断控制器的寄存器中读出当前的中断号，做相应的相应，然后清中断标志位
 	@现在的微处理器寄存器结构非常复杂，不建议硬刚芯片手册手写配置代码，直接参考厂家和网络高手的例子特别省事
-	
+
 	ldr pc,lr
 
 reset:
 	ldr sp,=stack_base		@ 分配栈地址到 sp 寄存器
 	msr cpsr,#0x10			@ 切换到 user 模式
-	
+
 	@... 用户应用程序，可以调用 c 函数
-	
+
 	swi 2					@ 触发软中断，自动跳转到软中断程序入口
 							@ 并自动把返回地址（下一个指令的地址）保存到 LR 寄存器
 							@ 并自动切换到 SVC（超级用户） 模式
 	nop
 	nop
-	
-	
+
+
 	swi 5
 	nop
 	nop
-	
-	
+
+
 	swi 7
 	nop
 	nop
-	
+
 	/*
 		@ 这一段是调用 c 程序里面的 void print_test_string(unsigned int cpsr, char *str) 函数
 		@ 给它传入的两个实参为 r0 和 r1
@@ -1407,54 +1407,54 @@ reset:
 		ldr r1, =test_string
 		bl print_test_string
 	*/
-	
+
 	b reset					@ 返回 reset 地址，大循环
 
 /*
 		test_string:
-			.string &#34;test_string&#34;	
+			.string &#34;test_string&#34;
 */
-	
+
 	@ 定义栈空间和地址，buf 为栈的开头地址，stack_base 为栈的尾地址，中间有 32 个 word 空间
 	@ 我们使用进出栈的指令是 stmfd 和 ldmfd
 	@ 这两个指令，为从 stack_base 开始向上递进存，向下递进取的顺序，与这里定义的顺序一致
-	
+
 	/*
 		ldr sp,=0x80200000
 		stmfd sp!, {r0-r2} @ 入栈
 		ldmfd sp!, {r0-r2} @ 出栈
-		
+
 		结果：
 				0x00000000
 				...
 				0x801FFFF4	-&gt; 	R0
 							   R1
 				0x80200000	-&gt; 	R2	sp指针的移动方向：存向上，取向下
-		
+
 		也可以用下面指令，效果一样
 		push {r0-r2} @ 入栈
 		pop {r0-r2}  @ 出栈
 
 	*/
-	
+
 	/*
 		栈的存取方式
 		栈的存取方式，为后进先出（LIFO），是由于进出栈指令的作用方式决定的，数据在栈指针处入栈时，
 		如 stmfd sp!,{r0-r12,lr}，根据这个指令的含义，栈指针sp会根据数据存放的方向自增或自减，出栈的时候过程相反，
 		在外界看来，这种方式就是只能在头部进出数据的线性表，从算法上来说是一种特殊的线性表，这种
 		方式是由汇编指令和硬件的易实现性所决定的。
-		
+
 		堆是一块空闲空间，使用 malloc 函数来管理它，malloc 函数可以自己写
-		
+
 		&#34;stack_base:&#34; 这种带冒号的标签表示地址位置，通过其得到指令/数据地址
 	*/
-	.data					
+	.data
 buf:
 	.space 32
 stack_base:
-	
-	
-	
+
+
+
 	.end
 
 </code></pre></td></tr></table>

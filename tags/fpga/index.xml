@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>FPGA - 标签 - 欢迎来到 Staok - 瞰百易</title>
+        <title>FPGA - 标签 - 折耳根</title>
         <link>http://Staok.github.io/tags/fpga/</link>
-        <description>FPGA - 标签 - 欢迎来到 Staok - 瞰百易</description>
+        <description>FPGA - 标签 - 折耳根</description>
         <generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 15 Feb 2021 16:15:14 &#43;0800</lastBuildDate><atom:link href="http://Staok.github.io/tags/fpga/" rel="self" type="application/rss+xml" /><item>
     <title>【规范】HDL &amp; FPGA 学习和规范</title>
     <link>http://Staok.github.io/fpga%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%A7%84%E8%8C%83/</link>

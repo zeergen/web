@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>【主线剧情 番外02】设备树详解 - 欢迎来到 Staok - 瞰百易</title><meta name="Description" content="介绍设备树"><meta property="og:title" content="【主线剧情 番外02】设备树详解" />
+        <title>【主线剧情 番外02】设备树详解 - 折耳根</title><meta name="Description" content="介绍设备树"><meta property="og:title" content="【主线剧情 番外02】设备树详解" />
 <meta property="og:description" content="介绍设备树" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://Staok.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85-%E7%95%AA%E5%A4%9602-%E8%AE%BE%E5%A4%87%E6%A0%91%E8%AF%A6%E8%A7%A3/" /><meta property="article:section" content="posts" />
@@ -31,7 +31,7 @@
                             "@type": "ImageObject",
                             "url": "http:\/\/Staok.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
-                            "height":  2048 
+                            "height":  2048
                         }],"genre": "posts","keywords": "ARM, dts","wordcount":  6750 ,
         "url": "http:\/\/Staok.github.io\/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85-%E7%95%AA%E5%A4%9602-%E8%AE%BE%E5%A4%87%E6%A0%91%E8%AF%A6%E8%A7%A3\/","datePublished": "2021-05-23T16:46:10+08:00","dateModified": "2021-06-03T18:19:07+08:00","publisher": {
             "@type": "Organization",
@@ -39,7 +39,7 @@
                     "@type": "ImageObject",
                     "url": "http:\/\/Staok.github.io\/images\/avatar.png",
                     "width":  404 ,
-                    "height":  392 
+                    "height":  392
                 }},"author": {
                 "@type": "Person",
                 "name": "Staok"
@@ -51,7 +51,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+            <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -75,7 +75,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="欢迎来到 Staok - 瞰百易"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
+                <a href="/" title="折耳根"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>回家</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -232,11 +232,11 @@
     <span class="n">rst_gpio</span> <span class="o">=</span> <span class="n">of_get_named_gpio_flags</span><span class="p">(</span><span class="n">np</span><span class="p">,</span> <span class="s">&#34;rst-gpio&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">flags</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">OF_GPIO_ACTIVE_LOW</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">struct</span> <span class="n">gpio_desc</span> <span class="o">*</span><span class="n">desc</span><span class="p">;</span>
- 
+
         <span class="n">desc</span> <span class="o">=</span> <span class="n">gpio_to_desc</span><span class="p">(</span><span class="n">rst_gpio</span><span class="p">);</span>
         <span class="n">set_bit</span><span class="p">(</span><span class="n">FLAG_ACTIVE_LOW</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">desc</span><span class="o">-&gt;</span><span class="n">flags</span><span class="p">);</span>
     <span class="p">}</span>
- 
+
     <span class="n">irq</span> <span class="o">=</span> <span class="n">of_irq_get</span><span class="p">(</span><span class="n">np</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
     <span class="n">trigger_type</span> <span class="o">=</span> <span class="n">irq_get_trigger_type</span><span class="p">(</span><span class="n">irq</span><span class="p">);</span>
     <span class="n">request_threaded_irq</span><span class="p">(</span><span class="n">irq</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">irq_handler</span><span class="p">,</span> <span class="n">trigger_type</span><span class="p">,</span> <span class="s">&#34;irq&#34;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
@@ -369,9 +369,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">memory {   
-	reg = &lt;0x80000000 0x20000000&gt;;   
-}; 
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">memory {
+	reg = &lt;0x80000000 0x20000000&gt;;
+};
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -384,9 +384,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">chosen {   
-    bootargs = &#34;noinitrd root=/dev/mtdblock4 rw init=/linuxrc console=ttySAC0,115200&#34;;   
-};   
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">chosen {
+    bootargs = &#34;noinitrd root=/dev/mtdblock4 rw init=/linuxrc console=ttySAC0,115200&#34;;
+};
 </code></pre></td></tr></table>
 </div>
 </div><p>这个节点用作 uboot 向 linux 内核传递配置参数的“通道”，我们在 Uboot 中设置的参数就是通过这个节点传递到内核的。</p>
@@ -441,16 +441,16 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">soc {
     #address-cel1s = &lt;2&gt;;
-    #size-cells = &lt;1&gt;; 
-    controller = &lt;&amp;mbusc&gt;; 
+    #size-cells = &lt;1&gt;;
+    controller = &lt;&amp;mbusc&gt;;
 
     devbus_bootcs:devbus-bootcs {
-        compatible = &#34;marvell,orion-devbus&#34;; 
-        reg = &lt;MBUS_ID(OxfO,0x01) 0X1046C 0x4&gt;; 
+        compatible = &#34;marvell,orion-devbus&#34;;
+        reg = &lt;MBUS_ID(OxfO,0x01) 0X1046C 0x4&gt;;
         ranges = &lt;0 MBUS_ID(0x01,0x0f) 0 Oxffffffff&gt;;
         #address-cells = &lt;1&gt;;
-        #size-cells = &lt;1&gt;; 
-        clocks = &lt;&amp;core_clk 0&gt;; 
+        #size-cells = &lt;1&gt;;
+        clocks = &lt;&amp;core_clk 0&gt;;
         status = &#34;disabled&#34;;
     };
     ...
