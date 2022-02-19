@@ -43,11 +43,11 @@ enableEmoji = true
         title = ""
         weight = 2
       [[languages.zh-cn.menu.main]]
-        identifier = "categories"
+        identifier = "fruits"
         pre = ""
         post = ""
         name = "水果区"
-        url = "/categories/"
+        url = "/fruits/"
         title = ""
         weight = 3
       [[languages.zh-cn.menu.main]]

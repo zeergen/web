@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>主线剧情 - 水果区 - 折耳根</title>
-        <link>http://Qitas.github.io/categories/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85/</link>
+        <link>http://Qitas.github.io/fruits/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85/</link>
         <description>主线剧情 - 水果区 - 折耳根</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 23 May 2021 16:46:10 &#43;0800</lastBuildDate><atom:link href="http://Qitas.github.io/categories/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 23 May 2021 16:46:10 &#43;0800</lastBuildDate><atom:link href="http://Qitas.github.io/fruits/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%85/" rel="self" type="application/rss+xml" /><item>
     <title>【主线剧情01】ARM IMX6ULL 基础学习记录</title>
     <link>http://Qitas.github.io/%E4%B8%BB%E7%BA%BF%E5%89%A7%E6%83%8501-arm-imx6ull%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
     <pubDate>Fri, 02 Apr 2021 13:26:36 &#43;0800</pubDate>
